@@ -1,0 +1,3 @@
+
+CREATE TABLE USER (id int AUTO_INCREMENT,username varchar(40),password varchar(40),PRIMARY KEY (id));
+ delete from USER  where id=1;

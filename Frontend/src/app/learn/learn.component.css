@@ -1,0 +1,359 @@
+/* table{
+    font-family:'Calibri';
+    font-size:15px;
+    background-color:#fff;
+    color:#333;
+} */
+/* .modal-header{
+    background-color:#333;
+    color:#fff;
+}
+.icon1{
+    margin-left: 175px;
+    font-size: 100px;
+    color: firebrick;
+}
+.toastr{
+    margin-left: 35px;
+    padding-top: 20px;
+} */
+body {
+    background: #dd5e89;
+    background: -webkit-linear-gradient(to left, #dd5e89, #f7bb97);
+    background: linear-gradient(to left, #dd5e89, #f7bb97);
+    min-height: 100vh;
+  }
+
+
+  /* $(document).ready(function(){
+    $(".update").click(function(){
+        var id = $(this).data("uid");
+        var f1 = $("#f1").html();
+        var e1 = $("#e1").html();
+        var p1 = $("#p1").html();
+        var u1 = $("#u1").html();
+        var c1 = $("#c1").html();
+        var f2 = $("#f2").html();
+        var e2 = $("#e2").html();
+        var p2 = $("#p2").html();
+        var u2 = $("#u2").html();
+        var c2 = $("#c2").html();
+        var f3 = $("#f2").html();
+        var e3 = $("#e2").html();
+        var p3 = $("#p2").html();
+        var u3 = $("#u2").html();
+        var c3 = $("#c2").html();
+        var f4 = $("#f2").html();
+        var e4 = $("#e2").html();
+        var p4 = $("#p2").html();
+        var u4 = $("#u2").html();
+        var c4 = $("#c2").html();
+        var f5 = $("#f2").html();
+        var e5 = $("#e2").html();
+        var p5 = $("#p2").html();
+        var u5 = $("#u2").html();
+        var c5 = $("#c2").html();
+        var f6 = $("#f2").html();
+        var e6 = $("#e2").html();
+        var p6 = $("#p2").html();
+        var u6 = $("#u2").html();
+        var c6 = $("#c2").html();
+        var f7 = $("#f2").html();
+        var e7 = $("#e2").html();
+        var p7 = $("#p2").html();
+        var u7 = $("#u2").html();
+        var c7 = $("#c2").html();
+        var f8 = $("#f2").html();
+        var e8 = $("#e2").html();
+        var p8 = $("#p2").html();
+        var u8 = $("#u2").html();
+        var c8 = $("#c2").html();
+        if(id==1){
+            $("#fn").val(f1);
+            $("#em").val(e1);
+            $("#pn").val(p1);
+            $("#un").val(u1);
+            $("#co").val(c1);
+        }else if(id==2){
+          $("#fn").val(f2);
+          $("#em").val(e2);
+          $("#pn").val(p2);
+          $("#un").val(u2);
+          $("#co").val(c2);
+        }if(id==2){
+          $("#fn").val(f2);
+          $("#em").val(e2);
+          $("#pn").val(p2);
+          $("#un").val(u2);
+          $("#co").val(c2);
+      }else if(id==3){
+          $("#fn").val(f3);
+          $("#em").val(e3);
+          $("#pn").val(p3);
+          $("#un").val(u3);
+          $("#co").val(c3);
+        }if(id==3){
+          $("#fn").val(f3);
+          $("#em").val(e3);
+          $("#pn").val(p3);
+          $("#un").val(u3);
+          $("#co").val(c3);
+      }else if(id==4){
+          $("#fn").val(f4);
+          $("#em").val(e4);
+          $("#pn").val(p4);
+          $("#un").val(u4);
+          $("#co").val(c4);
+        }if(id==4){
+          $("#fn").val(f4);
+          $("#em").val(e4);
+          $("#pn").val(p4);
+          $("#un").val(u4);
+          $("#co").val(c4);
+      }else if(id==5){
+          $("#fn").val(f5);
+          $("#em").val(e5);
+          $("#pn").val(p5);
+          $("#un").val(u5);
+          $("#co").val(c5);
+        }if(id==5){
+          $("#fn").val(f5);
+          $("#em").val(e5);
+          $("#pn").val(p5);
+          $("#un").val(u5);
+          $("#co").val(c5);
+      }else if(id==6){
+          $("#fn").val(f6);
+          $("#em").val(e6);
+          $("#pn").val(p6);
+          $("#un").val(u6);
+          $("#co").val(c6);
+        }if(id==6){
+          $("#fn").val(f6);
+          $("#em").val(e6);
+          $("#pn").val(p6);
+          $("#un").val(u6);
+          $("#co").val(c6);
+      }else if(id==7){
+          $("#fn").val(f7);
+          $("#em").val(e7);
+          $("#pn").val(p7);
+          $("#un").val(u7);
+          $("#co").val(c7);
+        }if(id==7){
+          $("#fn").val(f7);
+          $("#em").val(e7);
+          $("#pn").val(p7);
+          $("#un").val(u7);
+          $("#co").val(c7);
+      }else if(id==8){
+          $("#fn").val(f8);
+          $("#em").val(e8);
+          $("#pn").val(p8);
+          $("#un").val(u8);
+          $("#co").val(c8);
+        }if(id==8){
+          $("#fn").val(f8);
+          $("#em").val(e8);
+          $("#pn").val(p8);
+          $("#un").val(u8);
+          $("#co").val(c8);
+      }else if(id==1){
+        $("#fn").val(f1);
+            $("#em").val(e1);
+            $("#pn").val(p1);
+            $("#un").val(u1);
+            $("#co").val(c1);
+      }
+        $("#up").click(function(){
+            if(id==1){
+                var fn = $("#fn").val();
+                var em = $("#em").val();
+                var pn = $("#pn").val();  
+                var un = $("#un").val();
+                var co = $("#co").val();    
+                $("#f1").html(fn);
+                $("#e1").html(em);
+                $("#p1").html(pn);
+                $("#u1").html(un);
+                $("#c1").html(co);
+            }else if(id==2){
+              var fn = $("#fn").val();
+              var em = $("#em").val();
+              var pn = $("#pn").val();  
+              var un = $("#un").val();
+              var co = $("#co").val();    
+              $("#f2").html(fn);
+              $("#e2").html(em);
+              $("#p2").html(pn);
+              $("#u2").html(un);
+              $("#c2").html(co);            
+            }if(id==2){
+              var fn = $("#fn").val();
+              var em = $("#em").val();
+              var pn = $("#pn").val();  
+              var un = $("#un").val();
+              var co = $("#co").val();    
+              $("#f2").html(fn);
+              $("#e2").html(em);
+              $("#p2").html(pn);
+              $("#u2").html(un);
+              $("#c2").html(co);    
+          }else if(id==3){
+              var fn = $("#fn").val();
+              var em = $("#em").val();
+              var pn = $("#pn").val();  
+              var un = $("#un").val();
+              var co = $("#co").val();    
+              $("#f3").html(fn);
+              $("#e3").html(em);
+              $("#p3").html(pn);
+              $("#u3").html(un);
+              $("#c3").html(co);            
+            }if(id==3){
+              var fn = $("#fn").val();
+              var em = $("#em").val();
+              var pn = $("#pn").val();  
+              var un = $("#un").val();
+              var co = $("#co").val();    
+              $("#f3").html(fn);
+              $("#e3").html(em);
+              $("#p3").html(pn);
+              $("#u3").html(un);
+              $("#c3").html(co);      
+          }else if(id==4){
+              var fn = $("#fn").val();
+              var em = $("#em").val();
+              var pn = $("#pn").val();  
+              var un = $("#un").val();
+              var co = $("#co").val();    
+              $("#f4").html(fn);
+              $("#e4").html(em);
+              $("#p4").html(pn);
+              $("#u4").html(un);
+              $("#c4").html(co);            
+            }if(id==4){
+              var fn = $("#fn").val();
+              var em = $("#em").val();
+              var pn = $("#pn").val();  
+              var un = $("#un").val();
+              var co = $("#co").val();    
+              $("#f4").html(fn);
+              $("#e4").html(em);
+              $("#p4").html(pn);
+              $("#u4").html(un);
+              $("#c4").html(co);  
+          }else if(id==5){
+              var fn = $("#fn").val();
+              var em = $("#em").val();
+              var pn = $("#pn").val();  
+              var un = $("#un").val();
+              var co = $("#co").val();    
+              $("#f5").html(fn);
+              $("#e5").html(em);
+              $("#p5").html(pn);
+              $("#u5").html(un);
+              $("#c5").html(co);            
+            }if(id==5){
+              var fn = $("#fn").val();
+              var em = $("#em").val();
+              var pn = $("#pn").val();  
+              var un = $("#un").val();
+              var co = $("#co").val();    
+              $("#f5").html(fn);
+              $("#e5").html(em);
+              $("#p5").html(pn);
+              $("#u5").html(un);
+              $("#c5").html(co);    
+          }else if(id==6){
+              var fn = $("#fn").val();
+              var em = $("#em").val();
+              var pn = $("#pn").val();  
+              var un = $("#un").val();
+              var co = $("#co").val();    
+              $("#f6").html(fn);
+              $("#e6").html(em);
+              $("#p6").html(pn);
+              $("#u6").html(un);
+              $("#c6").html(co);            
+            }if(id==6){
+              var fn = $("#fn").val();
+              var em = $("#em").val();
+              var pn = $("#pn").val();  
+              var un = $("#un").val();
+              var co = $("#co").val();    
+              $("#f6").html(fn);
+              $("#e6").html(em);
+              $("#p6").html(pn);
+              $("#u6").html(un);
+              $("#c6").html(co);    
+          }else if(id==7){
+              var fn = $("#fn").val();
+              var em = $("#em").val();
+              var pn = $("#pn").val();  
+              var un = $("#un").val();
+              var co = $("#co").val();    
+              $("#f7").html(fn);
+              $("#e7").html(em);
+              $("#p7").html(pn);
+              $("#u7").html(un);
+              $("#c7").html(co);            
+            }if(id==7){
+              var fn = $("#fn").val();
+              var em = $("#em").val();
+              var pn = $("#pn").val();  
+              var un = $("#un").val();
+              var co = $("#co").val();    
+              $("#f7").html(fn);
+              $("#e7").html(em);
+              $("#p7").html(pn);
+              $("#u7").html(un);
+              $("#c7").html(co);     
+          }else if(id==8){
+              var fn = $("#fn").val();
+              var em = $("#em").val();
+              var pn = $("#pn").val();  
+              var un = $("#un").val();
+              var co = $("#co").val();    
+              $("#f8").html(fn);
+              $("#e8").html(em);
+              $("#p8").html(pn);
+              $("#u8").html(un);
+              $("#c8").html(co);            
+            }
+            if(id==8){
+              var fn = $("#fn").val();
+              var em = $("#em").val();
+              var pn = $("#pn").val();  
+              var un = $("#un").val();
+              var co = $("#co").val();    
+              $("#f8").html(fn);
+              $("#e8").html(em);
+              $("#p8").html(pn);
+              $("#u8").html(un);
+              $("#c8").html(co);   
+          }else if(id==1){
+              var fn = $("#fn").val();
+              var em = $("#em").val();
+              var pn = $("#pn").val();  
+              var un = $("#un").val();
+              var co = $("#co").val();    
+              $("#f1").html(fn);
+                $("#e1").html(em);
+                $("#p1").html(pn);
+                $("#u1").html(un);
+                $("#c1").html(co);          
+            }
+        });
+    });
+    $(".delete").click(function(){
+       var id = $(this).data("uid");
+       $("#del").click(function(){
+           if(id==1){
+               $("#d1").html('');
+           }else if(id==2){
+               $("#d2").html('');
+           }
+       });
+    });
+ });    */

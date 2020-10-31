@@ -1,0 +1,213 @@
+<div class="container-scroller">
+    <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+        <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+            <a class="navbar-brand brand-logo" href="index.html"><img src="assets/images/logo.svg" alt="logo" /></a>
+            <a class="navbar-brand brand-logo-mini" href="index.html"><img src="assets/images/logo-mini.svg"
+                    alt="logo" /></a>
+        </div>
+        <div class="navbar-menu-wrapper d-flex align-items-stretch">
+            <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+                <span class="mdi mdi-menu"></span>
+            </button>
+            <ul class="navbar-nav navbar-nav-right">
+                <li class="nav-item d-none d-lg-block full-screen-link">
+                    <a class="nav-link">
+                        <i class="mdi mdi-fullscreen" id="fullscreen-button"></i>
+                    </a>
+                </li>
+                <li class="nav-item nav-logout d-none d-lg-block">
+                    <a class="nav-link" href="#">
+                      <i class="mdi mdi-bell-outline"></i>
+                    </a>
+                  </li>
+                <li class="nav-item nav-logout d-none d-lg-block">
+                    <a class="nav-link" href="#">
+                        <i class="mdi mdi-lock"></i>
+                    </a>
+                </li>
+                <li class="nav-item nav-settings d-none d-lg-block">
+                    <a class="nav-link" href="#">
+                        <i class="mdi mdi-arrow-right-bold-box"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+        <!-- partial:partials/_sidebar.html -->
+        <nav class="sidebar sidebar-offcanvas" id="sidebar">
+            <ul class="nav">
+                <!-- <li class="nav-item nav-profile">
+          <a href="#" class="nav-link">
+            <div class="nav-profile-image">
+              <img src="assets/images/faces/face1.jpg" alt="profile">
+              <span class="login-status online"></span>            
+            </div>
+            <div class="nav-profile-text d-flex flex-column">
+              <span class="font-weight-bold mb-2">David Grey. H</span>
+              <span class="text-secondary text-small">Project Manager</span>
+            </div>
+            <i class="mdi mdi-bookmark-check text-success nav-profile-badge"></i>
+          </a>
+        </li> -->
+        <li>       
+            <span class="menu-title nav-link general">GENERAL</span>      
+        </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="user-dashboard">
+                        <span class="menu-title">Dashboard</span>
+                        <i class="mdi mdi-television menu-icon"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="user-profile">
+                        <span class="menu-title">Profile</span>                       
+                        <i class="mdi mdi-contacts menu-icon"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="support">
+                        <span class="menu-title">Support</span>
+                        <i class="mdi mdi-worker menu-icon"></i>
+                    </a>
+                </li>               
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false"
+                        aria-controls="ui-basic">
+                        <span class="menu-title">App List</span>
+                        <i class="menu-arrow"></i>
+                        <i class="mdi mdi-account-circle menu-icon"></i>
+                    </a>
+                    <div class="collapse" id="ui-basic">
+                        <ul class="nav flex-column sub-menu">
+                            <li class="nav-item"> <a class="nav-link" href="add-app">Add App</a></li>
+                            <li class="nav-item"> <a class="nav-link" href="list">List</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <!-- partial -->
+        <div class="main-panel">
+            <div class="content-wrapper">
+                <div class="row" id="proBanner">
+                    <div class="col-12">
+                        <span class="d-flex align-items-center purchase-popup">
+
+                            <div class="nav-profile-img">
+                                <img src="assets/images/faces/face1.jpg" alt="image">
+                                <span class="availability-status online"></span>
+                            </div>
+                            <div class="nav-profile-text">
+                                <p class="mb-1 col-1 text-black" style="font-weight: bolder;">johnyRechard</p>
+                                <p class="mb-1 col-1 text-black" style="padding-top:10px;font-weight: bolder;">Admin</p>
+                            </div>
+                        </span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 grid-margin stretch-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <form class="forms-sample">
+                                    <div class="form-group">
+                                        <label for="exampleInputUsername1">Full Name:</label>
+                                        <input type="text" class="form-control" id="exampleInputUsername1"
+                                            placeholder="Name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Email address:</label>
+                                        <input type="email" class="form-control" id="exampleInputEmail1"
+                                            placeholder="Email">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1">Mobile No:</label>
+                                        <input type="password" class="form-control" id="exampleInputPassword1"
+                                            placeholder="Mobile No">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputConfirmPassword1">Country:</label>
+                                        <input type="password" class="form-control" id="exampleInputConfirmPassword1"
+                                            placeholder="Country">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputUsername1">Username:</label>
+                                        <input type="text" class="form-control" id="exampleInputUsername1"
+                                            placeholder="Username">
+                                    </div>
+                                    <button type="submit" class="btn btn-gradient-primary mr-2">Delete account</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8 grid-margin stretch-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Update Profile</h4>
+                                <p class="card-description"> </p>
+                                <form class="forms-sample">
+                                    <div class="form-group">
+                                        <label>Profile Picture</label>
+                                        <input type="file" name="img[]" class="file-upload-default">
+                                        <div class="input-group col-xs-12">
+                                            <input type="text" class="form-control file-upload-info" disabled
+                                                placeholder="Upload Image">
+                                            <span class="input-group-append">
+                                                <button class="file-upload-browse btn btn-gradient-primary"
+                                                    type="button">Upload</button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputUsername1">Full Name:</label>
+                                        <input type="text" class="form-control" id="exampleInputUsername1"
+                                            placeholder="Name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail3">Phone No</label>
+                                        <input type="email" class="form-control" id="exampleInputEmail3"
+                                            placeholder="Phone No">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputConfirmPassword1">Country:</label>
+                                        <input type="password" class="form-control" id="exampleInputConfirmPassword1"
+                                            placeholder="Country">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword4">Current Password</label>
+                                        <input type="password" class="form-control" id="exampleInputPassword4"
+                                            placeholder="Current Password">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword4">New Password</label>
+                                        <input type="password" class="form-control" id="exampleInputPassword4"
+                                            placeholder="New Password">
+                                    </div>
+
+                                    <button type="submit" class="btn btn-gradient-primary mr-2">Update</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- partial:partials/_footer.html -->
+            <footer class="footer">
+                <div class="d-sm-flex justify-content-center justify-content-sm-between">
+                    <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">
+                        <i class="mdi mdi mdi-camcorder-box icons"></i>
+                        <i class="mdi mdi-twitter-box icons"></i>
+                        <i class="mdi mdi-facebook-box icons"></i>
+                        <i class="mdi mdi-instagram icons"></i>
+                    </span>
+                    <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Epic Stream © 2020 All
+                        Rights
+                        Reserved.</span>
+                </div>
+            </footer>
+            <!-- partial -->
+        </div>
+    </div>
+</div>

@@ -1,0 +1,167 @@
+<!-- <div class="h-100"> -->
+    <div class="row full-row adjust-row-margin">
+        <img src="assets/images/background/image3.jpg" width="110%" height="665px">
+        <div class="row image-form full-row adjust-row-margin">
+            <div class="col-sm">
+
+            </div>
+            <div class="col-12 col-sm-4">
+                <form class="login-form" [formGroup]="login">
+                    <div style="margin-top: 140px;padding-top: 50px;margin-left:60px;" class="margin">
+                        Sign In <br />
+                        Login into your admin account
+                    </div>
+                    <div class="row adjust-row-margin full-row">
+                        <div class="row adjust-row-margin full-row">
+                            <div class="col-1 col-sm-1"></div>
+                            <div class="col-3 col-sm-3">
+                                <label type="text">
+                                    UserName:
+                                </label>
+                            </div>
+                            <div class="col-8 col-sm-8"></div>
+
+                        </div>
+                        <div class="row adjust-row-margin full-row">
+                            <div class="col-1 col-sm-1"></div>
+                            <div class="col-10 col-sm-8">
+                                <input type="text" class="form-control" formControlName="UserName"
+                                    pattern="[a-zA-Z0-9.-]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}"
+                                    [ngClass]="{ 'is-invalid': f.UserName.touched && f.UserName.errors }"
+                                    style="margin-bottom: 20px;">
+                                <div *ngIf="f.UserName.touched && f.UserName.errors" class="invalid-feedback">
+                                    <div *ngIf="f.UserName.errors.required">UserName is required</div>
+                                    <div *ngIf="f.UserName.errors">UserName must be a valid email address</div>
+                                </div>
+                            </div>
+                            <div class="col-1 col-sm-3"></div>
+
+                        </div>
+                    </div>
+                    <div class="row adjust-row-margin full-row">
+                        <div class="row adjust-row-margin full-row">
+                            <div class="col-1 col-sm-1">  </div>
+                            <div class="col-4 col-sm-4">
+                                <label type="text">
+                                    Password:
+                                </label>                                
+                            </div>      
+                            <div class="col-1 col-sm-3">
+                                    <a routerLink="/recover-password" routerLinkActive="active">RecoverPassword </a>
+                                </div>                      
+                            <div class="col-6 col-sm-4">
+                               
+                            </div>
+                        </div>
+                        <div class="row adjust-row-margin full-row">
+                            <div class="col-1 col-sm-1"></div>
+                            <div class="col-10 col-sm-8">
+                                <input type="password" class="form-control" formControlName="password"
+                                    [ngClass]="{ 'is-invalid': f.password.touched && f.password.errors }">
+                                <div *ngIf="f.password.touched && f.password.errors" class="invalid-feedback">
+                                    <div *ngIf="f.password.errors.required">Password is required</div>
+                                    <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-1 col-sm-3"></div>
+
+                        </div>
+                    </div>
+                    <div class="row adjust-row-margin full-row" style="padding-top: 10px;">
+                        <div class="row adjust-row-margin full-row">
+                            <div class="col-1 col-sm-1"><input id="checkbox1" type="checkbox"style="margin-left:35px"></div>
+                            <div class="col-10 col-sm-8">                                
+                                <label class="label-checkbox ml-2 mb-0" for="checkbox1">Remember me
+                                </label>
+                            </div>
+                            <div class="col-1 col-sm-3">  </div>
+
+                        </div>
+                        <div class="row adjust-row-margin full-row"style="padding-top: 10px;">
+                            <div class="col-1 col-sm-1"></div>
+                            <div class="col-10 col-sm-10"> 
+                                <button type="submit" style="margin-top: 0em;" class="button">Login</button>
+                            </div>
+                            <div class="col-1 col-sm-1"></div>
+                        </div>
+                    </div>
+                    <div class="row adjust-row-margin full-row" style="padding-top: 10px;">
+                        <div class="row adjust-row-margin full-row">
+                            <div class="col-1 col-sm-1"></div>
+                            <div class="col-10 col-sm-8"style="text-align:center;">                                
+                                Don't have an account? <a routerLink="/login" routerLinkActive="active" > create one now! </a>
+                            </div>
+                            <div class="col-1 col-sm-3">  </div>
+
+                        </div>
+                        <div class="row adjust-row-margin full-row"style="padding-top: 20px;">
+                            <div class="col-sm-1margin"></div>
+                            <div class="col-sm-3"></div>
+                            <div class="col-sm-8"></div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-sm">
+
+            </div>
+        </div>
+
+    </div>
+<!-- </div> -->
+<!-- </div> -->
+<!-- 
+ <div class="h-100" style="margin-bottom: 200px;">
+    <img src="assets/images/background/image.jpg" width="100%" height="150%">
+    <form class="form-login" [formGroup]="login" (ngSubmit)="onSubmit()">
+        <div style="margin-top: 50px;" class="margin">
+            Sign In <br />            
+            Login into your admin account
+        </div>        
+        <div class="margin">
+            <div style="margin-top: 20px; margin-bottom: 5px;">
+                <label type="text">
+                    UserName:
+                </label>
+            </div>
+            <input type="text" class="form-control" formControlName="UserName"
+                pattern="[a-zA-Z0-9.-]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}"
+                [ngClass]="{ 'is-invalid': f.UserName.touched && f.UserName.errors }"style="width: 340px;">
+            <div *ngIf="f.UserName.touched && f.UserName.errors" class="invalid-feedback">
+                <div *ngIf="f.UserName.errors.required">UserName is required</div>
+                <div *ngIf="f.UserName.errors">UserName must be a valid email address</div>
+            </div>
+        </div>
+
+    
+        <div class="margin">            
+            <div style=" margin-bottom: 5px;">
+                <label type="text">
+                    Password:
+                    <a style="float: right; margin-right: 30px;" routerLink="/recover-password" routerLinkActive="active" > Recover password </a>
+                </label>
+               
+            </div>
+            <input type="password" class="form-control" formControlName="password"
+                [ngClass]="{ 'is-invalid': f.password.touched && f.password.errors }" style="width: 340px;">
+            <div *ngIf="f.password.touched && f.password.errors" class="invalid-feedback">
+                <div *ngIf="f.password.errors.required">Password is required</div>
+                <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+            </div>
+        </div>
+        
+        <div class="margin" style="margin-top: 5px;">
+            <input id="checkbox1" type="checkbox">
+            <label class="label-checkbox ml-2 mb-0" for="checkbox1">Remember me</label>
+        </div>
+        <button type="submit" class="button" style="margin-top: 0em;">Login</button>
+        <div style="margin-top: 20px;" class="margin">
+            
+              <nav> Don't have an account? <a routerLink="/login" routerLinkActive="active" > create one now! </a>
+              </nav>
+            
+          </div>
+
+    </form>
+</div> -->

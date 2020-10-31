@@ -1,0 +1,38 @@
+.icons{
+    margin-right: 10px;
+  }
+  .general{
+    font-weight: bolder;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .icon1{
+    margin-left: 180px;
+    font-size: 100px;
+    color: firebrick;
+}
+.toastr{
+    margin-left: 35px;
+    padding-top: 20px;
+}
+  .custom-tab-1 .nav {
+    border: 0; }
+  
+  .custom-tab-1 .nav-link {
+    font-size: 14px;
+    font-weight: 600;
+    border: 0;
+    color: black; }
+    .custom-tab-1 .nav-link:hover, .custom-tab-1 .nav-link:focus {
+      border: 0; }
+    .custom-tab-1 .nav-link.active {
+      background: transparent;
+      border: 0;
+      border-bottom: 2px solid #5E1084;
+      color: black; }
+  
+  .custom-tab-1 .tab-pane {
+    padding: 25px; }
+    .custom-tab-1 .tab-pane p {
+      margin-bottom: 0; }

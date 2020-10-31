@@ -1,0 +1,242 @@
+
+
+
+<!-- <div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body table-responsive">
+            <h4 class="card-title">Admin List</h4>
+            <table datatable [dtOptions]="dtOptions" class="row-border hover" class="table table-striped" id="footable">
+                <thead>
+                    <tr style="background-color: gray;">
+                        <th data-breakpoints="xs">#</th>
+                        <th> Full name</th>
+                        <th data-breakpoints="xs">Email</th>
+                        <th data-breakpoints="xs"> Phone No</th>
+                        <th data-breakpoints="xs"> Username</th>
+                        <th data-breakpoints="xs"> Status</th>
+                        <th data-breakpoints="xs sm">Created On </th>
+                        <th data-breakpoints="xs sm md">Action</th>
+                    </tr>
+                </thead>
+                <tbody data-expanded="true">
+                    <tr id="d1">
+                        <td>1</td>
+                        <td id="f1"> Hermannnn Beck</td>
+                        <td id="e1">herman@gmail.com</td>
+                        <td id="p1"> 2323345466</td>
+                        <td id="u1"> Herman</td>
+                        <td>
+                            <button title="Click to view" class="btn btn-primary btn-sm" data-toggle="modal"
+                                data-target="#exampleModalCenter">Active
+                            </button></td>
+                        <td id="c1"> 7 nov 2019</td>
+                        <td class="row">
+                            <button type="button" title="Click to Edit" data-target="#edit" data-uid="1"
+                                class="mr-1 update btn btn-primary btn-sm" data-toggle="modal">
+                                <i class="mdi mdi-pencil-box"></i>
+                            </button>
+                            <button type="button" title="Click to Edit" class="delete btn btn-primary btn-sm"
+                                data-toggle="modal" data-target="#delete" data-uid="1">
+                                <i class="mdi mdi-delete-forever"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr id="d2">
+                        <td>2</td>
+                        <td id="f2"> Herman Beccck</td>
+                        <td id="e2">herman@gmail.com</td>
+                        <td id="p2"> 2323345466</td>
+                        <td id="u2"> Herman</td>
+                        <td>
+                            <button title="Click to view" class="btn btn-primary btn-sm" data-toggle="modal"
+                                data-target="#exampleModalCenter">Active
+                            </button></td>
+                        <td id="c2"> 7 nov 2019</td>
+                        <td class="row">
+                            <button type="button" title="Click to Edit" data-target="#edit" data-uid="2"
+                                class="mr-1 update btn btn-primary btn-sm" data-toggle="modal">
+                                <i class="mdi mdi-pencil-box"></i>
+                            </button>
+                            <button type="button" title="Click to Edit" class="delete btn btn-primary btn-sm"
+                                data-toggle="modal" data-target="#delete" data-uid="2">
+                                <i class="mdi mdi-delete-forever"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr id="d1">
+                        <td>3</td>
+                        <td id="f1"> Herman Beck</td>
+                        <td id="e1">herman@gmail.com</td>
+                        <td id="p1"> 2323345466</td>
+                        <td id="u1"> Herman</td>
+                        <td>
+                            <button title="Click to view" class="btn btn-primary btn-sm" data-toggle="modal"
+                                data-target="#exampleModalCenter">Active
+                            </button></td>
+                        <td id="c1"> 7 nov 2019</td>
+                        <td class="row">
+                            <button type="button" title="Click to Edit" data-target="#edit" data-uid="1"
+                                class="mr-1 update btn btn-primary btn-sm" data-toggle="modal">
+                                <i class="mdi mdi-pencil-box"></i>
+                            </button>
+                            <button type="button" title="Click to Edit" class="delete btn btn-primary btn-sm"
+                                data-toggle="modal" data-target="#delete" data-uid="1">
+                                <i class="mdi mdi-delete-forever"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr id="d2">
+                        <td>4</td>
+                        <td id="f2"> Herman Beck</td>
+                        <td id="e2">herman@gmail.com</td>
+                        <td id="p2"> 2323345466</td>
+                        <td id="u2"> Herman</td>
+                        <td>
+                            <button title="Click to view" class="btn btn-primary btn-sm" data-toggle="modal"
+                                data-target="#exampleModalCenter">Active
+                            </button></td>
+                        <td id="c2"> 7 nov 2019</td>
+                        <td class="row">
+                            <button type="button" title="Click to Edit" data-target="#edit" data-uid="2"
+                                class="mr-1 update btn btn-primary btn-sm" data-toggle="modal">
+                                <i class="mdi mdi-pencil-box"></i>
+                            </button>
+                            <button type="button" title="Click to Edit" class="delete btn btn-primary btn-sm"
+                                data-toggle="modal" data-target="#delete" data-uid="2">
+                                <i class="mdi mdi-delete-forever"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr id="d1">
+                        <td>5</td>
+                        <td id="f1"> Herman Beck</td>
+                        <td id="e1">herman@gmail.com</td>
+                        <td id="p1"> 2323345466</td>
+                        <td id="u1"> Herman</td>
+                        <td>
+                            <button title="Click to view" class="btn btn-primary btn-sm" data-toggle="modal"
+                                data-target="#exampleModalCenter">Active
+                            </button></td>
+                        <td id="c1"> 7 nov 2019</td>
+                        <td class="row">
+                            <button type="button" title="Click to Edit" data-target="#edit" data-uid="1"
+                                class="mr-1 update btn btn-primary btn-sm" data-toggle="modal">
+                                <i class="mdi mdi-pencil-box"></i>
+                            </button>
+                            <button type="button" title="Click to Edit" class="delete btn btn-primary btn-sm"
+                                data-toggle="modal" data-target="#delete" data-uid="1">
+                                <i class="mdi mdi-delete-forever"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr id="d2">
+                        <td>6</td>
+                        <td id="f2"> Herman Beck</td>
+                        <td id="e2">herman@gmail.com</td>
+                        <td id="p2"> 2323345466</td>
+                        <td id="u2"> Herman</td>
+                        <td>
+                            <button title="Click to view" class="btn btn-primary btn-sm" data-toggle="modal"
+                                data-target="#exampleModalCenter">Active
+                            </button></td>
+                        <td id="c2"> 7 nov 2019</td>
+                        <td class="row">
+                            <button type="button" title="Click to Edit" data-target="#edit" data-uid="2"
+                                class="mr-1 update btn btn-primary btn-sm" data-toggle="modal">
+                                <i class="mdi mdi-pencil-box"></i>
+                            </button>
+                            <button type="button" title="Click to Edit" class="delete btn btn-primary btn-sm"
+                                data-toggle="modal" data-target="#delete" data-uid="2">
+                                <i class="mdi mdi-delete-forever"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr id="d1">
+                        <td>7</td>
+                        <td id="f1"> Herman Beck</td>
+                        <td id="e1">herman@gmail.com</td>
+                        <td id="p1"> 2323345466</td>
+                        <td id="u1"> Herman</td>
+                        <td>
+                            <button title="Click to view" class="btn btn-primary btn-sm" data-toggle="modal"
+                                data-target="#exampleModalCenter">Active
+                            </button></td>
+                        <td id="c1"> 7 nov 2019</td>
+                        <td class="row">
+                            <button type="button" title="Click to Edit" data-target="#edit" data-uid="1"
+                                class="mr-1 update btn btn-primary btn-sm" data-toggle="modal">
+                                <i class="mdi mdi-pencil-box"></i>
+                            </button>
+                            <button type="button" title="Click to Edit" class="delete btn btn-primary btn-sm"
+                                data-toggle="modal" data-target="#delete" data-uid="1">
+                                <i class="mdi mdi-delete-forever"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr id="d2">
+                        <td>8</td>
+                        <td id="f2"> Herman Beck</td>
+                        <td id="e2">herman@gmail.com</td>
+                        <td id="p2"> 2323345466</td>
+                        <td id="u2"> Herman</td>
+                        <td>
+                            <button title="Click to view" class="btn btn-primary btn-sm" data-toggle="modal"
+                                data-target="#exampleModalCenter">Active
+                            </button></td>
+                        <td id="c2"> 7 nov 2019</td>
+                        <td class="row">
+                            <button type="button" title="Click to Edit" data-target="#edit" data-uid="2"
+                                class="mr-1 update btn btn-primary btn-sm" data-toggle="modal">
+                                <i class="mdi mdi-pencil-box"></i>
+                            </button>
+                            <button type="button" title="Click to Edit" class="delete btn btn-primary btn-sm"
+                                data-toggle="modal" data-target="#delete" data-uid="2">
+                                <i class="mdi mdi-delete-forever"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div id="edit" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Update Data</h4>
+            </div>
+            <div class="modal-body">
+                <input id="fn" type="text" class="form-control" name="fname" placeholder="Full Name">
+                <input id="em" type="text" class="form-control" name="fname" placeholder="email">
+                <input id="pn" type="text" class="form-control" name="fname" placeholder="phone no">
+                <input id="un" type="text" class="form-control" name="fname" placeholder="Username">
+                <input id="co" type="text" class="form-control" name="fname" placeholder="createdOn">
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="up" class="btn btn-primary" data-dismiss="modal">Update</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="delete" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-sm-12 icon1">
+                        <i class="mdi mdi-close-circle-outline"></i>
+                    </div>
+                    <div class="col-sm-12 toastr">
+                        <h2>Are you sure about to delete<br />this admin?</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="del" class="btn btn-danger" data-dismiss="modal">Delete</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div> -->

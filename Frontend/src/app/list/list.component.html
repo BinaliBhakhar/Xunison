@@ -1,0 +1,1408 @@
+<div class="container-scroller">
+    <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+        <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+            <a class="navbar-brand brand-logo" href="index.html"><img src="assets/images/logo.svg" alt="logo" /></a>
+            <a class="navbar-brand brand-logo-mini" href="index.html"><img src="assets/images/logo-mini.svg"
+                    alt="logo" /></a>
+        </div>
+        <div class="navbar-menu-wrapper d-flex align-items-stretch">
+            <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+                <span class="mdi mdi-menu"></span>
+            </button>
+            <ul class="navbar-nav navbar-nav-right">
+                <li class="nav-item d-none d-lg-block full-screen-link">
+                    <a class="nav-link">
+                        <i class="mdi mdi-fullscreen" id="fullscreen-button"></i>
+                    </a>
+                </li>
+                <li class="nav-item nav-logout d-none d-lg-block">
+                    <a class="nav-link" href="#">
+                        <i class="mdi mdi-bell-outline"></i>
+                    </a>
+                </li>
+                <li class="nav-item nav-logout d-none d-lg-block">
+                    <a class="nav-link" href="#">
+                        <i class="mdi mdi-lock"></i>
+                    </a>
+                </li>
+                <li class="nav-item nav-settings d-none d-lg-block">
+                    <a class="nav-link" href="#">
+                        <i class="mdi mdi-arrow-right-bold-box"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+        <!-- partial:partials/_sidebar.html -->
+        <nav class="sidebar sidebar-offcanvas" id="sidebar">
+            <ul class="nav">
+                <!-- <li class="nav-item nav-profile">
+          <a href="#" class="nav-link">
+            <div class="nav-profile-image">
+              <img src="assets/images/faces/face1.jpg" alt="profile">
+              <span class="login-status online"></span>            
+            </div>
+            <div class="nav-profile-text d-flex flex-column">
+              <span class="font-weight-bold mb-2">David Grey. H</span>
+              <span class="text-secondary text-small">Project Manager</span>
+            </div>
+            <i class="mdi mdi-bookmark-check text-success nav-profile-badge"></i>
+          </a>
+        </li> -->
+                <li>
+                    <span class="menu-title nav-link general">GENERAL</span>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="user-dashboard">
+                        <span class="menu-title">Dashboard</span>
+                        <i class="mdi mdi-television menu-icon"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="user-profile">
+                        <span class="menu-title">Profile</span>
+                        <i class="mdi mdi-contacts menu-icon"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="support">
+                        <span class="menu-title">Support</span>
+                        <i class="mdi mdi-worker menu-icon"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false"
+                        aria-controls="ui-basic">
+                        <span class="menu-title">App List</span>
+                        <i class="menu-arrow"></i>
+                        <i class="mdi mdi-account-circle menu-icon"></i>
+                    </a>
+                    <div class="collapse" id="ui-basic">
+                        <ul class="nav flex-column sub-menu">
+                            <li class="nav-item"> <a class="nav-link" href="add-app">Add App</a></li>
+                            <li class="nav-item"> <a class="nav-link" href="list">List</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <!-- partial -->
+        <div class="main-panel">
+            <div class="content-wrapper">
+                <div class="row" id="proBanner">
+                    <div class="col-12">
+                        <span class="d-flex align-items-center purchase-popup">
+                            <p style="font-weight: bolder;">App List</p>
+                        </span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 grid-margin stretch-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <div>
+                                    <img style="height:40px;margin-left:80px;"
+                                        src="assets/images/background/instagram.jpg" alt="image">
+                                </div>
+                                <form class="forms-sample">
+                                    <div class="form-group" style="padding-top:20px;">
+                                        <label for="exampleInputUsername1">App Name :- </label> kj Stream
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">App Package Name :- </label> kj Stream
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">App Type :- </label> Android,Ios,Roku
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Status :-
+                                            <button title="Click to view" class="mr-2 btn btn-danger btn-sm"> Rejected
+                                            </button>
+                                        </label>
+                                    </div>
+                                    <button type="button" class="btn btn-primary" data-dismiss="modal">Edit</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 grid-margin stretch-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <div>
+                                    <img style="height:40px;margin-left:80px;"
+                                        src="assets/images/background/instagram.jpg" alt="image">
+                                </div>
+                                <form class="forms-sample">
+                                    <div class="form-group" style="padding-top:20px;">
+                                        <label for="exampleInputUsername1">App Name :- </label> kj Stream
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">App Package Name :- </label> kj Stream
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">App Type :- </label> Android,Ios,Roku
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Status :-
+                                            <button title="Click to view" class="mr-2 btn btn-danger btn-sm"> Rejected
+                                            </button>
+                                        </label>
+                                    </div>
+                                    <button type="button" class="btn btn-primary" data-dismiss="modal">Edit</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 grid-margin stretch-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <div>
+                                    <img style="height:40px;margin-left:80px;"
+                                        src="assets/images/background/instagram.jpg" alt="image">
+                                </div>
+                                <form class="forms-sample">
+                                    <div class="form-group" style="padding-top:20px;">
+                                        <label for="exampleInputUsername1">App Name :- </label> kj Stream
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">App Package Name :- </label> kj Stream
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">App Type :- </label> Android,Ios,Roku
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Status :-
+                                            <button title="Click to view" class="mr-2 btn btn-primary btn-sm"> pending
+                                            </button>
+                                        </label>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 grid-margin stretch-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <div>
+                                    <img style="height:40px;margin-left:80px;"
+                                        src="assets/images/background/instagram.jpg" alt="image">
+                                </div>
+                                <form class="forms-sample">
+                                    <div class="form-group" style="padding-top:20px;">
+                                        <label for="exampleInputUsername1">App Name :- </label> kj Stream
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">App Package Name :- </label> kj Stream
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">App Type :- </label> Android,Ios,Roku
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Status :-
+                                            <button title="Click to view" class="mr-2 btn btn-primary btn-sm"> Pending
+                                            </button>
+                                        </label>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 grid-margin stretch-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <div>
+                                    <img style="height:40px;margin-left:80px;"
+                                        src="assets/images/background/instagram.jpg" alt="image">
+                                </div>
+                                <form class="forms-sample">
+                                    <div class="form-group" style="padding-top:20px;">
+                                        <label for="exampleInputUsername1">App Name :- </label> kj Stream
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">App Package Name :- </label> kj Stream
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">App Type :- </label> Android,Ios,Roku
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Status :-
+                                            <button title="Click to view" class="mr-2 btn btn-success btn-sm"> Active
+                                            </button>
+                                        </label>
+                                    </div>
+                                    <button type="button" class="btn btn-primary" data-toggle="modal"
+                                        data-target="#exampleModalCenter">Detail</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 grid-margin stretch-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <div>
+                                    <img style="height:40px;margin-left:80px;"
+                                        src="assets/images/background/instagram.jpg" alt="image">
+                                </div>
+                                <form class="forms-sample">
+                                    <div class="form-group" style="padding-top:20px;">
+                                        <label for="exampleInputUsername1">App Name :- </label> kj Stream
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">App Package Name :- </label> kj Stream
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">App Type :- </label> Android,Ios,Roku
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Status :-
+                                            <button title="Click to view" class="mr-2 btn btn-success btn-sm"> Active
+                                            </button>
+                                        </label>
+                                    </div>
+                                    <button type="button" class="btn btn-primary" data-toggle="modal"
+                                        data-target="#exampleModalCenter">Detail</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 grid-margin stretch-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <div>
+                                    <img style="height:40px;margin-left:80px;"
+                                        src="assets/images/background/instagram.jpg" alt="image">
+                                </div>
+                                <form class="forms-sample">
+                                    <div class="form-group" style="padding-top:20px;">
+                                        <label for="exampleInputUsername1">App Name :- </label> kj Stream
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">App Package Name :- </label> kj Stream
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">App Type :- </label> Android,Ios,Roku
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Status :-
+                                            <button title="Click to view" class="mr-2 btn btn-danger btn-sm"> Rejected
+                                            </button>
+                                        </label>
+                                    </div>
+                                    <button type="button" class="btn btn-primary" data-dismiss="modal">Edit</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 grid-margin stretch-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <div>
+                                    <img style="height:40px;margin-left:80px;"
+                                        src="assets/images/background/instagram.jpg" alt="image">
+                                </div>
+                                <form class="forms-sample">
+                                    <div class="form-group" style="padding-top:20px;">
+                                        <label for="exampleInputUsername1">App Name :- </label> kj Stream
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">App Package Name :- </label> kj Stream
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">App Type :- </label> Android,Ios,Roku
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Status :-
+                                            <button title="Click to view" class="mr-2 btn btn-secondary btn-sm">
+                                                Inactive
+                                            </button>
+                                        </label>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-primary" data-toggle="modal"
+                                            data-target="#exampleModalCenter">Edit</button>
+                                        <button type="button" class="btn btn-secondary" data-toggle="modal"
+                                            data-target="#exampleModalCenter">Detail</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 grid-margin stretch-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <div>
+                                    <img style="height:40px;margin-left:80px;"
+                                        src="assets/images/background/instagram.jpg" alt="image">
+                                </div>
+                                <form class="forms-sample">
+                                    <div class="form-group" style="padding-top:20px;">
+                                        <label for="exampleInputUsername1">App Name :- </label> kj Stream
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">App Package Name :- </label> kj Stream
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">App Type :- </label> Android,Ios,Roku
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Status :-
+                                            <button title="Click to view" class="mr-2 btn btn-secondary btn-sm">
+                                                Inactive
+                                            </button>
+                                        </label>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-primary" data-toggle="modal"
+                                            data-target="#exampleModalCenter">Edit</button>
+                                        <button type="button" class="btn btn-secondary" data-toggle="modal"
+                                            data-target="#exampleModalCenter">Detail</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" id="proBanner">
+                    <div class="col-12">
+                        <span class="d-flex align-items-center purchase-popup">
+                            <p style="font-weight: bolder;">App Details</p>
+                        </span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 grid-margin stretch-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Details</h4>
+
+                                <div class="custom-tab-1">
+                                    <ul class="nav nav-tabs">
+                                        <li class="nav-item"><a class="nav-link active" data-toggle="tab"
+                                                href="#notification">Notification</a>
+                                        </li>
+                                        <li class="nav-item"><a class="nav-link" data-toggle="tab"
+                                                href="#inAppAnnouncement">In-App Announcement</a>
+                                        </li>
+                                        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#DNS">DNS</a>
+                                        </li>
+                                        <li class="nav-item"><a class="nav-link" data-toggle="tab"
+                                                href="#image">Image</a>
+                                        </li>
+                                        <li class="nav-item"><a class="nav-link" data-toggle="tab"
+                                                href="#version">Version</a>
+                                        </li>
+                                        <li class="nav-item"><a class="nav-link" data-toggle="tab"
+                                                href="#banner">banner</a>
+                                        </li>
+                                        <li class="nav-item"><a class="nav-link" data-toggle="tab"
+                                                href="#usersList">UsersList</a>
+                                        </li>
+                                        <li class="nav-item"><a class="nav-link" data-toggle="tab"
+                                                href="#channelsReport">ChannelsReport</a>
+                                        </li>
+                                        <li class="nav-item"><a class="nav-link" data-toggle="tab"
+                                                href="#settings">Settings</a>
+                                        </li>
+                                    </ul>
+                                    <div class="tab-content tab-content-default">
+                                        <div class="tab-pane fade show active" id="notification" role="tabpanel">
+                                            <div style="padding-top: 70px;padding-bottom:10px">
+                                                <h4 class="card-title">Send Notification</h4>
+                                            </div>
+                                            <form class="forms-sample">
+                                                <div class="form-group">
+                                                    <label for="exampleInputUsername1">Title:</label>
+                                                    <input type="text" class="form-control" id="exampleInputUsername1"
+                                                        placeholder="Title">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">Message:</label>
+                                                    <textarea class="form-control" id="exampleTextarea1" rows="6"
+                                                        placeholder="Message"></textarea>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>App Icon:</label>
+                                                    <input type="file" name="img[]" class="file-upload-default">
+                                                    <div class="input-group col-xs-12">
+                                                        <span class="input-group-append">
+                                                            <button class="file-upload-browse btn btn-gradient-primary"
+                                                                type="button">Browse..</button>
+                                                        </span>
+                                                        <input type="text" class="form-control file-upload-info"
+                                                            disabled placeholder="No file selected.">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputConfirmPassword1">External Link ( optional
+                                                        ):</label>
+                                                    <input type="password" class="form-control"
+                                                        id="exampleInputConfirmPassword1" placeholder="link">
+                                                </div>
+                                                <button type="submit"
+                                                    class="btn btn-gradient-primary mr-2">Send</button>
+                                            </form>
+                                        </div>
+                                        <div class="tab-pane fade" id="inAppAnnouncement">
+                                            <div style="padding-top: 70px;padding-bottom: 10px;">
+                                                <h4 class="card-title">New Announcement</h4>
+                                            </div>
+                                            <form class="forms-sample">
+                                                <div class="form-group">
+                                                    <label for="exampleInputUsername1">Title:</label>
+                                                    <input type="text" class="form-control" id="exampleInputUsername1"
+                                                        placeholder="Title">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">Short Description:</label>
+                                                    <textarea class="form-control" id="exampleTextarea1" rows="6"
+                                                        placeholder="Message"></textarea>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Image:</label>
+                                                    <input type="file" name="img[]" class="file-upload-default">
+                                                    <div class="input-group col-xs-12">
+                                                        <input type="text" class="form-control file-upload-info"
+                                                            disabled placeholder="Upload Image">
+                                                        <span class="input-group-append">
+                                                            <button class="file-upload-browse btn btn-gradient-primary"
+                                                                type="button">Upload</button>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-1 col-sm-1">
+                                                        <label type="text">
+                                                            Status:
+                                                        </label>
+                                                    </div>
+                                                    <div class="col-1 col-sm-2">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio"
+                                                                name="gridRadios" value="option1" checked>
+                                                            <label class="form-check-label">
+                                                                On
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-1 col-sm-3">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio"
+                                                                name="gridRadios" value="option2">
+                                                            <label class="form-check-label">
+                                                                Off
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <button type="submit"
+                                                    class="btn btn-gradient-primary mr-2">Send</button>
+                                            </form>
+                                            <div class="col-lg-12 grid-margin stretch-card">
+                                                <div class="card">
+                                                    <div class="card-body table-responsive">
+                                                        <h4 class="card-title">Announcement</h4>
+                                                        <table datatable [dtOptions]="dtOptions"
+                                                            class="row-border hover" class="table table-striped"
+                                                            class="table" id="footable">
+                                                            <thead>
+                                                                <tr style="background-color: gray;">
+                                                                    <th data-breakpoints="xs">#</th>
+                                                                    <th data-breakpoints="xs"> Title</th>
+                                                                    <th data-breakpoints="xs">Sort Description</th>
+                                                                    <th data-breakpoints="xs"> Image</th>
+                                                                    <th data-breakpoints="xs"> Status</th>
+                                                                    <th data-breakpoints="xs"> Sent Users</th>
+                                                                    <th data-breakpoints="xs sm">Receive Users</th>
+                                                                    <th data-breakpoints="xs sm md">Click Users</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody data-expanded="true">
+                                                                <tr>
+                                                                    <td data-title="ID" data-breakpoints="xs">1 </td>
+                                                                    <td data-title="title" data-breakpoints="xs">
+                                                                        New Update
+                                                                    </td>
+                                                                    <td data-title="message" data-breakpoints="xs">
+                                                                        Our New Update will coming <br /> soon with new
+                                                                        tv channels <br />
+                                                                        movies and series ....
+                                                                    </td>
+                                                                    <td data-title="image" data-breakpoints="xs">
+                                                                        <img src="assets/images/background/flower.jpeg"
+                                                                            alt="image" />
+                                                                    </td>
+                                                                    <td data-title="External link"
+                                                                        data-breakpoints="xs">
+                                                                        On
+                                                                    </td>
+                                                                    <td data-title="sent users" data-breakpoints="xs">
+                                                                        213
+                                                                    </td>
+                                                                    <td data-title="receive users"
+                                                                        data-breakpoints="xs">
+                                                                        208
+                                                                    </td>
+                                                                    <td data-title="Click users" data-breakpoints="xs">
+                                                                        187
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td data-title="ID" data-breakpoints="xs">2 </td>
+                                                                    <td data-title="title" data-breakpoints="xs">
+                                                                        New Update
+                                                                    </td>
+                                                                    <td data-title="message" data-breakpoints="xs">
+                                                                        Our New Update will coming <br /> soon with new
+                                                                        tv channels <br />
+                                                                        movies and series ....
+                                                                    </td>
+                                                                    <td data-title="image" data-breakpoints="xs">
+                                                                        <img src="assets/images/background/flower.jpeg"
+                                                                            alt="image" />
+                                                                    </td>
+                                                                    <td data-title="External link"
+                                                                        data-breakpoints="xs">
+                                                                        Off
+                                                                    </td>
+                                                                    <td data-title="sent users" data-breakpoints="xs">
+                                                                        213
+                                                                    </td>
+                                                                    <td data-title="receive users"
+                                                                        data-breakpoints="xs">
+                                                                        208
+                                                                    </td>
+                                                                    <td data-title="Click users" data-breakpoints="xs">
+                                                                        187
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td data-title="ID" data-breakpoints="xs">3 </td>
+                                                                    <td data-title="title" data-breakpoints="xs">
+                                                                        New Update
+                                                                    </td>
+                                                                    <td data-title="message" data-breakpoints="xs">
+                                                                        Our New Update will coming <br /> soon with new
+                                                                        tv channels <br />
+                                                                        movies and series ....
+                                                                    </td>
+                                                                    <td data-title="image" data-breakpoints="xs">
+                                                                        <img src="assets/images/background/flower.jpeg"
+                                                                            alt="image" />
+                                                                    </td>
+                                                                    <td data-title="External link"
+                                                                        data-breakpoints="xs">
+                                                                        Off
+                                                                    </td>
+                                                                    <td data-title="sent users" data-breakpoints="xs">
+                                                                        213
+                                                                    </td>
+                                                                    <td data-title="receive users"
+                                                                        data-breakpoints="xs">
+                                                                        208
+                                                                    </td>
+                                                                    <td data-title="Click users" data-breakpoints="xs">
+                                                                        187
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td data-title="ID" data-breakpoints="xs">4 </td>
+                                                                    <td data-title="title" data-breakpoints="xs">
+                                                                        New Update
+                                                                    </td>
+                                                                    <td data-title="message" data-breakpoints="xs">
+                                                                        Our New Update will coming <br /> soon with new
+                                                                        tv channels <br />
+                                                                        movies and series ....
+                                                                    </td>
+                                                                    <td data-title="image" data-breakpoints="xs">
+                                                                        <img src="assets/images/background/flower.jpeg"
+                                                                            alt="image" />
+                                                                    </td>
+                                                                    <td data-title="External link"
+                                                                        data-breakpoints="xs">
+                                                                        Off
+                                                                    </td>
+                                                                    <td data-title="sent users" data-breakpoints="xs">
+                                                                        213
+                                                                    </td>
+                                                                    <td data-title="receive users"
+                                                                        data-breakpoints="xs">
+                                                                        208
+                                                                    </td>
+                                                                    <td data-title="Click users" data-breakpoints="xs">
+                                                                        187
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td data-title="ID" data-breakpoints="xs">5 </td>
+                                                                    <td data-title="title" data-breakpoints="xs">
+                                                                        New Update
+                                                                    </td>
+                                                                    <td data-title="message" data-breakpoints="xs">
+                                                                        Our New Update will coming <br /> soon with new
+                                                                        tv channels <br />
+                                                                        movies and series ....
+                                                                    </td>
+                                                                    <td data-title="image" data-breakpoints="xs">
+                                                                        <img src="assets/images/background/flower.jpeg"
+                                                                            alt="image" />
+                                                                    </td>
+                                                                    <td data-title="External link"
+                                                                        data-breakpoints="xs">
+                                                                        Off
+                                                                    </td>
+                                                                    <td data-title="sent users" data-breakpoints="xs">
+                                                                        213
+                                                                    </td>
+                                                                    <td data-title="receive users"
+                                                                        data-breakpoints="xs">
+                                                                        208
+                                                                    </td>
+                                                                    <td data-title="Click users" data-breakpoints="xs">
+                                                                        187
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="DNS">
+                                            <div style="padding-top: 70px;padding-bottom:10px">
+                                                <h4 class="card-title">DNS URL LISTS</h4>
+                                            </div>
+                                            <div class="col-lg-12 grid-margin stretch-card">
+                                                <div class="card">
+                                                    <div class="card-body table-responsive">
+                                                        <div class="row adjust-row-margin full-row">
+                                                            <div class="col-1 col-sm-1"> </div>
+                                                            <div class="col-10 col-sm-8">
+                                                            </div>
+                                                            <div class="col-1 col-sm-3" style="padding-bottom:10px;">
+                                                                <button title="Click to Edit" type="submit"
+                                                                    class=" btn-primary" data-toggle="modal"
+                                                                    data-target="#exampleModalCenter">Add New </button>
+                                                            </div>
+                                                        </div>
+                                                        <table datatable [dtOptions]="dtOptions"
+                                                            class="row-border hover" class="table table-striped"
+                                                            id="footable">
+                                                            <thead>
+                                                                <tr style="background-color: gray;">
+                                                                    <th data-breakpoints="xs">#</th>
+                                                                    <th data-breakpoints="xs">DNS URL</th>
+                                                                    <th data-breakpoints="xs"></th>
+                                                                    <th data-breakpoints="xs"></th>
+                                                                    <th data-breakpoints="xs"></th>
+                                                                    <th data-breakpoints="xs sm"></th>
+                                                                    <th data-breakpoints="xs sm md">Action</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody data-expanded="true">
+                                                                <tr>
+                                                                    <td data-title="ID" data-breakpoints="xs">1 </td>
+                                                                    <td data-title="dns url" data-breakpoints="xs">
+                                                                        http://51.79.78.226:25461
+                                                                    </td>
+                                                                    <td data-title="Email Address"
+                                                                        data-breakpoints="xs">
+                                                                    </td>
+                                                                    <td data-title="Email Address"
+                                                                        data-breakpoints="xs">
+                                                                    </td>
+                                                                    <td data-title="Email Address"
+                                                                        data-breakpoints="xs">
+                                                                    </td>
+                                                                    <td data-title="Email Address"
+                                                                        data-breakpoints="xs">
+                                                                    </td>
+                                                                    <td class="row">
+                                                                        <button title="Click to Edit"
+                                                                            class="mr-1 btn btn-primary btn-sm"data-toggle="modal"
+                                                                            data-target="#exampleModalCenter2">
+                                                                            <i class="mdi mdi-pencil-box"></i>
+                                                                        </button>
+                                                                        <button title="Click to Edit"
+                                                                            class="btn btn-primary btn-sm"
+                                                                            data-toggle="modal"
+                                                                            data-target="#exampleModalCenter3">
+                                                                            <i class="mdi mdi-delete-forever"></i>
+                                                                        </button>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td data-title="ID" data-breakpoints="xs">2 </td>
+                                                                    <td data-title="dns url" data-breakpoints="xs">
+                                                                        http://51.79.78.226:25461
+                                                                    </td>
+                                                                    <td data-title="Email Address"
+                                                                        data-breakpoints="xs">
+                                                                    </td>
+                                                                    <td data-title="Email Address"
+                                                                        data-breakpoints="xs">
+                                                                    </td>
+                                                                    <td data-title="Email Address"
+                                                                        data-breakpoints="xs">
+                                                                    </td>
+                                                                    <td data-title="Email Address"
+                                                                        data-breakpoints="xs">
+                                                                    </td>
+                                                                    <td class="row">
+                                                                        <button title="Click to Edit"
+                                                                            class="mr-1 btn btn-primary btn-sm"data-toggle="modal"
+                                                                            data-target="#exampleModalCenter2">
+                                                                            <i class="mdi mdi-pencil-box"></i>
+                                                                        </button>
+                                                                        <button title="Click to Edit"
+                                                                            class="btn btn-primary btn-sm"
+                                                                            data-toggle="modal"
+                                                                            data-target="#exampleModalCenter3">
+                                                                            <i class="mdi mdi-delete-forever"></i>
+                                                                        </button>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td data-title="ID" data-breakpoints="xs">3 </td>
+                                                                    <td data-title="dns url" data-breakpoints="xs">
+                                                                        http://51.79.78.226:25461
+                                                                    </td>
+                                                                    <td data-title="Email Address"
+                                                                        data-breakpoints="xs">
+                                                                    </td>
+                                                                    <td data-title="Email Address"
+                                                                        data-breakpoints="xs">
+                                                                    </td>
+                                                                    <td data-title="Email Address"
+                                                                        data-breakpoints="xs">
+                                                                    </td>
+                                                                    <td data-title="Email Address"
+                                                                        data-breakpoints="xs">
+                                                                    </td>
+                                                                    <td class="row">
+                                                                        <button title="Click to Edit"
+                                                                            class="mr-1 btn btn-primary btn-sm"data-toggle="modal"
+                                                                            data-target="#exampleModalCenter2">
+                                                                            <i class="mdi mdi-pencil-box"></i>
+                                                                        </button>
+                                                                        <button title="Click to Edit"
+                                                                            class="btn btn-primary btn-sm"
+                                                                            data-toggle="modal"
+                                                                            data-target="#exampleModalCenter3">
+                                                                            <i class="mdi mdi-delete-forever"></i>
+                                                                        </button>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td data-title="ID" data-breakpoints="xs">4 </td>
+                                                                    <td data-title="dns url" data-breakpoints="xs">
+                                                                        http://51.79.78.226:25461
+                                                                    </td>
+                                                                    <td data-title="Email Address"
+                                                                        data-breakpoints="xs">
+                                                                    </td>
+                                                                    <td data-title="Email Address"
+                                                                        data-breakpoints="xs">
+                                                                    </td>
+                                                                    <td data-title="Email Address"
+                                                                        data-breakpoints="xs">
+                                                                    </td>
+                                                                    <td data-title="Email Address"
+                                                                        data-breakpoints="xs">
+                                                                    </td>
+                                                                    <td class="row">
+                                                                        <button title="Click to Edit"
+                                                                        class="mr-1 btn btn-primary btn-sm"data-toggle="modal"
+                                                                        data-target="#exampleModalCenter2">
+                                                                        <i class="mdi mdi-pencil-box"></i>
+                                                                    </button>
+                                                                        <button title="Click to Edit"
+                                                                            class="btn btn-primary btn-sm"
+                                                                            data-toggle="modal"
+                                                                            data-target="#exampleModalCenter3">
+                                                                            <i class="mdi mdi-delete-forever"></i>
+                                                                        </button>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td data-title="ID" data-breakpoints="xs">5 </td>
+                                                                    <td data-title="dns url" data-breakpoints="xs">
+                                                                        http://51.79.78.226:25461
+                                                                    </td>
+                                                                    <td data-title="Email Address"
+                                                                        data-breakpoints="xs">
+                                                                    </td>
+                                                                    <td data-title="Email Address"
+                                                                        data-breakpoints="xs">
+                                                                    </td>
+                                                                    <td data-title="Email Address"
+                                                                        data-breakpoints="xs">
+                                                                    </td>
+                                                                    <td data-title="Email Address"
+                                                                        data-breakpoints="xs">
+                                                                    </td>
+                                                                    <td class="row">
+                                                                        <button title="Click to Edit"
+                                                                            class="mr-1 btn btn-primary btn-sm"data-toggle="modal"
+                                                                            data-target="#exampleModalCenter2">
+                                                                            <i class="mdi mdi-pencil-box"></i>
+                                                                        </button>
+                                                                        <button title="Click to Edit"
+                                                                            class="btn btn-primary btn-sm"
+                                                                            data-toggle="modal"
+                                                                            data-target="#exampleModalCenter3">
+                                                                            <i class="mdi mdi-delete-forever"></i>
+                                                                        </button>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td data-title="ID" data-breakpoints="xs">6 </td>
+                                                                    <td data-title="dns url" data-breakpoints="xs">
+                                                                        http://51.79.78.226:25461
+                                                                    </td>
+                                                                    <td data-title="Email Address"
+                                                                        data-breakpoints="xs">
+                                                                    </td>
+                                                                    <td data-title="Email Address"
+                                                                        data-breakpoints="xs">
+                                                                    </td>
+                                                                    <td data-title="Email Address"
+                                                                        data-breakpoints="xs">
+                                                                    </td>
+                                                                    <td data-title="Email Address"
+                                                                        data-breakpoints="xs">
+                                                                    </td>
+                                                                    <td class="row">
+                                                                        <button title="Click to Edit"
+                                                                            class="mr-1 btn btn-primary btn-sm"data-toggle="modal"
+                                                                            data-target="#exampleModalCenter2">
+                                                                            <i class="mdi mdi-pencil-box"></i>
+                                                                        </button>
+                                                                        <button title="Click to Edit"
+                                                                            class="btn btn-primary btn-sm"
+                                                                            data-toggle="modal"
+                                                                            data-target="#exampleModalCenter3">
+                                                                            <i class="mdi mdi-delete-forever"></i>
+                                                                        </button>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td data-title="ID" data-breakpoints="xs">7 </td>
+                                                                    <td data-title="dns url" data-breakpoints="xs">
+                                                                        http://51.79.78.226:25461
+                                                                    </td>
+                                                                    <td data-title="Email Address"
+                                                                        data-breakpoints="xs">
+                                                                    </td>
+                                                                    <td data-title="Email Address"
+                                                                        data-breakpoints="xs">
+                                                                    </td>
+                                                                    <td data-title="Email Address"
+                                                                        data-breakpoints="xs">
+                                                                    </td>
+                                                                    <td data-title="Email Address"
+                                                                        data-breakpoints="xs">
+                                                                    </td>
+                                                                    <td class="row">
+                                                                        <button title="Click to Edit"
+                                                                            class="mr-1 btn btn-primary btn-sm"data-toggle="modal"
+                                                                            data-target="#exampleModalCenter2">
+                                                                            <i class="mdi mdi-pencil-box"></i>
+                                                                        </button>
+                                                                        <button title="Click to Edit"
+                                                                            class="btn btn-primary btn-sm"
+                                                                            data-toggle="modal"
+                                                                            data-target="#exampleModalCenter3">
+                                                                            <i class="mdi mdi-delete-forever"></i>
+                                                                        </button>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td data-title="ID" data-breakpoints="xs">8 </td>
+                                                                    <td data-title="dns url" data-breakpoints="xs">
+                                                                        http://51.79.78.226:25461
+                                                                    </td>
+                                                                    <td data-title="Email Address"
+                                                                        data-breakpoints="xs">
+                                                                    </td>
+                                                                    <td data-title="Email Address"
+                                                                        data-breakpoints="xs">
+                                                                    </td>
+                                                                    <td data-title="Email Address"
+                                                                        data-breakpoints="xs">
+                                                                    </td>
+                                                                    <td data-title="Email Address"
+                                                                        data-breakpoints="xs">
+                                                                    </td>
+                                                                    <td class="row">
+                                                                        <button title="Click to Edit"
+                                                                            class="mr-1 btn btn-primary btn-sm"data-toggle="modal"
+                                                                            data-target="#exampleModalCenter2">
+                                                                            <i class="mdi mdi-pencil-box"></i>
+                                                                        </button>
+                                                                        <button title="Click to Edit"
+                                                                            class="btn btn-primary btn-sm"
+                                                                            data-toggle="modal"
+                                                                            data-target="#exampleModalCenter3">
+                                                                            <i class="mdi mdi-delete-forever"></i>
+                                                                        </button>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="image">
+                                            <div class="row">
+                                                <div class="col-md-4 grid-margin stretch-card">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <div>
+                                                                <img style="height:20px;"
+                                                                    src="assets/images/background/Artist_Growth_Wide_Logo.png" alt="image">
+                                                            </div>
+                                                            <form class="forms-sample">
+                                                                <div class="form-group" style="padding-top:20px;">
+                                                                    <label for="exampleInputUsername1">App Name :- </label> kj Stream
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="exampleInputEmail1">App Package Name :- </label> kj Stream
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="exampleInputEmail1">App Type :- </label> Android,Ios,Roku
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="exampleInputEmail1">Status :-
+                                                                        <button title="Click to view" class="mr-2 btn btn-primary btn-sm"> Pending
+                                                                        </button>
+                                                                    </label>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 grid-margin stretch-card">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <div>
+                                                                <img style="height:40px;margin-left:80px;"
+                                                                    src="assets/images/background/instagram.jpg" alt="image">
+                                                            </div>
+                                                            <form class="forms-sample">
+                                                                <div class="form-group" style="padding-top:20px;">
+                                                                    <label for="exampleInputUsername1">App Name :- </label> kj Stream
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="exampleInputEmail1">App Package Name :- </label> kj Stream
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="exampleInputEmail1">App Type :- </label> Android,Ios,Roku
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="exampleInputEmail1">Status :-
+                                                                        <button title="Click to view" class="mr-2 btn btn-success btn-sm"> Active
+                                                                        </button>
+                                                                    </label>
+                                                                </div>
+                                                                <button type="button" class="btn btn-primary" data-toggle="modal"
+                                                                    data-target="#exampleModalCenter">Detail</button>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 grid-margin stretch-card">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <div>
+                                                                <img style="height:40px;margin-left:80px;"
+                                                                    src="assets/images/background/instagram.jpg" alt="image">
+                                                            </div>
+                                                            <form class="forms-sample">
+                                                                <div class="form-group" style="padding-top:20px;">
+                                                                    <label for="exampleInputUsername1">App Name :- </label> kj Stream
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="exampleInputEmail1">App Package Name :- </label> kj Stream
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="exampleInputEmail1">App Type :- </label> Android,Ios,Roku
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="exampleInputEmail1">Status :-
+                                                                        <button title="Click to view" class="mr-2 btn btn-success btn-sm"> Active
+                                                                        </button>
+                                                                    </label>
+                                                                </div>
+                                                                <button type="button" class="btn btn-primary" data-toggle="modal"
+                                                                    data-target="#exampleModalCenter">Detail</button>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-4 grid-margin stretch-card">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <div>
+                                                                <img style="height:40px;margin-left:80px;"
+                                                                    src="assets/images/background/instagram.jpg" alt="image">
+                                                            </div>
+                                                            <form class="forms-sample">
+                                                                <div class="form-group" style="padding-top:20px;">
+                                                                    <label for="exampleInputUsername1">App Name :- </label> kj Stream
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="exampleInputEmail1">App Package Name :- </label> kj Stream
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="exampleInputEmail1">App Type :- </label> Android,Ios,Roku
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="exampleInputEmail1">Status :-
+                                                                        <button title="Click to view" class="mr-2 btn btn-danger btn-sm"> Rejected
+                                                                        </button>
+                                                                    </label>
+                                                                </div>
+                                                                <button type="button" class="btn btn-primary" data-dismiss="modal">Edit</button>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 grid-margin stretch-card">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <div>
+                                                                <img style="height:40px;margin-left:80px;"
+                                                                    src="assets/images/background/instagram.jpg" alt="image">
+                                                            </div>
+                                                            <form class="forms-sample">
+                                                                <div class="form-group" style="padding-top:20px;">
+                                                                    <label for="exampleInputUsername1">App Name :- </label> kj Stream
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="exampleInputEmail1">App Package Name :- </label> kj Stream
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="exampleInputEmail1">App Type :- </label> Android,Ios,Roku
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="exampleInputEmail1">Status :-
+                                                                        <button title="Click to view" class="mr-2 btn btn-secondary btn-sm">
+                                                                            Inactive
+                                                                        </button>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-primary" data-toggle="modal"
+                                                                        data-target="#exampleModalCenter">Edit</button>
+                                                                    <button type="button" class="btn btn-secondary" data-toggle="modal"
+                                                                        data-target="#exampleModalCenter">Detail</button>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 grid-margin stretch-card">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <div>
+                                                                <img style="height:40px;margin-left:80px;"
+                                                                    src="assets/images/background/instagram.jpg" alt="image">
+                                                            </div>
+                                                            <form class="forms-sample">
+                                                                <div class="form-group" style="padding-top:20px;">
+                                                                    <label for="exampleInputUsername1">App Name :- </label> kj Stream
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="exampleInputEmail1">App Package Name :- </label> kj Stream
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="exampleInputEmail1">App Type :- </label> Android,Ios,Roku
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="exampleInputEmail1">Status :-
+                                                                        <button title="Click to view" class="mr-2 btn btn-secondary btn-sm">
+                                                                            Inactive
+                                                                        </button>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-primary" data-toggle="modal"
+                                                                        data-target="#exampleModalCenter">Edit</button>
+                                                                    <button type="button" class="btn btn-secondary" data-toggle="modal"
+                                                                        data-target="#exampleModalCenter">Detail</button>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="version">
+                                            <div>
+                                                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                                                    nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                                                    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                                                    pariatur.</p>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="banner">
+                                            <div>
+                                                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                                                    nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                                                    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                                                    pariatur.</p>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="usersList">
+                                            <div>
+                                                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                                                    nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                                                    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                                                    pariatur.</p>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="channelsReport">
+                                            <div>
+                                                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                                                    nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                                                    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                                                    pariatur.</p>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="settings">
+                                            <div>
+                                                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                                                    nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                                                    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                                                    pariatur.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h2 class="modal-title  btn-inquiry" id="exampleModalLongTitle">Configure App</h2>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+
+                                <div class="col-12 grid-margin stretch-card">
+                                    <!-- <div class="card">
+                            <div class="card-body">                        -->
+                                    <form class="forms-sample">
+                                        <div class="form-group">
+                                            <label for="exampleInputUsername1">App Name:</label>
+                                            <input type="text" class="form-control" id="exampleInputUsername1"
+                                                placeholder="Title">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">App Package Name:</label>
+                                            <input type="text" class="form-control" id="exampleInputUsername1"
+                                                placeholder="Title">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">App Type:</label>
+                                            <form style="margin-left: 40px;;">
+                                                <div class="form-group">
+                                                    <div class="form-check form-check-inline">
+                                                        <label class="form-check-label">
+                                                            <input type="checkbox" class="form-check-input" value=""
+                                                                checked>Android
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline">
+                                                        <label class="form-check-label">
+                                                            <input type="checkbox" class="form-check-input" value="">Ios
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline">
+                                                        <label class="form-check-label">
+                                                            <input type="checkbox" class="form-check-input"
+                                                                value="">Roku
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>App Icon:</label>
+                                            <input type="file" name="img[]" class="file-upload-default">
+                                            <div class="input-group col-xs-12">
+                                                <span class="input-group-append">
+                                                    <button class="file-upload-browse btn btn-gradient-primary"
+                                                        type="button">Browse..</button>
+                                                </span>
+                                                <input type="text" class="form-control file-upload-info" disabled
+                                                    placeholder="No file selected.">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-1 col-sm-1">
+                                                <label type="text">
+                                                    Status:
+                                                </label>
+                                            </div>
+                                            <div class="col-2 col-sm-4">
+                                                <div class="form-check" style="padding-top:10px;">
+                                                    <input class="form-check-input" type="radio" name="gridRadios"
+                                                        value="option1" checked>
+                                                    <label class="form-check-label">
+                                                        Active
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-2 col-sm-4" style="padding-top:10px;">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="gridRadios"
+                                                        value="option2">
+                                                    <label class="form-check-label">
+                                                        Inactive
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary" data-dismiss="modal">Update</button>
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancle</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="exampleModalCenter1" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+
+                                <div class="row">
+                                    <div class="col-sm-12" style="text-align:center;padding-bottom:20px;">
+                                        <h2>ADD DNS URL</h2>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label for="exampleInputUsername1">URL</label>
+                                            <input type="text" class="form-control" id="exampleInputUsername1"
+                                                placeholder="">
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">ADD</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancle</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <!-- <h5 class="modal-title  btn-inquiry" id="exampleModalLongTitle">Edit</h5> -->
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+
+                                
+                                <div class="row">
+                                    <div class="col-sm-12" style="text-align:center;padding-bottom:20px;">
+                                        <h2>Edit DNS URL</h2>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label for="exampleInputUsername1">URL</label>
+                                            <input type="text" class="form-control" id="exampleInputUsername1"
+                                                placeholder="">
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">Update</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancle</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="exampleModalCenter3" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <!-- <h5 class="modal-title  btn-inquiry" id="exampleModalLongTitle">Edit</h5> -->
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+
+                                <div class="row">
+                                    <!-- <h5 class="col-form-label col-sm-2 pt-0">Edit</h5> -->
+                                    <div class="col-sm-12 icon1">
+                                        <i class="mdi mdi-close-circle-outline"></i>
+                                    </div>
+                                    <div class="col-sm-12 toastr">
+                                        <h2>Are you sure about to delete<br /> this User ?</h2>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">Cancle</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Yes Delete
+                                    It!</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- partial:partials/_footer.html -->
+                <footer class="footer">
+                    <div class="d-sm-flex justify-content-center justify-content-sm-between">
+                        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">
+                            <i class="mdi mdi mdi-camcorder-box icons"></i>
+                            <i class="mdi mdi-twitter-box icons"></i>
+                            <i class="mdi mdi-facebook-box icons"></i>
+                            <i class="mdi mdi-instagram icons"></i>
+                        </span>
+                        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Epic Stream © 2020 All
+                            Rights
+                            Reserved.</span>
+                    </div>
+                </footer>
+                <!-- partial -->
+            </div>
+        </div>
+    </div>

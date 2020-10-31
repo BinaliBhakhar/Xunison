@@ -1,0 +1,305 @@
+<div class="container-scroller">
+  <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+    <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+      <a class="navbar-brand brand-logo" href="index.html"><img src="assets/images/logo.svg" alt="logo" /></a>
+      <a class="navbar-brand brand-logo-mini" href="index.html"><img src="assets/images/logo-mini.svg" alt="logo" /></a>
+    </div>
+    <div class="navbar-menu-wrapper d-flex align-items-stretch">
+      <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+        <span class="mdi mdi-menu"></span>
+      </button>
+      <ul class="navbar-nav navbar-nav-right">
+        <li class="nav-item d-none d-lg-block full-screen-link">
+          <a class="nav-link">
+            <i class="mdi mdi-fullscreen" id="fullscreen-button"></i>
+          </a>
+        </li>
+
+        <li class="nav-item nav-logout d-none d-lg-block">
+          <a class="nav-link" href="#">
+            <i class="mdi mdi-lock"></i>
+          </a>
+        </li>
+        <li class="nav-item nav-settings d-none d-lg-block">
+          <a class="nav-link" href="#">
+            <i class="mdi mdi-arrow-right-bold-box"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!-- partial -->
+  <div class="container-fluid page-body-wrapper">
+    <!-- partial:partials/_sidebar.html -->
+    <nav class="sidebar sidebar-offcanvas" id="sidebar">
+      <ul class="nav">
+        <!-- <li class="nav-item nav-profile">
+        <a href="#" class="nav-link">
+          <div class="nav-profile-image">
+            <img src="assets/images/faces/face1.jpg" alt="profile">
+            <span class="login-status online"></span>            
+          </div>
+          <div class="nav-profile-text d-flex flex-column">
+            <span class="font-weight-bold mb-2">David Grey. H</span>
+            <span class="text-secondary text-small">Project Manager</span>
+          </div>
+          <i class="mdi mdi-bookmark-check text-success nav-profile-badge"></i>
+        </a>
+      </li> -->
+      <li>       
+        <span class="menu-title nav-link general">GENERAL</span>      
+    </li>
+        <li class="nav-item">
+          <a class="nav-link" href="header">
+            <span class="menu-title">Dashboard</span>
+            <i class="mdi mdi-television menu-icon"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="profile">
+            <span class="menu-title">Profile</span>
+            <!-- <i class="menu-arrow"></i> -->
+            <i class="mdi mdi-contacts menu-icon"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="notification">
+            <span class="menu-title">Notifications</span>
+            <i class="mdi mdi-bell-outline menu-icon"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="announcement">
+            <span class="menu-title">Announcement</span>
+            <i class="mdi mdi-comment-alert menu-icon"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+            <span class="menu-title">Users</span>
+            <i class="menu-arrow"></i>
+            <i class="mdi mdi-account-circle menu-icon"></i>
+          </a>
+          <div class="collapse" id="ui-basic">
+            <ul class="nav flex-column sub-menu">
+              <li class="nav-item"> <a class="nav-link" href="admin">Admin</a></li>
+              <li class="nav-item"> <a class="nav-link" href="user">User</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="manage-app">
+            <span class="menu-title">Manage Apps</span>
+            <i class="mdi mdi-apps menu-icon"></i>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <!-- partial -->
+    <div class="main-panel">
+      <div class="content-wrapper">
+        <div class="row" id="proBanner">
+          <div class="col-12">
+            <span class="d-flex align-items-center purchase-popup">
+              <p style="font-weight: bolder;">Notification</p>
+            </span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 grid-margin stretch-card">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="card-title" style="text-align:center;">Send Notifications</h4>
+                <p class="card-description"> </p>
+                <form class="forms-sample">
+                  <div class="form-group">
+                    <label for="exampleInputUsername1">Title:</label>
+                    <input type="text" class="form-control" id="exampleInputUsername1" placeholder="Title">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Message:</label>
+                    <textarea class="form-control" id="exampleTextarea1" rows="4" placeholder="Message"></textarea>
+                  </div>
+                  <div class="form-group">
+                    <label>Image ( Optional )</label>
+                    <input type="file" name="img[]" class="file-upload-default">
+                    <div class="input-group col-xs-12">
+                      <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Image">
+                      <span class="input-group-append">
+                        <button class="file-upload-browse btn btn-gradient-primary" type="button">Upload</button>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputConfirmPassword1">External Link ( optional ):</label>
+                    <input type="password" class="form-control" id="exampleInputConfirmPassword1" placeholder="link">
+                  </div>
+                  <button type="submit" class="btn btn-gradient-primary mr-2">Send</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+              <div class="card-body table-responsive">
+                <h4 class="card-title">Sent Notifications</h4>
+                <table datatable [dtOptions]="dtOptions" class="row-border hover" class="table table-striped" class="table"
+                  id="footable">
+                  <thead>
+                    <tr style="background-color: gray;">
+                      <th data-breakpoints="xs">#</th>
+                      <th data-breakpoints="xs"> Title</th>
+                      <th data-breakpoints="xs">Message</th>
+                      <th data-breakpoints="xs"> Image</th>
+                      <th data-breakpoints="xs"> External Link</th>
+                      <th data-breakpoints="xs"> Sent Users</th>
+                      <th data-breakpoints="xs sm">Receive Users</th>
+                      <th data-breakpoints="xs sm md">Click Users</th>
+                    </tr>
+                  </thead>
+                  <tbody data-expanded="true">
+                    <tr>
+                      <td data-title="ID" data-breakpoints="xs">1 </td>
+                      <td data-title="title" data-breakpoints="xs">
+                        New Update
+                      </td>
+                      <td data-title="message" data-breakpoints="xs">
+                        Our New Update will coming <br /> soon with new tv channels <br /> movies and series ....
+                      </td>
+                      <td data-title="image" data-breakpoints="xs">
+                        <img src="assets/images/background/flower.jpeg" alt="image" />
+                      </td>
+                      <td data-title="External link" data-breakpoints="xs">
+                        https://epicstream<br />.com/news
+                      </td>
+                      <td data-title="sent users" data-breakpoints="xs">
+                        213
+                      </td>
+                      <td data-title="receive users" data-breakpoints="xs">
+                        208
+                      </td>
+                      <td data-title="Click users" data-breakpoints="xs">
+                        187
+                      </td>
+                    </tr>
+                    <tr>
+                      <td data-title="ID" data-breakpoints="xs">2 </td>
+                      <td data-title="title" data-breakpoints="xs">
+                        New Update
+                      </td>
+                      <td data-title="message" data-breakpoints="xs">
+                        Our New Update will coming <br /> soon with new tv channels <br /> movies and series ....
+                      </td>
+                      <td data-title="image" data-breakpoints="xs">
+                        <img src="assets/images/background/flower.jpeg" alt="image" />
+                      </td>
+                      <td data-title="External link" data-breakpoints="xs">
+                        https://epicstream<br />.com/news
+                      </td>
+                      <td data-title="sent users" data-breakpoints="xs">
+                        213
+                      </td>
+                      <td data-title="receive users" data-breakpoints="xs">
+                        208
+                      </td>
+                      <td data-title="Click users" data-breakpoints="xs">
+                        187
+                      </td>
+                    </tr>
+                    <tr>
+                      <td data-title="ID" data-breakpoints="xs">3 </td>
+                      <td data-title="title" data-breakpoints="xs">
+                        New Update
+                      </td>
+                      <td data-title="message" data-breakpoints="xs">
+                        Our New Update will coming <br /> soon with new tv channels <br /> movies and series ....
+                      </td>
+                      <td data-title="image" data-breakpoints="xs">
+                        <img src="assets/images/background/flower.jpeg" alt="image" />
+                      </td>
+                      <td data-title="External link" data-breakpoints="xs">
+                        https://epicstream<br />.com/news
+                      </td>
+                      <td data-title="sent users" data-breakpoints="xs">
+                        213
+                      </td>
+                      <td data-title="receive users" data-breakpoints="xs">
+                        208
+                      </td>
+                      <td data-title="Click users" data-breakpoints="xs">
+                        187
+                      </td>
+                    </tr>
+                    <tr>
+                      <td data-title="ID" data-breakpoints="xs">4 </td>
+                      <td data-title="title" data-breakpoints="xs">
+                        New Update
+                      </td>
+                      <td data-title="message" data-breakpoints="xs">
+                        Our New Update will coming <br /> soon with new tv channels <br /> movies and series ....
+                      </td>
+                      <td data-title="image" data-breakpoints="xs">
+                        <img src="assets/images/background/flower.jpeg" alt="image" />
+                      </td>
+                      <td data-title="External link" data-breakpoints="xs">
+                        https://epicstream<br />.com/news
+                      </td>
+                      <td data-title="sent users" data-breakpoints="xs">
+                        213
+                      </td>
+                      <td data-title="receive users" data-breakpoints="xs">
+                        208
+                      </td>
+                      <td data-title="Click users" data-breakpoints="xs">
+                        187
+                      </td>
+                    </tr>
+                    <tr>
+                      <td data-title="ID" data-breakpoints="xs">5 </td>
+                      <td data-title="title" data-breakpoints="xs">
+                        New Update
+                      </td>
+                      <td data-title="message" data-breakpoints="xs">
+                        Our New Update will coming <br /> soon with new tv channels <br /> movies and series ....
+                      </td>
+                      <td data-title="image" data-breakpoints="xs">
+                        <img src="assets/images/background/flower.jpeg" alt="image" />
+                      </td>
+                      <td data-title="External link" data-breakpoints="xs">
+                        https://epicstream<br />.com/news
+                      </td>
+                      <td data-title="sent users" data-breakpoints="xs">
+                        213
+                      </td>
+                      <td data-title="receive users" data-breakpoints="xs">
+                        208
+                      </td>
+                      <td data-title="Click users" data-breakpoints="xs">
+                        187
+                      </td>
+                    </tr>                    
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- content-wrapper ends -->
+      <!-- partial:partials/_footer.html -->
+      <footer class="footer">
+        <div class="d-sm-flex justify-content-center justify-content-sm-between">
+          <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">
+            <i class="mdi mdi mdi-camcorder-box icons"></i>
+            <i class="mdi mdi-twitter-box icons"></i>
+            <i class="mdi mdi-facebook-box icons"></i>
+            <i class="mdi mdi-instagram icons"></i>
+          </span>
+          <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Epic Stream © 2020 All Rights
+            Reserved.</span>
+        </div>
+      </footer>
+      <!-- partial -->
+    </div>
+  </div>
+</div>
