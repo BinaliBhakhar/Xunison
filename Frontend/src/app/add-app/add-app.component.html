@@ -37,20 +37,7 @@
     <div class="container-fluid page-body-wrapper">
         <!-- partial:partials/_sidebar.html -->
         <nav class="sidebar sidebar-offcanvas" id="sidebar">
-            <ul class="nav">
-                <!-- <li class="nav-item nav-profile">
-          <a href="#" class="nav-link">
-            <div class="nav-profile-image">
-              <img src="assets/images/faces/face1.jpg" alt="profile">
-              <span class="login-status online"></span>            
-            </div>
-            <div class="nav-profile-text d-flex flex-column">
-              <span class="font-weight-bold mb-2">David Grey. H</span>
-              <span class="text-secondary text-small">Project Manager</span>
-            </div>
-            <i class="mdi mdi-bookmark-check text-success nav-profile-badge"></i>
-          </a>
-        </li> -->
+            <ul class="nav">               
                 <li>
                     <span class="menu-title nav-link general">GENERAL</span>
                 </li>
@@ -71,13 +58,7 @@
                         <span class="menu-title">Support</span>
                         <i class="mdi mdi-worker menu-icon"></i>
                     </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="in-app-announcement">
-                        <span class="menu-title">In App Announcement</span>
-                        <i class="mdi mdi-contacts menu-icon"></i>
-                    </a>
-                </li>
+                </li>               
                 <li class="nav-item">
                     <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false"
                         aria-controls="ui-basic">
@@ -109,17 +90,25 @@
                         <div class="card">
                             <div class="card-body table-responsive">
                                 <h4 class="card-title">Configure App:</h4>
-                                <form class="forms-sample">
+                                <form class="forms-sample"[formGroup]="addApp">
                                     <div class="form-group" style="padding-top:20px;">
                                         <label for="exampleInputUsername1">App Name:</label>
-                                        <input type="text" class="form-control" id="exampleInputUsername1"
-                                            placeholder="Title">
-                                    </div>
+                                        <input type="text" class="form-control" formControlName="appname" placeholder="FUll Name"
+                                        [ngClass]="{ 'is-invalid': addApp && f.appname.errors && !addApp.untouched}">
+                                      <div *ngIf="addApp.touched && f.appname.errors" class="invalid-feedback"
+                                        [hidden]="addApp.untouched">
+                                        <div *ngIf="f.appname.errors.required">App Name is required</div>
+                                      </div>
+                                      </div>
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">App Package Name:</label>
-                                        <input type="text" class="form-control" id="exampleInputUsername1"
-                                            placeholder="Title">
-                                    </div>
+                                        <label for="exampleInputUsername1">App Package Name:</label>
+                                        <input type="text" class="form-control" formControlName="apppackagename" placeholder="FUll Name"
+                                        [ngClass]="{ 'is-invalid': addApp && f.apppackagename.errors && !addApp.untouched}">
+                                      <div *ngIf="addApp.touched && f.apppackagename.errors" class="invalid-feedback"
+                                        [hidden]="addApp.untouched">
+                                        <div *ngIf="f.apppackagename.errors.required">App Package Name is required</div>
+                                      </div>
+                                      </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">App Type:</label>
                                         <form style="margin-left: 40px;;">
@@ -147,14 +136,17 @@
                                         <label>App Icon:</label>
                                         <input type="file" name="img[]" class="file-upload-default">
                                         <div class="input-group col-xs-12">
-                                            <span class="input-group-append">
-                                                <button class="file-upload-browse btn btn-gradient-primary"
-                                                    type="button">Browse..</button>
-                                            </span>
-                                            <input type="text" class="form-control file-upload-info" disabled
-                                                placeholder="No file selected.">
+                                          <input type="text" disabled placeholder="Upload Image" class="form-control file-upload-info" formControlName="appicon" placeholder="Title"
+                                          [ngClass]="{ 'is-invalid': addApp && f.appicon.errors && !addApp.untouched}">
+                                        <div *ngIf="addApp.touched && f.appicon.errors" class="invalid-feedback"
+                                          [hidden]="addApp.untouched">
+                                          <div *ngIf="f.appicon.errors.required">App icon is required</div>
                                         </div>
-                                    </div>
+                                          <span class="input-group-append">
+                                            <button class="file-upload-browse btn btn-gradient-primary" type="button">Browse..</button>
+                                          </span>
+                                        </div>
+                                      </div>
                                     <div class="row">
                                         <div class="col-1 col-sm-1">
                                             <label type="text">

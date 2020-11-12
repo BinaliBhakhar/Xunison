@@ -16,6 +16,18 @@
     margin-left: 35px;
     padding-top: 20px;
 }
+.artist{
+  /* position: absolute; */
+ width: 300px;
+ height: 200px;
+ left: 295px;
+ top: 312px;
+
+ background: #FFFFFF;
+ box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+ border-radius: 5px 5px 0px 0px;
+
+}
   .custom-tab-1 .nav {
     border: 0; }
   
@@ -36,3 +48,13 @@
     padding: 25px; }
     .custom-tab-1 .tab-pane p {
       margin-bottom: 0; }
+      .border{
+        position: absolute;
+        width: 1584px;
+        height: 0px;
+        left: 264px;
+        top: 741px;
+        border: 1px solid #ABABAB;
+      transform: rotate(-0.04deg);
+
+      }

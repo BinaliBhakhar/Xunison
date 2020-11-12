@@ -37,20 +37,7 @@
     <div class="container-fluid page-body-wrapper">
         <!-- partial:partials/_sidebar.html -->
         <nav class="sidebar sidebar-offcanvas" id="sidebar">
-            <ul class="nav">
-                <!-- <li class="nav-item nav-profile">
-          <a href="#" class="nav-link">
-            <div class="nav-profile-image">
-              <img src="assets/images/faces/face1.jpg" alt="profile">
-              <span class="login-status online"></span>            
-            </div>
-            <div class="nav-profile-text d-flex flex-column">
-              <span class="font-weight-bold mb-2">David Grey. H</span>
-              <span class="text-secondary text-small">Project Manager</span>
-            </div>
-            <i class="mdi mdi-bookmark-check text-success nav-profile-badge"></i>
-          </a>
-        </li> -->
+            <ul class="nav">               
         <li>       
             <span class="menu-title nav-link general">GENERAL</span>      
         </li>
@@ -110,34 +97,56 @@
                     <div class="col-md-4 grid-margin stretch-card">
                         <div class="card">
                             <div class="card-body">
-                                <form class="forms-sample">
+                                <form class="forms-sample"[formGroup]="profile">
                                     <div class="form-group">
-                                        <label for="exampleInputUsername1">Full Name:</label>
-                                        <input type="text" class="form-control" id="exampleInputUsername1"
-                                            placeholder="Name">
+                                      <label for="exampleInputUsername1">Full Name:</label>
+                                      <input type="text" class="form-control" formControlName="fullname" placeholder="FUll Name"
+                                      [ngClass]="{ 'is-invalid': profile && f.fullname.errors && !profile.untouched}">
+                                    <div *ngIf="profile.touched && f.fullname.errors" class="invalid-feedback"
+                                      [hidden]="profile.untouched">
+                                      <div *ngIf="f.fullname.errors.required">Full Name is required</div>
+                                    </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Email address:</label>
-                                        <input type="email" class="form-control" id="exampleInputEmail1"
-                                            placeholder="Email">
+                                      <label for="exampleInputEmail1">Email address:</label>
+                                      <input type="text" class="form-control" formControlName="email" placeholder="Email Address"
+                                      pattern="[a-zA-Z0-9.-]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z ]{2,}"
+                                      [ngClass]="{ 'is-invalid': profile && f.email.errors && !profile.untouched}">
+                                    <div *ngIf="profile && f.email.errors" class="invalid-feedback" [hidden]="profile.untouched">
+                                      <div *ngIf="f.email.errors.required">Email is required</div>
+                                      <div *ngIf="f.email.errors">Email must be a valid email address</div>
+                                    </div>       
                                     </div>
                                     <div class="form-group">
-                                        <label for="exampleInputPassword1">Mobile No:</label>
-                                        <input type="password" class="form-control" id="exampleInputPassword1"
-                                            placeholder="Mobile No">
+                                      <label for="exampleInputPassword1">Mobile No:</label>
+                                      <input type="text" class="form-control" formControlName="mobileno" placeholder="Mobile No"
+                                      pattern="^\s*(?:\+?(\d{1,3}))?[- (]*(\d{3})[- )]*(\d{3})[- ]*(\d{4})(?: *[x/#]{1}(\d+))?\s*$"
+                                      [ngClass]="{ 'is-invalid': profile && f.mobileno.errors && !profile.untouched}" />
+                                    <div *ngIf="profile && f.mobileno.errors" class="invalid-feedback" [hidden]="profile.untouched">
+                                      <div *ngIf="f.mobileno.errors.required">Mobile No is required</div>
+                                      <div *ngIf="f.mobileno.errors">Mobile No must be a valid</div>
+                                    </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="exampleInputConfirmPassword1">Country:</label>
-                                        <input type="password" class="form-control" id="exampleInputConfirmPassword1"
-                                            placeholder="Country">
+                                      <label for="exampleInputConfirmPassword1">Country:</label>
+                                      <input type="text" class="form-control" formControlName="country" placeholder="Country"
+                                      [ngClass]="{ 'is-invalid': profile && f.country.errors && !profile.untouched}">
+                                    <div *ngIf="profile.touched && f.country.errors" class="invalid-feedback"
+                                      [hidden]="profile.untouched">
+                                      <div *ngIf="f.country.errors.required">Country is required</div>
+                                    </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="exampleInputUsername1">Username:</label>
-                                        <input type="text" class="form-control" id="exampleInputUsername1"
-                                            placeholder="Username">
+                                      <label for="exampleInputUsername1">Username:</label>
+                                      <input type="text" class="form-control" formControlName="username" placeholder="userName"
+                                      [ngClass]="{ 'is-invalid': profile && f.username.errors && !profile.untouched}">
+                                    <div *ngIf="profile.touched && f.username.errors" class="invalid-feedback"
+                                      [hidden]="profile.untouched">
+                                      <div *ngIf="f.username.errors.required">Username is required</div>
+                                    </div>
                                     </div>
                                     <button type="submit" class="btn btn-gradient-primary mr-2">Delete account</button>
-                                </form>
+                                  </form>
                             </div>
                         </div>
                     </div>
@@ -146,47 +155,73 @@
                             <div class="card-body">
                                 <h4 class="card-title">Update Profile</h4>
                                 <p class="card-description"> </p>
-                                <form class="forms-sample">
+                                <form class="forms-sample"[formGroup]="profile">
                                     <div class="form-group">
-                                        <label>Profile Picture</label>
-                                        <input type="file" name="img[]" class="file-upload-default">
-                                        <div class="input-group col-xs-12">
-                                            <input type="text" class="form-control file-upload-info" disabled
-                                                placeholder="Upload Image">
-                                            <span class="input-group-append">
-                                                <button class="file-upload-browse btn btn-gradient-primary"
-                                                    type="button">Upload</button>
-                                            </span>
+                                      <label>Profile Picture</label>
+                                      <input type="file" name="img[]" class="file-upload-default">
+                                      <div class="input-group col-xs-12">
+                                        <input type="text" disabled placeholder="Upload Image" class="form-control  file-upload-info" formControlName="fullname" placeholder="FUll Name"
+                                      [ngClass]="{ 'is-invalid': profile && f.fullname.errors && !profile.untouched}">
+                                    <div *ngIf="profile.touched && f.fullname.errors" class="invalid-feedback"
+                                      [hidden]="profile.untouched">
+                                      <div *ngIf="f.fullname.errors.required">Please select image.</div>
+                                    </div>
+                                        <span class="input-group-append">
+                                          <button class="file-upload-browse btn btn-gradient-primary" type="button">Upload</button>
+                                        </span>
+                                      </div>
+                                    </div>
+                                    <div class="form-group">
+                                      <label for="exampleInputUsername1">Full Name:</label>
+                                      <input type="text" class="form-control" formControlName="fullname" placeholder="FUll Name"
+                                      [ngClass]="{ 'is-invalid': profile && f.fullname.errors && !profile.untouched}">
+                                    <div *ngIf="profile.touched && f.fullname.errors" class="invalid-feedback"
+                                      [hidden]="profile.untouched">
+                                      <div *ngIf="f.fullname.errors.required">Full Name is required</div>
+                                    </div>
+                                    </div>
+                                    <div class="form-group">
+                                      <label for="exampleInputEmail3">Phone No</label>
+                                      <input type="text" class="form-control" formControlName="mobileno" placeholder="Mobile No"
+                                      pattern="^\s*(?:\+?(\d{1,3}))?[- (]*(\d{3})[- )]*(\d{3})[- ]*(\d{4})(?: *[x/#]{1}(\d+))?\s*$"
+                                      [ngClass]="{ 'is-invalid': profile && f.mobileno.errors && !profile.untouched}" />
+                                    <div *ngIf="profile && f.mobileno.errors" class="invalid-feedback" [hidden]="profile.untouched">
+                                      <div *ngIf="f.mobileno.errors.required">Phone No is required</div>
+                                      <div *ngIf="f.mobileno.errors">Phone No must be a valid</div>
+                                    </div>
+                                    </div>
+                                    <div class="form-group">
+                                      <label for="exampleInputConfirmPassword1">Country:</label>
+                                      <input type="text" class="form-control" formControlName="country" placeholder="Country"
+                                      [ngClass]="{ 'is-invalid': profile && f.country.errors && !profile.untouched}">
+                                    <div *ngIf="profile.touched && f.country.errors" class="invalid-feedback"
+                                      [hidden]="profile.untouched">
+                                      <div *ngIf="f.country.errors.required">Country is required</div>
+                                    </div>
+                                    </div>
+                                    <div class="form-group">
+                                      <label for="exampleInputPassword4">Current Password</label>
+                                      <input type="password" class="form-control" placeholder="Password" formControlName="password"
+                                      [ngClass]="{ 'is-invalid': profile && f.password.errors && !profile.untouched}">
+                                    <div *ngIf="profile && f.password.errors" class="invalid-feedback" [hidden]="profile.untouched">
+                                      <div *ngIf="f.password.errors.required">Current Password is required</div>
+                                      <div *ngIf="f.password.errors.minlength">Current Password must be at least 6 characters</div>
+                                    </div>
+                                    </div>
+                                    <div class="form-group">
+                                      <label for="exampleInputPassword4">New Password</label>
+                                      <input type="password" class="form-control" formControlName="confirmPassword"
+                                          placeholder="Confirm password" required="true" placeholder=" Confirm Password"
+                                          [ngClass]="{ 'is-invalid': profile && f.confirmPassword.errors && !profile.untouched}" />
+                                        <div *ngIf="profile && f.confirmPassword.errors" class="invalid-feedback"
+                                          [hidden]="profile.untouched">
+                                          <div *ngIf="f.confirmPassword.errors.required">New Password is required</div>
+                                          <div *ngIf="f.confirmPassword.errors.mustMatch">New Passwords must match</div>
                                         </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputUsername1">Full Name:</label>
-                                        <input type="text" class="form-control" id="exampleInputUsername1"
-                                            placeholder="Name">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail3">Phone No</label>
-                                        <input type="email" class="form-control" id="exampleInputEmail3"
-                                            placeholder="Phone No">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputConfirmPassword1">Country:</label>
-                                        <input type="password" class="form-control" id="exampleInputConfirmPassword1"
-                                            placeholder="Country">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputPassword4">Current Password</label>
-                                        <input type="password" class="form-control" id="exampleInputPassword4"
-                                            placeholder="Current Password">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputPassword4">New Password</label>
-                                        <input type="password" class="form-control" id="exampleInputPassword4"
-                                            placeholder="New Password">
-                                    </div>
-
+                  
                                     <button type="submit" class="btn btn-gradient-primary mr-2">Update</button>
-                                </form>
+                                  </form>
                             </div>
                         </div>
                     </div>

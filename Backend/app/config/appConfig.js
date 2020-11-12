@@ -17,7 +17,7 @@ module.exports = {
     },
     "server": { //Server Configuration
         "name": "Xunison Application",
-        "port": 3008,
+        "port": 3000,
         "considerPort": true
     },
     "token": {

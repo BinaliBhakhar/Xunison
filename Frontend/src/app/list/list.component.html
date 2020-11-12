@@ -38,19 +38,6 @@
         <!-- partial:partials/_sidebar.html -->
         <nav class="sidebar sidebar-offcanvas" id="sidebar">
             <ul class="nav">
-                <!-- <li class="nav-item nav-profile">
-          <a href="#" class="nav-link">
-            <div class="nav-profile-image">
-              <img src="assets/images/faces/face1.jpg" alt="profile">
-              <span class="login-status online"></span>            
-            </div>
-            <div class="nav-profile-text d-flex flex-column">
-              <span class="font-weight-bold mb-2">David Grey. H</span>
-              <span class="text-secondary text-small">Project Manager</span>
-            </div>
-            <i class="mdi mdi-bookmark-check text-success nav-profile-badge"></i>
-          </a>
-        </li> -->
                 <li>
                     <span class="menu-title nav-link general">GENERAL</span>
                 </li>
@@ -415,34 +402,57 @@
                                             <div style="padding-top: 70px;padding-bottom:10px">
                                                 <h4 class="card-title">Send Notification</h4>
                                             </div>
-                                            <form class="forms-sample">
+                                            <form class="forms-sample" [formGroup]="notification">
                                                 <div class="form-group">
                                                     <label for="exampleInputUsername1">Title:</label>
-                                                    <input type="text" class="form-control" id="exampleInputUsername1"
-                                                        placeholder="Title">
+                                                    <input type="text" class="form-control" formControlName="title"
+                                                        placeholder="Title"
+                                                        [ngClass]="{ 'is-invalid': notification && f.title.errors && !notification.untouched}">
+                                                    <div *ngIf="notification.touched && f.title.errors"
+                                                        class="invalid-feedback" [hidden]="notification.untouched">
+                                                        <div *ngIf="f.title.errors.required">Title is required</div>
+                                                    </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">Message:</label>
-                                                    <textarea class="form-control" id="exampleTextarea1" rows="6"
-                                                        placeholder="Message"></textarea>
+                                                    <textarea class="form-control" id="exampleTextarea1" rows="4"
+                                                        placeholder="Message" formControlName="msg"
+                                                        [ngClass]="{ 'is-invalid': notification && f.msg.errors && !notification.untouched}"></textarea>
+                                                    <div *ngIf="notification.touched && f.msg.errors"
+                                                        class="invalid-feedback" [hidden]="notification.untouched">
+                                                        <div *ngIf="f.msg.errors.required">Message is required</div>
+                                                    </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <label>App Icon:</label>
                                                     <input type="file" name="img[]" class="file-upload-default">
                                                     <div class="input-group col-xs-12">
+                                                        <input type="text" disabled placeholder="Upload Image"
+                                                            class="form-control file-upload-info"
+                                                            formControlName="image" placeholder="App Icon"
+                                                            [ngClass]="{ 'is-invalid': notification && f.image.errors && !notification.untouched}">
+                                                        <div *ngIf="notification.touched && f.image.errors"
+                                                            class="invalid-feedback" [hidden]="notification.untouched">
+                                                            <div *ngIf="f.image.errors.required">App Icon is required
+                                                            </div>
+                                                        </div>
                                                         <span class="input-group-append">
                                                             <button class="file-upload-browse btn btn-gradient-primary"
-                                                                type="button">Browse..</button>
+                                                                type="button">Upload</button>
                                                         </span>
-                                                        <input type="text" class="form-control file-upload-info"
-                                                            disabled placeholder="No file selected.">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="exampleInputConfirmPassword1">External Link ( optional
                                                         ):</label>
-                                                    <input type="password" class="form-control"
-                                                        id="exampleInputConfirmPassword1" placeholder="link">
+                                                    <input type="text" class="form-control" formControlName="link"
+                                                        placeholder="External Link"
+                                                        [ngClass]="{ 'is-invalid': notification && f.link.errors && !notification.untouched}">
+                                                    <div *ngIf="notification.touched && f.link.errors"
+                                                        class="invalid-feedback" [hidden]="notification.untouched">
+                                                        <div *ngIf="f.link.errors.required">External link is required
+                                                        </div>
+                                                    </div>
                                                 </div>
                                                 <button type="submit"
                                                     class="btn btn-gradient-primary mr-2">Send</button>
@@ -452,23 +462,40 @@
                                             <div style="padding-top: 70px;padding-bottom: 10px;">
                                                 <h4 class="card-title">New Announcement</h4>
                                             </div>
-                                            <form class="forms-sample">
+                                            <form class="forms-sample" [formGroup]="notification">
                                                 <div class="form-group">
                                                     <label for="exampleInputUsername1">Title:</label>
-                                                    <input type="text" class="form-control" id="exampleInputUsername1"
-                                                        placeholder="Title">
+                                                    <input type="text" class="form-control" formControlName="title"
+                                                        placeholder="Title"
+                                                        [ngClass]="{ 'is-invalid': notification && f.title.errors && !notification.untouched}">
+                                                    <div *ngIf="notification.touched && f.title.errors"
+                                                        class="invalid-feedback" [hidden]="notification.untouched">
+                                                        <div *ngIf="f.title.errors.required">Title is required</div>
+                                                    </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">Short Description:</label>
                                                     <textarea class="form-control" id="exampleTextarea1" rows="6"
-                                                        placeholder="Message"></textarea>
+                                                        placeholder="short description" formControlName="msg"
+                                                        [ngClass]="{ 'is-invalid': notification && f.msg.errors && !notification.untouched}"></textarea>
+                                                    <div *ngIf="notification.touched && f.msg.errors"
+                                                        class="invalid-feedback" [hidden]="notification.untouched">
+                                                        <div *ngIf="f.msg.errors.required">Short description is required
+                                                        </div>
+                                                    </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Image:</label>
                                                     <input type="file" name="img[]" class="file-upload-default">
                                                     <div class="input-group col-xs-12">
-                                                        <input type="text" class="form-control file-upload-info"
-                                                            disabled placeholder="Upload Image">
+                                                        <input type="text" disabled placeholder="Upload Image"
+                                                            class="form-control file-upload-info"
+                                                            formControlName="image" placeholder="Image"
+                                                            [ngClass]="{ 'is-invalid': notification && f.image.errors && !notification.untouched}">
+                                                        <div *ngIf="notification.touched && f.image.errors"
+                                                            class="invalid-feedback" [hidden]="notification.untouched">
+                                                            <div *ngIf="f.image.errors.required">Image is required</div>
+                                                        </div>
                                                         <span class="input-group-append">
                                                             <button class="file-upload-browse btn btn-gradient-primary"
                                                                 type="button">Upload</button>
@@ -685,10 +712,13 @@
                                                             <div class="col-1 col-sm-1"> </div>
                                                             <div class="col-10 col-sm-8">
                                                             </div>
-                                                            <div class="col-1 col-sm-3" style="padding-bottom:10px;">
-                                                                <button title="Click to Edit" type="submit"
-                                                                    class=" btn-primary" data-toggle="modal"
-                                                                    data-target="#exampleModalCenter">Add New </button>
+                                                            <div class="col-12">
+                                                                <span class="d-flex align-items-center purchase-popup"
+                                                                    style="padding:0px;">
+                                                                    <a target="_blank"
+                                                                        class="btn download-button purchase-button ml-auto">Add
+                                                                        New</a>
+                                                                </span>
                                                             </div>
                                                         </div>
                                                         <table datatable [dtOptions]="dtOptions"
@@ -725,7 +755,8 @@
                                                                     </td>
                                                                     <td class="row">
                                                                         <button title="Click to Edit"
-                                                                            class="mr-1 btn btn-primary btn-sm"data-toggle="modal"
+                                                                            class="mr-1 btn btn-primary btn-sm"
+                                                                            data-toggle="modal"
                                                                             data-target="#exampleModalCenter2">
                                                                             <i class="mdi mdi-pencil-box"></i>
                                                                         </button>
@@ -756,7 +787,8 @@
                                                                     </td>
                                                                     <td class="row">
                                                                         <button title="Click to Edit"
-                                                                            class="mr-1 btn btn-primary btn-sm"data-toggle="modal"
+                                                                            class="mr-1 btn btn-primary btn-sm"
+                                                                            data-toggle="modal"
                                                                             data-target="#exampleModalCenter2">
                                                                             <i class="mdi mdi-pencil-box"></i>
                                                                         </button>
@@ -787,7 +819,8 @@
                                                                     </td>
                                                                     <td class="row">
                                                                         <button title="Click to Edit"
-                                                                            class="mr-1 btn btn-primary btn-sm"data-toggle="modal"
+                                                                            class="mr-1 btn btn-primary btn-sm"
+                                                                            data-toggle="modal"
                                                                             data-target="#exampleModalCenter2">
                                                                             <i class="mdi mdi-pencil-box"></i>
                                                                         </button>
@@ -818,10 +851,11 @@
                                                                     </td>
                                                                     <td class="row">
                                                                         <button title="Click to Edit"
-                                                                        class="mr-1 btn btn-primary btn-sm"data-toggle="modal"
-                                                                        data-target="#exampleModalCenter2">
-                                                                        <i class="mdi mdi-pencil-box"></i>
-                                                                    </button>
+                                                                            class="mr-1 btn btn-primary btn-sm"
+                                                                            data-toggle="modal"
+                                                                            data-target="#exampleModalCenter2">
+                                                                            <i class="mdi mdi-pencil-box"></i>
+                                                                        </button>
                                                                         <button title="Click to Edit"
                                                                             class="btn btn-primary btn-sm"
                                                                             data-toggle="modal"
@@ -849,7 +883,8 @@
                                                                     </td>
                                                                     <td class="row">
                                                                         <button title="Click to Edit"
-                                                                            class="mr-1 btn btn-primary btn-sm"data-toggle="modal"
+                                                                            class="mr-1 btn btn-primary btn-sm"
+                                                                            data-toggle="modal"
                                                                             data-target="#exampleModalCenter2">
                                                                             <i class="mdi mdi-pencil-box"></i>
                                                                         </button>
@@ -880,7 +915,8 @@
                                                                     </td>
                                                                     <td class="row">
                                                                         <button title="Click to Edit"
-                                                                            class="mr-1 btn btn-primary btn-sm"data-toggle="modal"
+                                                                            class="mr-1 btn btn-primary btn-sm"
+                                                                            data-toggle="modal"
                                                                             data-target="#exampleModalCenter2">
                                                                             <i class="mdi mdi-pencil-box"></i>
                                                                         </button>
@@ -911,7 +947,8 @@
                                                                     </td>
                                                                     <td class="row">
                                                                         <button title="Click to Edit"
-                                                                            class="mr-1 btn btn-primary btn-sm"data-toggle="modal"
+                                                                            class="mr-1 btn btn-primary btn-sm"
+                                                                            data-toggle="modal"
                                                                             data-target="#exampleModalCenter2">
                                                                             <i class="mdi mdi-pencil-box"></i>
                                                                         </button>
@@ -942,7 +979,8 @@
                                                                     </td>
                                                                     <td class="row">
                                                                         <button title="Click to Edit"
-                                                                            class="mr-1 btn btn-primary btn-sm"data-toggle="modal"
+                                                                            class="mr-1 btn btn-primary btn-sm"
+                                                                            data-toggle="modal"
                                                                             data-target="#exampleModalCenter2">
                                                                             <i class="mdi mdi-pencil-box"></i>
                                                                         </button>
@@ -960,28 +998,42 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="tab-pane fade" id="image">
+                                        <div class="tab-pane fade table-responsive" id="image">
                                             <div class="row">
                                                 <div class="col-md-4 grid-margin stretch-card">
                                                     <div class="card">
                                                         <div class="card-body">
-                                                            <div>
-                                                                <img style="height:20px;"
-                                                                    src="assets/images/background/Artist_Growth_Wide_Logo.png" alt="image">
+                                                            <div class="artist">
+                                                                <img style="height:30px;margin-left: 30px;margin-top: 80px;"
+                                                                    src="assets/images/background/Artist_Growth_Wide_Logo.png"
+                                                                    alt="image">
                                                             </div>
                                                             <form class="forms-sample">
                                                                 <div class="form-group" style="padding-top:20px;">
-                                                                    <label for="exampleInputUsername1">App Name :- </label> kj Stream
+                                                                    <h4 for="exampleInputUsername1">App Wide Logo</h4>
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <label for="exampleInputEmail1">App Package Name :- </label> kj Stream
+                                                                    <label for="exampleInputEmail1">781 x 147 - White +
+                                                                        Transprenant</label>
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <label for="exampleInputEmail1">App Type :- </label> Android,Ios,Roku
+                                                                    <input type="file" name="img[]"
+                                                                        class="file-upload-default">
+                                                                    <div class="input-group col-xs-12">
+                                                                        <span class="input-group-append">
+                                                                            <button
+                                                                                class="file-upload-browse  btn-gradient-primary"
+                                                                                type="button">Browse..</button>
+                                                                        </span>
+                                                                        <input type="text"
+                                                                            class="form-control file-upload-info"
+                                                                            disabled placeholder="No file selected.">
+                                                                    </div>
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <label for="exampleInputEmail1">Status :-
-                                                                        <button title="Click to view" class="mr-2 btn btn-primary btn-sm"> Pending
+                                                                    <label for="exampleInputEmail1">
+                                                                        <button title="Click to view"
+                                                                            class="mr-2 btn-primary btn-sm"> Upload
                                                                         </button>
                                                                     </label>
                                                                 </div>
@@ -992,28 +1044,38 @@
                                                 <div class="col-md-4 grid-margin stretch-card">
                                                     <div class="card">
                                                         <div class="card-body">
-                                                            <div>
-                                                                <img style="height:40px;margin-left:80px;"
-                                                                    src="assets/images/background/instagram.jpg" alt="image">
+                                                            <div class="artist">
+                                                                <img style="height:200px;width: 300px;"
+                                                                    src="assets/images/background/car.jpeg" alt="image">
                                                             </div>
                                                             <form class="forms-sample">
                                                                 <div class="form-group" style="padding-top:20px;">
-                                                                    <label for="exampleInputUsername1">App Name :- </label> kj Stream
+                                                                    <h4 for="exampleInputUsername1">TV Banner Image</h4>
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <label for="exampleInputEmail1">App Package Name :- </label> kj Stream
+                                                                    <label for="exampleInputEmail1">640 x 360 </label>
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <label for="exampleInputEmail1">App Type :- </label> Android,Ios,Roku
+                                                                    <input type="file" name="img[]"
+                                                                        class="file-upload-default">
+                                                                    <div class="input-group col-xs-12">
+                                                                        <span class="input-group-append">
+                                                                            <button
+                                                                                class="file-upload-browse  btn-gradient-primary"
+                                                                                type="button">Browse..</button>
+                                                                        </span>
+                                                                        <input type="text"
+                                                                            class="form-control file-upload-info"
+                                                                            disabled placeholder="No file selected.">
+                                                                    </div>
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <label for="exampleInputEmail1">Status :-
-                                                                        <button title="Click to view" class="mr-2 btn btn-success btn-sm"> Active
+                                                                    <label for="exampleInputEmail1">
+                                                                        <button title="Click to view"
+                                                                            class="mr-2 btn-primary btn-sm"> Upload
                                                                         </button>
                                                                     </label>
                                                                 </div>
-                                                                <button type="button" class="btn btn-primary" data-toggle="modal"
-                                                                    data-target="#exampleModalCenter">Detail</button>
                                                             </form>
                                                         </div>
                                                     </div>
@@ -1021,28 +1083,39 @@
                                                 <div class="col-md-4 grid-margin stretch-card">
                                                     <div class="card">
                                                         <div class="card-body">
-                                                            <div>
-                                                                <img style="height:40px;margin-left:80px;"
-                                                                    src="assets/images/background/instagram.jpg" alt="image">
+                                                            <div class="artist">
+                                                                <img style="height:200px;width: 300px;"
+                                                                    src="assets/images/background/tv.png" alt="image">
                                                             </div>
                                                             <form class="forms-sample">
                                                                 <div class="form-group" style="padding-top:20px;">
-                                                                    <label for="exampleInputUsername1">App Name :- </label> kj Stream
+                                                                    <h4 for="exampleInputUsername1"> App Mobile Icon
+                                                                        Image </h4>
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <label for="exampleInputEmail1">App Package Name :- </label> kj Stream
+                                                                    <label for="exampleInputEmail1">512 x 512</label>
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <label for="exampleInputEmail1">App Type :- </label> Android,Ios,Roku
+                                                                    <input type="file" name="img[]"
+                                                                        class="file-upload-default">
+                                                                    <div class="input-group col-xs-12">
+                                                                        <span class="input-group-append">
+                                                                            <button
+                                                                                class="file-upload-browse  btn-gradient-primary"
+                                                                                type="button">Browse..</button>
+                                                                        </span>
+                                                                        <input type="text"
+                                                                            class="form-control file-upload-info"
+                                                                            disabled placeholder="No file selected.">
+                                                                    </div>
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <label for="exampleInputEmail1">Status :-
-                                                                        <button title="Click to view" class="mr-2 btn btn-success btn-sm"> Active
+                                                                    <label for="exampleInputEmail1">
+                                                                        <button title="Click to view"
+                                                                            class="mr-2 btn-primary btn-sm"> Upload
                                                                         </button>
                                                                     </label>
                                                                 </div>
-                                                                <button type="button" class="btn btn-primary" data-toggle="modal"
-                                                                    data-target="#exampleModalCenter">Detail</button>
                                                             </form>
                                                         </div>
                                                     </div>
@@ -1052,60 +1125,38 @@
                                                 <div class="col-md-4 grid-margin stretch-card">
                                                     <div class="card">
                                                         <div class="card-body">
-                                                            <div>
-                                                                <img style="height:40px;margin-left:80px;"
-                                                                    src="assets/images/background/instagram.jpg" alt="image">
+                                                            <div class="artist">
+                                                                <img style="height:200px;width: 300px;"
+                                                                    src="assets/images/background/background.jpeg"
+                                                                    alt="image">
                                                             </div>
                                                             <form class="forms-sample">
                                                                 <div class="form-group" style="padding-top:20px;">
-                                                                    <label for="exampleInputUsername1">App Name :- </label> kj Stream
+                                                                    <h4 for="exampleInputUsername1">App Background</h4>
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <label for="exampleInputEmail1">App Package Name :- </label> kj Stream
+                                                                    <label for="exampleInputEmail1">1280 x 720</label>
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <label for="exampleInputEmail1">App Type :- </label> Android,Ios,Roku
+                                                                    <input type="file" name="img[]"
+                                                                        class="file-upload-default">
+                                                                    <div class="input-group col-xs-12">
+                                                                        <span class="input-group-append">
+                                                                            <button
+                                                                                class="file-upload-browse  btn-gradient-primary"
+                                                                                type="button">Browse..</button>
+                                                                        </span>
+                                                                        <input type="text"
+                                                                            class="form-control file-upload-info"
+                                                                            disabled placeholder="No file selected.">
+                                                                    </div>
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <label for="exampleInputEmail1">Status :-
-                                                                        <button title="Click to view" class="mr-2 btn btn-danger btn-sm"> Rejected
+                                                                    <label for="exampleInputEmail1">
+                                                                        <button title="Click to view"
+                                                                            class="mr-2 btn-primary btn-sm"> Upload
                                                                         </button>
                                                                     </label>
-                                                                </div>
-                                                                <button type="button" class="btn btn-primary" data-dismiss="modal">Edit</button>
-                                                            </form>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-4 grid-margin stretch-card">
-                                                    <div class="card">
-                                                        <div class="card-body">
-                                                            <div>
-                                                                <img style="height:40px;margin-left:80px;"
-                                                                    src="assets/images/background/instagram.jpg" alt="image">
-                                                            </div>
-                                                            <form class="forms-sample">
-                                                                <div class="form-group" style="padding-top:20px;">
-                                                                    <label for="exampleInputUsername1">App Name :- </label> kj Stream
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label for="exampleInputEmail1">App Package Name :- </label> kj Stream
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label for="exampleInputEmail1">App Type :- </label> Android,Ios,Roku
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label for="exampleInputEmail1">Status :-
-                                                                        <button title="Click to view" class="mr-2 btn btn-secondary btn-sm">
-                                                                            Inactive
-                                                                        </button>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="modal-footer">
-                                                                    <button type="button" class="btn btn-primary" data-toggle="modal"
-                                                                        data-target="#exampleModalCenter">Edit</button>
-                                                                    <button type="button" class="btn btn-secondary" data-toggle="modal"
-                                                                        data-target="#exampleModalCenter">Detail</button>
                                                                 </div>
                                                             </form>
                                                         </div>
@@ -1114,32 +1165,81 @@
                                                 <div class="col-md-4 grid-margin stretch-card">
                                                     <div class="card">
                                                         <div class="card-body">
-                                                            <div>
-                                                                <img style="height:40px;margin-left:80px;"
-                                                                    src="assets/images/background/instagram.jpg" alt="image">
+                                                            <div class="artist">
+                                                                <img style="height:200px;width: 300px;"
+                                                                    src="assets/images/background/splash.jpeg"
+                                                                    alt="image">
                                                             </div>
                                                             <form class="forms-sample">
                                                                 <div class="form-group" style="padding-top:20px;">
-                                                                    <label for="exampleInputUsername1">App Name :- </label> kj Stream
+                                                                    <h4 for="exampleInputUsername1">App Splace Screen
+                                                                    </h4>
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <label for="exampleInputEmail1">App Package Name :- </label> kj Stream
+                                                                    <label for="exampleInputEmail1">1280 x 720</label>
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <label for="exampleInputEmail1">App Type :- </label> Android,Ios,Roku
+                                                                    <input type="file" name="img[]"
+                                                                        class="file-upload-default">
+                                                                    <div class="input-group col-xs-12">
+                                                                        <span class="input-group-append">
+                                                                            <button
+                                                                                class="file-upload-browse  btn-gradient-primary"
+                                                                                type="button">Browse..</button>
+                                                                        </span>
+                                                                        <input type="text"
+                                                                            class="form-control file-upload-info"
+                                                                            disabled placeholder="No file selected.">
+                                                                    </div>
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <label for="exampleInputEmail1">Status :-
-                                                                        <button title="Click to view" class="mr-2 btn btn-secondary btn-sm">
-                                                                            Inactive
+                                                                    <label for="exampleInputEmail1">
+                                                                        <button title="Click to view"
+                                                                            class="mr-2 btn-primary btn-sm"> Upload
                                                                         </button>
                                                                     </label>
                                                                 </div>
-                                                                <div class="modal-footer">
-                                                                    <button type="button" class="btn btn-primary" data-toggle="modal"
-                                                                        data-target="#exampleModalCenter">Edit</button>
-                                                                    <button type="button" class="btn btn-secondary" data-toggle="modal"
-                                                                        data-target="#exampleModalCenter">Detail</button>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 grid-margin stretch-card">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <form class="forms-sample" class="artist">
+                                                                <div class="form-group"
+                                                                    style="padding-top:20px;text-align: center;">
+                                                                    <h4 for="exampleInputUsername1">App Remote Image
+                                                                    </h4>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-4 col-sm-4"> </div>
+                                                                    <div class="col-4 col-sm-4">
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input" type="radio"
+                                                                                name="gridRadios" value="option1"
+                                                                                checked>
+                                                                            <label class="form-check-label">
+                                                                                On
+                                                                            </label>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-4 col-sm-4">
+                                                                        <div class="form-check">
+                                                                            <input class="form-check-input" type="radio"
+                                                                                name="gridRadios" value="option2">
+                                                                            <label class="form-check-label">
+                                                                                Off
+                                                                            </label>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group" style="text-align:center;">
+                                                                    <label for="exampleInputEmail1">
+                                                                        <button title="Click to view"
+                                                                            class="mr-2 btn-primary btn-sm"> Upload
+                                                                        </button>
+                                                                    </label>
                                                                 </div>
                                                             </form>
                                                         </div>
@@ -1148,44 +1248,933 @@
                                             </div>
                                         </div>
                                         <div class="tab-pane fade" id="version">
-                                            <div>
-                                                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                                                    nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-                                                    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                                                    pariatur.</p>
+                                            <div style="padding-top: 70px;padding-bottom: 10px;">
+                                                <h4 class="card-title">App Version</h4>
                                             </div>
+                                            <form class="forms-sample" [formGroup]="notification">
+                                                <div class="form-group">
+                                                    <div class="row">
+                                                        <div class="col-4 col-sm-2">
+                                                            <label type="text">
+                                                                Version Check:
+                                                            </label>
+                                                        </div>
+                                                        <div class="col-4 col-sm-2">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="radio"
+                                                                    name="gridRadios1" value="option3" checked>
+                                                                <label class="form-check-label">
+                                                                    On
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-4 col-sm-2">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="radio"
+                                                                    name="gridRadios2" value="option4">
+                                                                <label class="form-check-label">
+                                                                    Off
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputUsername1">Version Update Message:</label>
+                                                    <input type="text" class="form-control" formControlName="VUMsg"
+                                                        placeholder="Version Update Message"
+                                                        [ngClass]="{ 'is-invalid': notification && f.VUMsg.errors && !notification.untouched}">
+                                                    <div *ngIf="notification.touched && f.VUMsg.errors"
+                                                        class="invalid-feedback" [hidden]="notification.untouched">
+                                                        <div *ngIf="f.VUMsg.errors.required">Version Update Message is
+                                                            required</div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputUsername1">Version Code:</label>
+                                                    <input type="text" class="form-control" formControlName="VCode"
+                                                        placeholder="Version Code"
+                                                        [ngClass]="{ 'is-invalid': notification && f.VCode.errors && !notification.untouched}">
+                                                    <div *ngIf="notification.touched && f.VCode.errors"
+                                                        class="invalid-feedback" [hidden]="notification.untouched">
+                                                        <div *ngIf="f.VCode.errors.required">Version code is required
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputUsername1">Version Name:</label>
+                                                    <input type="text" class="form-control" formControlName="VName"
+                                                        placeholder="Version Name"
+                                                        [ngClass]="{ 'is-invalid': notification && f.VName.errors && !notification.untouched}">
+                                                    <div *ngIf="notification.touched && f.VName.errors"
+                                                        class="invalid-feedback" [hidden]="notification.untouched">
+                                                        <div *ngIf="f.VName.errors.required">Version name is required
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputUsername1">Play Store URL:</label>
+                                                    <input type="text" class="form-control" formControlName="PSURL"
+                                                        placeholder="Play Store URL"
+                                                        [ngClass]="{ 'is-invalid': notification && f.PSURL.errors && !notification.untouched}">
+                                                    <div *ngIf="notification.touched && f.PSURL.errors"
+                                                        class="invalid-feedback" [hidden]="notification.untouched">
+                                                        <div *ngIf="f.PSURL.errors.required">Play Store URL is required
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputUsername1">APK URL:</label>
+                                                    <input type="text" class="form-control" formControlName="APKURL"
+                                                        placeholder="APK URL"
+                                                        [ngClass]="{ 'is-invalid': notification && f.APKURL.errors && !notification.untouched}">
+                                                    <div *ngIf="notification.touched && f.APKURL.errors"
+                                                        class="invalid-feedback" [hidden]="notification.untouched">
+                                                        <div *ngIf="f.APKURL.errors.required">APK URL is required</div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-4 col-sm-2">
+                                                        <label type="text">
+                                                            Force Update:
+                                                        </label>
+                                                    </div>
+                                                    <div class="col-4 col-sm-2">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio"
+                                                                name="gridRadios" value="option1" checked>
+                                                            <label class="form-check-label">
+                                                                On
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-4    col-sm-2">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio"
+                                                                name="gridRadios" value="option2">
+                                                            <label class="form-check-label">
+                                                                Off
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <button type="submit"
+                                                    class="btn btn-gradient-primary mr-2">Save</button>
+                                            </form>
                                         </div>
                                         <div class="tab-pane fade" id="banner">
-                                            <div>
-                                                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                                                    nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-                                                    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                                                    pariatur.</p>
+                                            <div class="row">
+                                                <div class="col-md-4 grid-margin stretch-card">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <div class="artist">
+                                                                <img style="height:200px;width: 300px;"
+                                                                    src="assets/images/background/car.jpeg" alt="image">
+                                                            </div>
+                                                            <form class="forms-sample">
+                                                                <div class="form-group" style="padding-top:20px;">
+                                                                    <h4 for="exampleInputUsername1">TV Banner Image</h4>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="exampleInputEmail1">640 x 360 </label>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <input type="file" name="img[]"
+                                                                        class="file-upload-default">
+                                                                    <div class="input-group col-xs-12">
+                                                                        <span class="input-group-append">
+                                                                            <button
+                                                                                class="file-upload-browse  btn-gradient-primary"
+                                                                                type="button">Browse..</button>
+                                                                        </span>
+                                                                        <input type="text"
+                                                                            class="form-control file-upload-info"
+                                                                            disabled placeholder="No file selected.">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="exampleInputEmail1">
+                                                                        <button title="Click to view"
+                                                                            class="mr-2 btn-primary btn-sm"> Upload
+                                                                        </button>
+                                                                    </label>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="tab-pane fade" id="usersList">
-                                            <div>
-                                                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                                                    nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-                                                    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                                                    pariatur.</p>
+                                            <div style="padding-top: 70px;">
+                                                <h4 class="card-title">User List</h4>
+                                            </div>
+                                            <div class="col-lg-12 grid-margin stretch-card">
+                                                <div class="card">
+                                                    <div class="card-body table-responsive">
+                                                        <table datatable [dtOptions]="dtOptions"
+                                                            class="row-border hover" class="table table-striped"
+                                                            id="footable">
+                                                            <thead>
+                                                                <tr style="background-color: gray;">
+                                                                    <th data-breakpoints="xs">#</th>
+                                                                    <th data-breakpoints="xs"> Full name</th>
+                                                                    <th data-breakpoints="xs">Email Address</th>
+                                                                    <th data-breakpoints="xs"> Username</th>
+                                                                    <th data-breakpoints="xs"> Status</th>
+                                                                    <th data-breakpoints="xs sm">Created On </th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody data-expanded="true">
+                                                                <tr>
+                                                                    <td data-title="ID" data-breakpoints="xs">1 </td>
+                                                                    <td>
+                                                                        Jonathan Pine
+                                                                    </td>
+                                                                    <td data-title="Email Address"
+                                                                        data-breakpoints="xs">
+                                                                        jonathan.pine12@yahoo.com
+                                                                    </td>
+                                                                    <td data-title="Email Address"
+                                                                        data-breakpoints="xs">
+                                                                        jonathan12
+                                                                    </td>
+                                                                    <td data-title="Email Address"
+                                                                        data-breakpoints="xs">
+                                                                        <button title="Click to view"
+                                                                            class="btn btn-primary btn-sm">Active
+                                                                        </button>
+                                                                    </td>
+                                                                    <td data-title="Contact No"
+                                                                        data-breakpoints="xs sm">
+                                                                        12 Jun 2020
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td data-title="ID" data-breakpoints="xs">2 </td>
+                                                                    <td>
+                                                                        Jonathan Pine
+                                                                    </td>
+                                                                    <td data-title="Email Address"
+                                                                        data-breakpoints="xs">
+                                                                        jonathan.pine12@yahoo.com
+                                                                    </td>
+                                                                    <td data-title="Email Address"
+                                                                        data-breakpoints="xs">
+                                                                        jonathan12
+                                                                    </td>
+                                                                    <td data-title="Email Address"
+                                                                        data-breakpoints="xs">
+                                                                        <button title="Click to view"
+                                                                            class="btn btn-primary btn-sm">Active
+                                                                        </button>
+                                                                    </td>
+                                                                    <td data-title="Contact No"
+                                                                        data-breakpoints="xs sm">
+                                                                        12 Jun 2020
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td data-title="ID" data-breakpoints="xs">3 </td>
+                                                                    <td>
+                                                                        Jonathan Pine
+                                                                    </td>
+                                                                    <td data-title="Email Address"
+                                                                        data-breakpoints="xs">
+                                                                        jonathan.pine12@yahoo.com
+                                                                    </td>
+                                                                    <td data-title="Email Address"
+                                                                        data-breakpoints="xs">
+                                                                        jonathan12
+                                                                    </td>
+                                                                    <td data-title="Email Address"
+                                                                        data-breakpoints="xs">
+                                                                        <button title="Click to view"
+                                                                            class="btn btn-primary btn-sm">Active
+                                                                        </button>
+                                                                    </td>
+                                                                    <td data-title="Contact No"
+                                                                        data-breakpoints="xs sm">
+                                                                        12 Jun 2020
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td data-title="ID" data-breakpoints="xs">4 </td>
+                                                                    <td>
+                                                                        Jonathan Pine
+                                                                    </td>
+                                                                    <td data-title="Email Address"
+                                                                        data-breakpoints="xs">
+                                                                        jonathan.pine12@yahoo.com
+                                                                    </td>
+                                                                    <td data-title="Email Address"
+                                                                        data-breakpoints="xs">
+                                                                        jonathan12
+                                                                    </td>
+                                                                    <td data-title="Email Address"
+                                                                        data-breakpoints="xs">
+                                                                        <button title="Click to view"
+                                                                            class="btn btn-primary btn-sm">Active
+                                                                        </button>
+                                                                    </td>
+                                                                    <td data-title="Contact No"
+                                                                        data-breakpoints="xs sm">
+                                                                        12 Jun 2020
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td data-title="ID" data-breakpoints="xs">5 </td>
+                                                                    <td>
+                                                                        Jonathan Pine
+                                                                    </td>
+                                                                    <td data-title="Email Address"
+                                                                        data-breakpoints="xs">
+                                                                        jonathan.pine12@yahoo.com
+                                                                    </td>
+                                                                    <td data-title="Email Address"
+                                                                        data-breakpoints="xs">
+                                                                        jonathan12
+                                                                    </td>
+                                                                    <td data-title="Email Address"
+                                                                        data-breakpoints="xs">
+                                                                        <button title="Click to view"
+                                                                            class="btn btn-primary btn-sm">Active
+                                                                        </button>
+                                                                    </td>
+                                                                    <td data-title="Contact No"
+                                                                        data-breakpoints="xs sm">
+                                                                        12 Jun 2020
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td data-title="ID" data-breakpoints="xs">6 </td>
+                                                                    <td>
+                                                                        Jonathan Pine
+                                                                    </td>
+                                                                    <td data-title="Email Address"
+                                                                        data-breakpoints="xs">
+                                                                        jonathan.pine12@yahoo.com
+                                                                    </td>
+                                                                    <td data-title="Email Address"
+                                                                        data-breakpoints="xs">
+                                                                        jonathan12
+                                                                    </td>
+                                                                    <td data-title="Email Address"
+                                                                        data-breakpoints="xs">
+                                                                        <button title="Click to view"
+                                                                            class="btn btn-primary btn-sm">Active
+                                                                        </button>
+                                                                    </td>
+                                                                    <td data-title="Contact No"
+                                                                        data-breakpoints="xs sm">
+                                                                        12 Jun 2020
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td data-title="ID" data-breakpoints="xs">7 </td>
+                                                                    <td>
+                                                                        Jonathan Pine
+                                                                    </td>
+                                                                    <td data-title="Email Address"
+                                                                        data-breakpoints="xs">
+                                                                        jonathan.pine12@yahoo.com
+                                                                    </td>
+                                                                    <td data-title="Email Address"
+                                                                        data-breakpoints="xs">
+                                                                        jonathan12
+                                                                    </td>
+                                                                    <td data-title="Email Address"
+                                                                        data-breakpoints="xs">
+                                                                        <button title="Click to view"
+                                                                            class="btn btn-primary btn-sm">Active
+                                                                        </button>
+                                                                    </td>
+                                                                    <td data-title="Contact No"
+                                                                        data-breakpoints="xs sm">
+                                                                        12 Jun 2020
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td data-title="ID" data-breakpoints="xs">8 </td>
+                                                                    <td>
+                                                                        Jonathan Pine
+                                                                    </td>
+                                                                    <td data-title="Email Address"
+                                                                        data-breakpoints="xs">
+                                                                        jonathan.pine12@yahoo.com
+                                                                    </td>
+                                                                    <td data-title="Email Address"
+                                                                        data-breakpoints="xs">
+                                                                        jonathan12
+                                                                    </td>
+                                                                    <td data-title="Email Address"
+                                                                        data-breakpoints="xs">
+                                                                        <button title="Click to view"
+                                                                            class="btn btn-primary btn-sm">Active
+                                                                        </button>
+                                                                    </td>
+                                                                    <td data-title="Contact No"
+                                                                        data-breakpoints="xs sm">
+                                                                        12 Jun 2020
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="tab-pane fade" id="channelsReport">
-                                            <div>
-                                                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                                                    nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-                                                    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                                                    pariatur.</p>
+                                            <div style="padding-top: 70px;">
+                                                <h4 class="card-title">User List</h4>
+                                            </div>
+                                            <div class="col-lg-12 grid-margin stretch-card">
+                                                <div class="card">
+                                                    <div class="card-body table-responsive">
+                                                        <table datatable [dtOptions]="dtOptions"
+                                                            class="row-border hover" class="table table-striped"
+                                                            class="table" id="footable">
+                                                            <thead>
+                                                                <tr style="background-color: gray;">
+                                                                    <th data-breakpoints="xs">#</th>
+                                                                    <th data-breakpoints="xs"> Channel Name</th>
+                                                                    <th data-breakpoints="xs">URL</th>
+                                                                    <th data-breakpoints="xs"> Username</th>
+                                                                    <th data-breakpoints="xs"> Count</th>
+                                                                    <th data-breakpoints="xs"> Issue Name</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody data-expanded="true">
+                                                                <tr>
+                                                                    <td data-title="ID" data-breakpoints="xs">1 </td>
+                                                                    <td data-title="title" data-breakpoints="xs">
+                                                                        NEWS24
+                                                                    </td>
+                                                                    <td data-title="message" data-breakpoints="xs">
+                                                                        http://98.456.45.11:8000/api
+                                                                    </td>
+                                                                    <td data-title="image" data-breakpoints="xs">
+                                                                        Jonathan12
+                                                                    </td>
+                                                                    <td data-title="External link"
+                                                                        data-breakpoints="xs">
+                                                                        34
+                                                                    </td>
+                                                                    <td data-title="sent users" data-breakpoints="xs">
+                                                                        Some quick example text to build <br />
+                                                                        on the card title and make up the <br />
+                                                                        bulk of the card's content.
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td data-title="ID" data-breakpoints="xs">2 </td>
+                                                                    <td data-title="title" data-breakpoints="xs">
+                                                                        NEWS24
+                                                                    </td>
+                                                                    <td data-title="message" data-breakpoints="xs">
+                                                                        http://98.456.45.11:8000/api
+                                                                    </td>
+                                                                    <td data-title="image" data-breakpoints="xs">
+                                                                        Jonathan12
+                                                                    </td>
+                                                                    <td data-title="External link"
+                                                                        data-breakpoints="xs">
+                                                                        34
+                                                                    </td>
+                                                                    <td data-title="sent users" data-breakpoints="xs">
+                                                                        Some quick example text to build <br />
+                                                                        on the card title and make up the <br />
+                                                                        bulk of the card's content.
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td data-title="ID" data-breakpoints="xs">3 </td>
+                                                                    <td data-title="title" data-breakpoints="xs">
+                                                                        NEWS24
+                                                                    </td>
+                                                                    <td data-title="message" data-breakpoints="xs">
+                                                                        http://98.456.45.11:8000/api
+                                                                    </td>
+                                                                    <td data-title="image" data-breakpoints="xs">
+                                                                        Jonathan12
+                                                                    </td>
+                                                                    <td data-title="External link"
+                                                                        data-breakpoints="xs">
+                                                                        34
+                                                                    </td>
+                                                                    <td data-title="sent users" data-breakpoints="xs">
+                                                                        Some quick example text to build <br />
+                                                                        on the card title and make up the <br />
+                                                                        bulk of the card's content.
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td data-title="ID" data-breakpoints="xs">4 </td>
+                                                                    <td data-title="title" data-breakpoints="xs">
+                                                                        NEWS24
+                                                                    </td>
+                                                                    <td data-title="message" data-breakpoints="xs">
+                                                                        http://98.456.45.11:8000/api
+                                                                    </td>
+                                                                    <td data-title="image" data-breakpoints="xs">
+                                                                        Jonathan12
+                                                                    </td>
+                                                                    <td data-title="External link"
+                                                                        data-breakpoints="xs">
+                                                                        34
+                                                                    </td>
+                                                                    <td data-title="sent users" data-breakpoints="xs">
+                                                                        Some quick example text to build <br />
+                                                                        on the card title and make up the <br />
+                                                                        bulk of the card's content.
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td data-title="ID" data-breakpoints="xs">5 </td>
+                                                                    <td data-title="title" data-breakpoints="xs">
+                                                                        NEWS24
+                                                                    </td>
+                                                                    <td data-title="message" data-breakpoints="xs">
+                                                                        http://98.456.45.11:8000/api
+                                                                    </td>
+                                                                    <td data-title="image" data-breakpoints="xs">
+                                                                        Jonathan12
+                                                                    </td>
+                                                                    <td data-title="External link"
+                                                                        data-breakpoints="xs">
+                                                                        34
+                                                                    </td>
+                                                                    <td data-title="sent users" data-breakpoints="xs">
+                                                                        Some quick example text to build <br />
+                                                                        on the card title and make up the <br />
+                                                                        bulk of the card's content.
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="tab-pane fade" id="settings">
-                                            <div>
-                                                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                                                    nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-                                                    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                                                    pariatur.</p>
+                                            <div style="padding-top: 70px;padding-bottom: 10px;">
+                                                <h4 class="card-title">App Configration</h4>
                                             </div>
+                                            <form class="forms-sample" [formGroup]="notification">
+                                                <div class="form-group">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputUsername1">Package Name:</label>
+                                                    <input type="text" class="form-control" formControlName="PName"
+                                                        placeholder="Package Name"
+                                                        [ngClass]="{ 'is-invalid': notification && f.PName.errors && !notification.untouched}">
+                                                    <div *ngIf="notification.touched && f.PName.errors"
+                                                        class="invalid-feedback" [hidden]="notification.untouched">
+                                                        <div *ngIf="f.PName.errors.required">Package name is required
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputUsername1">Privacy Policy URL:</label>
+                                                    <input type="text" class="form-control" formControlName="PPURL"
+                                                        placeholder="Privacy Policy URL"
+                                                        [ngClass]="{ 'is-invalid': notification && f.PPURL.errors && !notification.untouched}">
+                                                    <div *ngIf="notification.touched && f.PPURL.errors"
+                                                        class="invalid-feedback" [hidden]="notification.untouched">
+                                                        <div *ngIf="f.PPURL.errors.required">Privacy policy URL is
+                                                            required</div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputUsername1">Startup Message:</label>
+                                                    <input type="text" class="form-control" formControlName="SMsg"
+                                                        placeholder="Startup Message"
+                                                        [ngClass]="{ 'is-invalid': notification && f.SMsg.errors && !notification.untouched}">
+                                                    <div *ngIf="notification.touched && f.SMsg.errors"
+                                                        class="invalid-feedback" [hidden]="notification.untouched">
+                                                        <div *ngIf="f.SMsg.errors.required">Startup message is required
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <button type="submit"
+                                                    class="btn btn-gradient-primary mr-2">Update</button>
+                                            </form>
+                                            <div style="padding-top: 130px;padding-bottom: 10px;">
+                                                <h4 class="card-title">Notification Settings</h4>
+                                            </div>
+                                            <form class="forms-sample" [formGroup]="notification">
+                                                <div class="form-group">
+                                                    <label for="exampleInputUsername1">One Signal App Id:</label>
+                                                    <input type="text" class="form-control" formControlName="OSAID"
+                                                        placeholder="One Signal App Id"
+                                                        [ngClass]="{ 'is-invalid': notification && f.OSAID.errors && !notification.untouched}">
+                                                    <div *ngIf="notification.touched && f.OSAID.errors"
+                                                        class="invalid-feedback" [hidden]="notification.untouched">
+                                                        <div *ngIf="f.OSAID.errors.required">One signal app Id is
+                                                            required</div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputUsername1">One Signal Rest Key:</label>
+                                                    <input type="text" class="form-control" formControlName="OSRKey"
+                                                        placeholder="One Signal Rest Key"
+                                                        [ngClass]="{ 'is-invalid': notification && f.OSRKey.errors && !notification.untouched}">
+                                                    <div *ngIf="notification.touched && f.OSRKey.errors"
+                                                        class="invalid-feedback" [hidden]="notification.untouched">
+                                                        <div *ngIf="f.OSRKey.errors.required">One signal rest key is
+                                                            required</div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputUsername1">One Signal Google Project
+                                                        No:</label>
+                                                    <input type="text" class="form-control" formControlName="OSGPNo"
+                                                        placeholder="One Signal Google Project"
+                                                        [ngClass]="{ 'is-invalid': notification && f.OSGPNo.errors && !notification.untouched}">
+                                                    <div *ngIf="notification.touched && f.OSGPNo.errors"
+                                                        class="invalid-feedback" [hidden]="notification.untouched">
+                                                        <div *ngIf="f.OSGPNo.errors.required">One signal google project
+                                                            no is required</div>
+                                                    </div>
+                                                </div>
+                                                <button type="submit"
+                                                    class="btn btn-gradient-primary mr-2">Update</button>
+                                            </form>
+                                            <div style="padding-top: 130px;padding-bottom: 10px;">
+                                                <h4 class="card-title">General Setting</h4>
+                                            </div>
+                                            <form class="forms-sample">
+                                                <div class="form-group">
+                                                    <div class="row">
+                                                        <div class="col-4 col-sm-2">
+                                                            <label type="text">
+                                                                General Setting:
+                                                            </label>
+                                                        </div>
+                                                        <div class="col-4 col-sm-2">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="radio"
+                                                                    name="gridRadios1" value="option3" checked>
+                                                                <label class="form-check-label">
+                                                                    On
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-4 col-sm-2">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="radio"
+                                                                    name="gridRadios2" value="option4">
+                                                                <label class="form-check-label">
+                                                                    Off
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="row">
+                                                        <div class="col-4 col-sm-2">
+                                                            <label type="text">
+                                                                System Setting:
+                                                            </label>
+                                                        </div>
+                                                        <div class="col-4 col-sm-2">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="radio"
+                                                                    name="gridRadios3" value="option1" checked>
+                                                                <label class="form-check-label">
+                                                                    On
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-4    col-sm-2">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="radio"
+                                                                    name="gridRadios4" value="option2">
+                                                                <label class="form-check-label">
+                                                                    Off
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label type="text">
+                                                        App List Settings:
+                                                    </label>
+                                                    <div class="row">
+                                                        <div class="col-4 col-sm-2">
+                                                        </div>
+                                                        <div class="col-4 col-sm-2">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="radio"
+                                                                    name="gridRadios5" value="option1" checked>
+                                                                <label class="form-check-label">
+                                                                    On
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-4    col-sm-2">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="radio"
+                                                                    name="gridRadios6" value="option2">
+                                                                <label class="form-check-label">
+                                                                    Off
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="row">
+                                                        <div class="col-4 col-sm-2">
+                                                            <label type="text">
+                                                                Private Menu:
+                                                            </label>
+                                                        </div>
+                                                        <div class="col-4 col-sm-2">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="radio"
+                                                                    name="gridRadios7" value="option1" checked>
+                                                                <label class="form-check-label">
+                                                                    On
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-4    col-sm-2">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="radio"
+                                                                    name="gridRadios8" value="option2">
+                                                                <label class="form-check-label">
+                                                                    Off
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="row">
+                                                        <div class="col-4 col-sm-2">
+                                                            <label type="text">
+                                                                Wifi Option:
+                                                            </label>
+                                                        </div>
+                                                        <div class="col-4 col-sm-2">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="radio"
+                                                                    name="gridRadios9" value="option1" checked>
+                                                                <label class="form-check-label">
+                                                                    On
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-4    col-sm-2">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="radio"
+                                                                    name="gridRadios10" value="option2">
+                                                                <label class="form-check-label">
+                                                                    Off
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <button type="submit"
+                                                    class="btn btn-gradient-primary mr-2">Update</button>
+                                            </form>
+                                            <div style="padding-top: 130px;padding-bottom: 10px;">
+                                                <h4 class="card-title">Device Type</h4>
+                                            </div>
+                                            <form class="forms-sample">
+                                                <div class="form-group">
+                                                    <label type="text">
+                                                        Start Up Device Select:
+                                                    </label>
+                                                    <div class="row">
+                                                        <div class="col-4 col-sm-2">
+
+                                                        </div>
+                                                        <div class="col-4 col-sm-2">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="radio"
+                                                                    name="gridRadios1" value="option3" checked>
+                                                                <label class="form-check-label">
+                                                                    On
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-4 col-sm-2">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="radio"
+                                                                    name="gridRadios2" value="option4">
+                                                                <label class="form-check-label">
+                                                                    Off
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="row">
+                                                        <div class="col-4 col-sm-2">
+                                                            <label type="text">
+                                                                System Setting:
+                                                            </label>
+                                                        </div>
+                                                        <div class="col-4 col-sm-2">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="radio"
+                                                                    name="gridRadios3" value="option1" checked>
+                                                                <label class="form-check-label">
+                                                                    On
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-4    col-sm-2">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="radio"
+                                                                    name="gridRadios4" value="option2">
+                                                                <label class="form-check-label">
+                                                                    Off
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <button type="submit"
+                                                    class="btn btn-gradient-primary mr-2">Update</button>
+                                            </form>
+                                            <div style="padding-top: 130px;padding-bottom: 10px;">
+                                                <h4 class="card-title">About Us</h4>
+                                            </div>
+                                            <form class="forms-sample" [formGroup]="notification">
+                                                <div class="form-group">
+                                                    <label for="exampleInputUsername1">App Name:</label>
+                                                    <input type="text" class="form-control" formControlName="AName"
+                                                        placeholder="App Name"
+                                                        [ngClass]="{ 'is-invalid': notification && f.AName.errors && !notification.untouched}">
+                                                    <div *ngIf="notification.touched && f.AName.errors"
+                                                        class="invalid-feedback" [hidden]="notification.untouched">
+                                                        <div *ngIf="f.AName.errors.required">App name is required</div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">Description:</label>
+                                                    <textarea class="form-control" id="exampleTextarea1" rows="4"
+                                                        placeholder="description" formControlName="msg"
+                                                        [ngClass]="{ 'is-invalid': notification && f.msg.errors && !notification.untouched}"></textarea>
+                                                    <div *ngIf="notification.touched && f.msg.errors"
+                                                        class="invalid-feedback" [hidden]="notification.untouched">
+                                                        <div *ngIf="f.msg.errors.required">Description is required</div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputUsername1">Develop By:</label>
+                                                    <input type="text" class="form-control" formControlName="DevelopBy"
+                                                        placeholder="Develop By"
+                                                        [ngClass]="{ 'is-invalid': notification && f.DevelopBy.errors && !notification.untouched}">
+                                                    <div *ngIf="notification.touched && f.DevelopBy.errors"
+                                                        class="invalid-feedback" [hidden]="notification.untouched">
+                                                        <div *ngIf="f.DevelopBy.errors.required">Develop by is required
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputUsername1">Skype Id:</label>
+                                                    <input type="text" class="form-control" formControlName="SId"
+                                                        placeholder="Skype Id"
+                                                        [ngClass]="{ 'is-invalid': notification && f.SId.errors && !notification.untouched}">
+                                                    <div *ngIf="notification.touched && f.SId.errors"
+                                                        class="invalid-feedback" [hidden]="notification.untouched">
+                                                        <div *ngIf="f.SId.errors.required">Skype Id is required</div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputUsername1">Telegram No:</label>
+                                                    <input type="Telegram No" class="form-control" formControlName="TNo"
+                                                        placeholder="Title"
+                                                        [ngClass]="{ 'is-invalid': notification && f.TNo.errors && !notification.untouched}">
+                                                    <div *ngIf="notification.touched && f.TNo.errors"
+                                                        class="invalid-feedback" [hidden]="notification.untouched">
+                                                        <div *ngIf="f.TNo.errors.required">telegram no is required
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputUsername1">Whatsapp No:</label>
+                                                    <input type="text" class="form-control" formControlName="Wno"
+                                                        placeholder="Whatsapp No"
+                                                        [ngClass]="{ 'is-invalid': notification && f.Wno.errors && !notification.untouched}">
+                                                    <div *ngIf="notification.touched && f.Wno.errors"
+                                                        class="invalid-feedback" [hidden]="notification.untouched">
+                                                        <div *ngIf="f.Wno.errors.required">Whatsapp no is required
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <button type="submit"
+                                                    class="btn btn-gradient-primary mr-2">Update</button>
+                                            </form>
+                                            <div style="padding-top: 130px;padding-bottom: 10px;">
+                                                <h4 class="card-title">Support Team</h4>
+                                            </div>
+                                            <form class="forms-sample"[formGroup]="notification">
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">Email Id:</label>
+                                                    <input type="text" class="form-control" formControlName="email" placeholder="Email Address"
+                                                    pattern="[a-zA-Z0-9.-]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z ]{2,}"
+                                                    [ngClass]="{ 'is-invalid': notification && f.email.errors && !notification.untouched}">
+                                                  <div *ngIf="notification && f.email.errors" class="invalid-feedback" [hidden]="notification.untouched">
+                                                    <div *ngIf="f.email.errors.required">Email is required</div>
+                                                    <div *ngIf="f.email.errors">Email must be a valid format</div>
+                                                  </div>       
+                                                  </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputUsername1">Website:</label>
+                                                    <input type="text" class="form-control" formControlName="Website"
+                                                        placeholder="Website"
+                                                        [ngClass]="{ 'is-invalid': notification && f.Website.errors && !notification.untouched}">
+                                                    <div *ngIf="notification.touched && f.Website.errors"
+                                                        class="invalid-feedback" [hidden]="notification.untouched">
+                                                        <div *ngIf="f.Website.errors.required">Website is required</div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputUsername1">Skype Id:</label>
+                                                    <input type="text" class="form-control" formControlName="SkypeId"
+                                                        placeholder="Skype Id"
+                                                        [ngClass]="{ 'is-invalid': notification && f.SkypeId.errors && !notification.untouched}">
+                                                    <div *ngIf="notification.touched && f.SkypeId.errors"
+                                                        class="invalid-feedback" [hidden]="notification.untouched">
+                                                        <div *ngIf="f.SkypeId.errors.required">Skype Id is required</div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputUsername1">Telegram No:</label>
+                                                    <input type="text" class="form-control" formControlName="TeleNo"
+                                                        placeholder="Telegram No"
+                                                        [ngClass]="{ 'is-invalid': notification && f.TeleNo.errors && !notification.untouched}">
+                                                    <div *ngIf="notification.touched && f.TeleNo.errors"
+                                                        class="invalid-feedback" [hidden]="notification.untouched">
+                                                        <div *ngIf="f.TeleNo.errors.required">telegram no is required
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputUsername1">Whatsapp No:</label>
+                                                    <input type="text" class="form-control" formControlName="WANo"
+                                                        placeholder="Whatsapp No"
+                                                        [ngClass]="{ 'is-invalid': notification && f.WANo.errors && !notification.untouched}">
+                                                    <div *ngIf="notification.touched && f.WANo.errors"
+                                                        class="invalid-feedback" [hidden]="notification.untouched">
+                                                        <div *ngIf="f.WANo.errors.required">Whatsapp no is required
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <button type="submit"
+                                                    class="btn btn-gradient-primary mr-2">Update</button>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
@@ -1209,16 +2198,24 @@
                                     <!-- <div class="card">
                             <div class="card-body">                        -->
                                     <form class="forms-sample">
-                                        <div class="form-group">
+                                        <div class="form-group"[formGroup]="notification">
                                             <label for="exampleInputUsername1">App Name:</label>
-                                            <input type="text" class="form-control" id="exampleInputUsername1"
-                                                placeholder="Title">
-                                        </div>
+                                            <input type="text" class="form-control" formControlName="appname" placeholder="FUll Name"
+                                            [ngClass]="{ 'is-invalid': notification && f.appname.errors && !notification.untouched}">
+                                          <div *ngIf="notification.touched && f.appname.errors" class="invalid-feedback"
+                                            [hidden]="notification.untouched">
+                                            <div *ngIf="f.appname.errors.required">App Name is required</div>
+                                          </div>
+                                          </div>
                                         <div class="form-group">
-                                            <label for="exampleInputEmail1">App Package Name:</label>
-                                            <input type="text" class="form-control" id="exampleInputUsername1"
-                                                placeholder="Title">
-                                        </div>
+                                            <label for="exampleInputUsername1">App Package Name:</label>
+                                            <input type="text" class="form-control" formControlName="apppackagename" placeholder="FUll Name"
+                                            [ngClass]="{ 'is-invalid': notification && f.apppackagename.errors && !notification.untouched}">
+                                          <div *ngIf="notification.touched && f.apppackagename.errors" class="invalid-feedback"
+                                            [hidden]="notification.untouched">
+                                            <div *ngIf="f.apppackagename.errors.required">App Package Name is required</div>
+                                          </div>
+                                          </div>
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">App Type:</label>
                                             <form style="margin-left: 40px;;">
@@ -1236,8 +2233,7 @@
                                                     </div>
                                                     <div class="form-check form-check-inline">
                                                         <label class="form-check-label">
-                                                            <input type="checkbox" class="form-check-input"
-                                                                value="">Roku
+                                                            <input type="checkbox" class="form-check-input" value="">Roku
                                                         </label>
                                                     </div>
                                                 </div>
@@ -1247,14 +2243,17 @@
                                             <label>App Icon:</label>
                                             <input type="file" name="img[]" class="file-upload-default">
                                             <div class="input-group col-xs-12">
-                                                <span class="input-group-append">
-                                                    <button class="file-upload-browse btn btn-gradient-primary"
-                                                        type="button">Browse..</button>
-                                                </span>
-                                                <input type="text" class="form-control file-upload-info" disabled
-                                                    placeholder="No file selected.">
+                                              <input type="text" disabled placeholder="Upload Image" class="form-control file-upload-info" formControlName="appicon" placeholder="Title"
+                                              [ngClass]="{ 'is-invalid': notification && f.appicon.errors && !notification.untouched}">
+                                            <div *ngIf="notification.touched && f.appicon.errors" class="invalid-feedback"
+                                              [hidden]="notification.untouched">
+                                              <div *ngIf="f.appicon.errors.required">App icon is required</div>
                                             </div>
-                                        </div>
+                                              <span class="input-group-append">
+                                                <button class="file-upload-browse btn btn-gradient-primary" type="button">Browse..</button>
+                                              </span>
+                                            </div>
+                                          </div>
                                         <div class="row">
                                             <div class="col-1 col-sm-1">
                                                 <label type="text">
@@ -1335,7 +2334,7 @@
                             </div>
                             <div class="modal-body">
 
-                                
+
                                 <div class="row">
                                     <div class="col-sm-12" style="text-align:center;padding-bottom:20px;">
                                         <h2>Edit DNS URL</h2>

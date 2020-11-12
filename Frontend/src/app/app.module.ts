@@ -32,6 +32,7 @@ import { AddAppComponent } from './add-app/add-app.component';
 import { ListComponent } from './list/list.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -69,7 +70,8 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
     MatCardModule,
     MatGridListModule,
     MatSidenavModule,
-    DataTablesModule
+    DataTablesModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

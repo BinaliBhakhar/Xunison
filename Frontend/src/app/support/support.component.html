@@ -37,20 +37,7 @@
     <div class="container-fluid page-body-wrapper">
         <!-- partial:partials/_sidebar.html -->
         <nav class="sidebar sidebar-offcanvas" id="sidebar">
-            <ul class="nav">
-                <!-- <li class="nav-item nav-profile">
-          <a href="#" class="nav-link">
-            <div class="nav-profile-image">
-              <img src="assets/images/faces/face1.jpg" alt="profile">
-              <span class="login-status online"></span>            
-            </div>
-            <div class="nav-profile-text d-flex flex-column">
-              <span class="font-weight-bold mb-2">David Grey. H</span>
-              <span class="text-secondary text-small">Project Manager</span>
-            </div>
-            <i class="mdi mdi-bookmark-check text-success nav-profile-badge"></i>
-          </a>
-        </li> -->
+            <ul class="nav">                
         <li>       
             <span class="menu-title nav-link general">GENERAL</span>      
         </li>
@@ -103,43 +90,70 @@
                         <div class="card">
                             <div class="card-body table-responsive">
                                 <h4 class="card-title">Need Support</h4>
-                                <form class="forms-sample">
+                                <form class="forms-sample"[formGroup]="support">
                                     <div class="form-group"style="padding-top:20px;">
                                         <label for="exampleInputUsername1">Company Name:</label>
-                                        <input type="text" class="form-control" id="exampleInputUsername1"
-                                            placeholder="Title">
-                                    </div>
+                                        <input type="text" class="form-control" formControlName="companyname" placeholder="FUll Name"
+                                        [ngClass]="{ 'is-invalid': support && f.companyname.errors && !support.untouched}">
+                                      <div *ngIf="support.touched && f.companyname.errors" class="invalid-feedback"
+                                        [hidden]="support.untouched">
+                                        <div *ngIf="f.companyname.errors.required">Company Name is required</div>
+                                      </div>
+                                      </div>
+                                      <div class="form-group">
+                                        <label for="exampleInputEmail1">Email address:</label>
+                                        <input type="text" class="form-control" formControlName="email" placeholder="Email Address"
+                                        pattern="[a-zA-Z0-9.-]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z ]{2,}"
+                                        [ngClass]="{ 'is-invalid': support && f.email.errors && !support.untouched}">
+                                      <div *ngIf="support && f.email.errors" class="invalid-feedback" [hidden]="support.untouched">
+                                        <div *ngIf="f.email.errors.required">Email is required</div>
+                                        <div *ngIf="f.email.errors">Email must be a valid email address</div>
+                                      </div>       
+                                      </div>
+                                      <div class="form-group">
+                                        <label for="exampleInputEmail3">Phone No</label>
+                                        <input type="text" class="form-control" formControlName="mobileno" placeholder="Mobile No"
+                                        pattern="^\s*(?:\+?(\d{1,3}))?[- (]*(\d{3})[- )]*(\d{3})[- ]*(\d{4})(?: *[x/#]{1}(\d+))?\s*$"
+                                        [ngClass]="{ 'is-invalid': support && f.mobileno.errors && !support.untouched}" />
+                                      <div *ngIf="support && f.mobileno.errors" class="invalid-feedback" [hidden]="support.untouched">
+                                        <div *ngIf="f.mobileno.errors.required">Phone No is required</div>
+                                        <div *ngIf="f.mobileno.errors">Phone No must be a valid</div>
+                                      </div>
+                                      </div> 
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Email:</label>
-                                        <input type="text" class="form-control" id="exampleInputUsername1"
-                                            placeholder="Title">
-                                    </div>  
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Phone No:</label>
-                                        <input type="text" class="form-control" id="exampleInputUsername1"
-                                            placeholder="Title">
-                                    </div>   
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Subject:</label>
-                                        <input type="text" class="form-control" id="exampleInputUsername1"
-                                            placeholder="Title">
-                                    </div>      
+                                        <label for="exampleInputUsername1">Subject:</label>
+                                        <input type="text" class="form-control" formControlName="subject" placeholder="FUll Name"
+                                        [ngClass]="{ 'is-invalid': support && f.subject.errors && !support.untouched}">
+                                      <div *ngIf="support.touched && f.subject.errors" class="invalid-feedback"
+                                        [hidden]="support.untouched">
+                                        <div *ngIf="f.subject.errors.required">Subject is required</div>
+                                      </div>
+                                      </div>   
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Short Description:</label>
-                                        <textarea class="form-control" id="exampleTextarea1" rows="6" placeholder="Message"></textarea>
+                                        <textarea class="form-control" id="exampleTextarea1" rows="6" placeholder="short description"
+                                         formControlName="shortdes" 
+                                        [ngClass]="{ 'is-invalid': support && f.shortdes.errors && !support.untouched}"></textarea>
+                                      <div *ngIf="support.touched && f.shortdes.errors" class="invalid-feedback"
+                                        [hidden]="support.untouched">
+                                        <div *ngIf="f.shortdes.errors.required">Short description is required</div>
+                                      </div>
                                       </div>                             
-                                    <div class="form-group">
+                                      <div class="form-group">
                                         <label>File Attachment:</label>
                                         <input type="file" name="img[]" class="file-upload-default">
                                         <div class="input-group col-xs-12">
-                                            <span class="input-group-append">
-                                                <button class="file-upload-browse btn btn-gradient-primary"
-                                                    type="button">Browse..</button>
-                                            </span>
-                                            <input type="text" class="form-control file-upload-info" disabled
-                                                placeholder="No file selected.">
+                                          <input type="text" disabled placeholder="Upload Image" class="form-control file-upload-info" formControlName="fileattach" placeholder="Title"
+                                          [ngClass]="{ 'is-invalid': support && f.fileattach.errors && !support.untouched}">
+                                        <div *ngIf="support.touched && f.fileattach.errors" class="invalid-feedback"
+                                          [hidden]="support.untouched">
+                                          <div *ngIf="f.fileattach.errors.required">File attachment is required</div>
                                         </div>
-                                    </div>
+                                          <span class="input-group-append">
+                                            <button class="file-upload-browse btn btn-gradient-primary" type="button">Upload</button>
+                                          </span>
+                                        </div>
+                                      </div>
                                     <div class="row">
                                         <div class="col-1 col-sm-1">
                                             <label type="text">

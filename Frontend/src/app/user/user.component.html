@@ -1,521 +1,297 @@
 <div class="container-scroller">
-    <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
-      <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-        <a class="navbar-brand brand-logo" href="index.html"><img src="assets/images/logo.svg" alt="logo" /></a>
-        <a class="navbar-brand brand-logo-mini" href="index.html"><img src="assets/images/logo-mini.svg" alt="logo" /></a>
-      </div>
-      <div class="navbar-menu-wrapper d-flex align-items-stretch">
-        <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
-          <span class="mdi mdi-menu"></span>
-        </button>
-        <ul class="navbar-nav navbar-nav-right">
-          <li class="nav-item d-none d-lg-block full-screen-link">
-            <a class="nav-link">
-              <i class="mdi mdi-fullscreen" id="fullscreen-button"></i>
-            </a>
-          </li>
-  
-          <li class="nav-item nav-logout d-none d-lg-block">
-            <a class="nav-link" href="#">
-              <i class="mdi mdi-lock"></i>
-            </a>
-          </li>
-          <li class="nav-item nav-settings d-none d-lg-block">
-            <a class="nav-link" href="#">
-              <i class="mdi mdi-arrow-right-bold-box"></i>
-            </a>
-          </li>
-        </ul>
-      </div>
+  <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+    <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+      <a class="navbar-brand brand-logo" href="index.html"><img src="assets/images/logo.svg" alt="logo" /></a>
+      <a class="navbar-brand brand-logo-mini" href="index.html"><img src="assets/images/logo-mini.svg" alt="logo" /></a>
+    </div>
+    <div class="navbar-menu-wrapper d-flex align-items-stretch">
+      <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+        <span class="mdi mdi-menu"></span>
+      </button>
+      <ul class="navbar-nav navbar-nav-right">
+        <li class="nav-item d-none d-lg-block full-screen-link">
+          <a class="nav-link">
+            <i class="mdi mdi-fullscreen" id="fullscreen-button"></i>
+          </a>
+        </li>
+
+        <li class="nav-item nav-logout d-none d-lg-block">
+          <a class="nav-link" href="#">
+            <i class="mdi mdi-lock"></i>
+          </a>
+        </li>
+        <li class="nav-item nav-settings d-none d-lg-block">
+          <a class="nav-link" href="#">
+            <i class="mdi mdi-arrow-right-bold-box"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!-- partial -->
+  <div class="container-fluid page-body-wrapper">
+    <!-- partial:partials/_sidebar.html -->
+    <nav class="sidebar sidebar-offcanvas" id="sidebar">
+      <ul class="nav">
+        <li>
+          <span class="menu-title nav-link general">GENERAL</span>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="header">
+            <span class="menu-title">Dashboard</span>
+            <i class="mdi mdi-television menu-icon"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="profile">
+            <span class="menu-title">Profile</span>
+            <i class="mdi mdi-contacts menu-icon"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="notification">
+            <span class="menu-title">Notifications</span>
+            <i class="mdi mdi-bell-outline menu-icon"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="announcement">
+            <span class="menu-title">Announcement</span>
+            <i class="mdi mdi-comment-alert menu-icon"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+            <span class="menu-title">Users</span>
+            <i class="menu-arrow"></i>
+            <i class="mdi mdi-account-circle menu-icon"></i>
+          </a>
+          <div class="collapse" id="ui-basic">
+            <ul class="nav flex-column sub-menu">
+              <li class="nav-item"> <a class="nav-link" href="admin">Admin</a></li>
+              <li class="nav-item"> <a class="nav-link" href="user">User</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="manage-app">
+            <span class="menu-title">Manage Apps</span>
+            <i class="mdi mdi-apps menu-icon"></i>
+          </a>
+        </li>
+      </ul>
     </nav>
     <!-- partial -->
-    <div class="container-fluid page-body-wrapper">
-      <!-- partial:partials/_sidebar.html -->
-      <nav class="sidebar sidebar-offcanvas" id="sidebar">
-        <ul class="nav">
-          <!-- <li class="nav-item nav-profile">
-            <a href="#" class="nav-link">
-              <div class="nav-profile-image">
-                <img src="assets/images/faces/face1.jpg" alt="profile">
-                <span class="login-status online"></span>            
+    <div class="main-panel">
+      <div class="content-wrapper">
+        <div class="row" id="proBanner">
+          <div class="col-12">
+            <span class="d-flex align-items-center purchase-popup">
+              <p style="font-weight: bolder;">Users</p>
+              <button data-toggle="modal" data-target="#edit" target="_blank"
+                class="btn download-button purchase-button ml-auto">Add New</button>
+            </span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+              <div class="card-body table-responsive">
+                <h4 class="card-title">User List</h4>
+                <table datatable [dtOptions]="dtOptions" class="row-border hover" class="table table-striped"
+                  id="footable">
+                  <thead>
+                    <tr style="background-color: gray;">
+                      <th data-breakpoints="xs">#</th>
+                      <th data-breakpoints="xs"> Full name</th>
+                      <th data-breakpoints="xs">Company name</th>
+                      <th data-breakpoints="xs">Email</th>
+                      <th data-breakpoints="xs"> Phone No</th>
+                      <th data-breakpoints="xs"> Username</th>
+                      <th data-breakpoints="xs"> App Added</th>
+                      <th data-breakpoints="xs"> Status</th>
+                      <th data-breakpoints="xs sm">Created On </th>
+                      <th data-breakpoints="xs sm md">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody data-expanded="true">
+                    <tr *ngFor="let user of users">
+                      <td data-title="ID" data-breakpoints="xs">{{user.id}} </td>
+                      <td>
+                        <b *ngIf="!user.isEdit">{{user.fullName}}</b>
+                        <input type="text" class="col-md-12" placeholder="fullName" [(ngModel)]="user.fullName"
+                          *ngIf="user.isEdit" />
+                      </td>
+                      <td>
+                        <b *ngIf="!user.isEdit">{{user.companyName}}</b>
+                        <input type="text" class="col-md-12" placeholder="companyName" [(ngModel)]="user.companyName"
+                          *ngIf="user.isEdit" />
+                      </td>
+                      <td>
+                        <b *ngIf="!user.isEdit">{{user.email}}</b>
+                        <input type="text" class="col-md-12" placeholder="emailAddress" [(ngModel)]="user.email"
+                          *ngIf="user.isEdit" />
+                      </td>
+                      <td data-title="Contact No" data-breakpoints="xs sm">
+                        <b *ngIf="!user.isEdit">{{user.phoneNo}}</b>
+                        <input type="text" class="col-md-12" placeholder="phoneNo" [(ngModel)]="user.phoneNo"
+                          *ngIf="user.isEdit" />
+                      </td>
+                      <td data-title="Date of Birth" data-breakpoints="xs sm md">
+                        <b *ngIf="!user.isEdit">{{user.userName}}</b>
+                        <input type="text" class="col-md-12" placeholder="userName" [(ngModel)]="user.userName"
+                          *ngIf="user.isEdit" />
+                      </td>
+                      <td data-title="Address" data-breakpoints="xs">
+                        <b *ngIf="!user.isEdit">{{user.appAdded}}</b>
+                        <input type="text" class="col-md-12" placeholder="appAdded" [(ngModel)]="user.appAdded"
+                          *ngIf="user.isEdit" />
+                      </td>
+                      <td data-title="status" data-breakpoints="xs">
+                        <button title="Click to view" class="btn btn-primary btn-sm" data-toggle="modal"
+                          data-target="#exampleModalCenter">Active
+                        </button>
+                      </td>
+                      <td data-title="Address" data-breakpoints="xs">
+                        <b *ngIf="!user.isEdit">{{user.createdOn}}</b>
+                        <input type="text" class="col-md-12" placeholder="createdOn" [(ngModel)]="user.createdOn"
+                          *ngIf="user.isEdit" />
+                      </td>
+
+                      <td class="row" data-title="action" data-breakpoints="xs">
+                        <button *ngIf="!user.isEdit" (click)="user.isEdit = !user.isEdit" title="Click to Edit"
+                          class="mr-1 btn btn-primary btn-sm">
+                          <i class="mdi mdi-pencil-box"></i>
+                        </button>
+                        <button *ngIf="user.isEdit" (click)="saveUser(user)" title="Click to Save"
+                          class="mr-1 btn btn-secondary btn-sm">
+                          <i class="mdi mdi-content-save"></i>
+                        </button>
+                        <button *ngIf="user.isEdit" (click)="user.isEdit = !user.isEdit" title="Click to Cancel Edit"
+                          class="btn btn-danger btn-sm">
+                          <i class="mdi mdi-close-box"></i>
+                        </button>
+                        <button title="Click to Edit" (click)="deleteUser(user)" class="btn btn-primary btn-sm"
+                          data-toggle="modal" data-target="#exampleModalCenter1">
+                          <i class="mdi mdi-delete-forever"></i>
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
-              <div class="nav-profile-text d-flex flex-column">
-                <span class="font-weight-bold mb-2">David Grey. H</span>
-                <span class="text-secondary text-small">Project Manager</span>
-              </div>
-              <i class="mdi mdi-bookmark-check text-success nav-profile-badge"></i>
-            </a>
-          </li> -->
-          <li>       
-            <span class="menu-title nav-link general">GENERAL</span>      
-        </li>
-          <li class="nav-item">
-            <a class="nav-link" href="header">
-              <span class="menu-title">Dashboard</span>
-              <i class="mdi mdi-television menu-icon"></i>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="profile">
-              <span class="menu-title">Profile</span>              
-              <i class="mdi mdi-contacts menu-icon"></i>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="notification">
-              <span class="menu-title">Notifications</span>
-              <i class="mdi mdi-bell-outline menu-icon"></i>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="announcement">
-              <span class="menu-title">Announcement</span>
-              <i class="mdi mdi-comment-alert menu-icon"></i>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-              <span class="menu-title">Users</span>
-              <i class="menu-arrow"></i>
-              <i class="mdi mdi-account-circle menu-icon"></i>
-            </a>
-            <div class="collapse" id="ui-basic">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="admin">Admin</a></li>
-                <li class="nav-item"> <a class="nav-link" href="user">User</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="manage-app">
-              <span class="menu-title">Manage Apps</span>
-              <i class="mdi mdi-apps menu-icon"></i>
-            </a>
-          </li>
-        </ul>
-      </nav>
-      <!-- partial -->
-      <div class="main-panel">
-        <div class="content-wrapper">
-          <div class="row" id="proBanner">
-            <div class="col-12">
-              <span class="d-flex align-items-center purchase-popup">
-                <p style="font-weight: bolder;">Users</p>
-              </span>
             </div>
           </div>
-          <div class="row">
-            <div class="col-lg-12 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body table-responsive">
-                  <h4 class="card-title">User List</h4>
-                  <table datatable [dtOptions]="dtOptions" class="row-border hover" class="table table-striped" id="footable">
-                    <thead>
-                      <tr style="background-color: gray;">
-                        <th data-breakpoints="xs">#</th>
-                        <th data-breakpoints="xs"> Full name</th>
-                        <th data-breakpoints="xs">Company name</th>
-                        <th data-breakpoints="xs">Email</th>
-                        <th data-breakpoints="xs"> Phone No</th>
-                        <th data-breakpoints="xs"> Username</th>
-                        <th data-breakpoints="xs"> App Added</th>
-                        <th data-breakpoints="xs"> Status</th>
-                        <th data-breakpoints="xs sm">Created On </th>
-                        <th data-breakpoints="xs sm md">Action</th>
-                      </tr>
-                    </thead>
-                    <tbody data-expanded="true">
-                      <tr>
-                        <td data-title="ID" data-breakpoints="xs">1 </td>
-                        <td data-title="fullName" data-breakpoints="xs">
-                          Herman Beck
-                        </td>
-                        <td data-title="companyName" data-breakpoints="xs">
-                          Lula Tv
-                        </td>
-                        <td data-title="Email Address" data-breakpoints="xs">
-                          herman@gmail.com
-                        </td>
-                        <td data-title="phoneNo" data-breakpoints="xs">
-                          2323345466
-                        </td>
-                        <td data-title="userName" data-breakpoints="xs">
-                          Herman
-                        </td>
-                        <td data-title="appAdded" data-breakpoints="xs">
-                          12
-                        </td>
-                        <td data-title="status" data-breakpoints="xs">
-                          <button title="Click to view" class="btn btn-primary btn-sm" data-toggle="modal"
-                            data-target="#exampleModalCenter">Active                          
-                          </button>
-                        </td>
-                        <td data-title="createdOn" data-breakpoints="xs sm">
-                          7 nov 2019
-                        </td>                      
-                        <td class="row"data-title="action" data-breakpoints="xs">
-                          <button  title="Click to Edit" class="mr-1 btn btn-primary btn-sm">
-                              <i class="mdi mdi-pencil-box"></i>
-                          </button>
-                          <button  title="Click to Edit" class="btn btn-primary btn-sm" data-toggle="modal"
-                          data-target="#exampleModalCenter1">
-                            <i class="mdi mdi-delete-forever"></i>
-                        </button>                                           
-                      </td>                    
-                      </tr>
-                      <!-- <button title="Click to Save" class="mr-1 btn btn-secondary btn-sm">
-                              <i class="mdi mdi-content-save-settings"></i>
-                          </button>
-                          <button title="Click to Cancel Edit" class="btn btn-danger btn-sm">
-                              <i class="mdi mdi-close-box"></i>
-                          </button> -->    
-                      <tr>
-                        <td data-title="ID" data-breakpoints="xs">2 </td>
-                        <td data-title="fullName" data-breakpoints="xs">
-                          Herman Beck
-                        </td>
-                        <td data-title="companyName" data-breakpoints="xs">
-                          Lula Tv
-                        </td>
-                        <td data-title="Email Address" data-breakpoints="xs">
-                          herman@gmail.com
-                        </td>
-                        <td data-title="phoneNo" data-breakpoints="xs">
-                          2323345466
-                        </td>
-                        <td data-title="userName" data-breakpoints="xs">
-                          Herman
-                        </td>
-                        <td data-title="appAdded" data-breakpoints="xs">
-                          12
-                        </td>
-                        <td data-title="status" data-breakpoints="xs">
-                          <button title="Click to view" class="btn btn-primary btn-sm" data-toggle="modal"
-                            data-target="#exampleModalCenter">Active                          
-                          </button>
-                        </td>
-                        <td data-title="createdOn" data-breakpoints="xs sm">
-                          7 nov 2019
-                        </td>                      
-                        <td class="row"data-title="action" data-breakpoints="xs">
-                          <button  title="Click to Edit" class="mr-1 btn btn-primary btn-sm">
-                              <i class="mdi mdi-pencil-box"></i>
-                          </button>
-                          <button  title="Click to Edit" class="btn btn-primary btn-sm" data-toggle="modal"
-                          data-target="#exampleModalCenter1">
-                            <i class="mdi mdi-delete-forever"></i>
-                        </button>                                           
-                      </td> 
-                      </tr>
-                      <tr>
-                        <td data-title="ID" data-breakpoints="xs">3 </td>
-                        <td data-title="fullName" data-breakpoints="xs">
-                          Herman Beck
-                        </td>
-                        <td data-title="companyName" data-breakpoints="xs">
-                          Lula Tv
-                        </td>
-                        <td data-title="Email Address" data-breakpoints="xs">
-                          herman@gmail.com
-                        </td>
-                        <td data-title="phoneNo" data-breakpoints="xs">
-                          2323345466
-                        </td>
-                        <td data-title="userName" data-breakpoints="xs">
-                          Herman
-                        </td>
-                        <td data-title="appAdded" data-breakpoints="xs">
-                          12
-                        </td>
-                        <td data-title="status" data-breakpoints="xs">
-                          <button title="Click to view" class="btn btn-primary btn-sm" data-toggle="modal"
-                            data-target="#exampleModalCenter">Active                          
-                          </button>
-                        </td>
-                        <td data-title="createdOn" data-breakpoints="xs sm">
-                          7 nov 2019
-                        </td>                      
-                        <td class="row"data-title="action" data-breakpoints="xs">
-                          <button  title="Click to Edit" class="mr-1 btn btn-primary btn-sm">
-                              <i class="mdi mdi-pencil-box"></i>
-                          </button>
-                          <button  title="Click to Edit" class="btn btn-primary btn-sm" data-toggle="modal"
-                          data-target="#exampleModalCenter1">
-                            <i class="mdi mdi-delete-forever"></i>
-                        </button>                                           
-                      </td> 
-                      </tr>
-                      <tr>
-                        <td data-title="ID" data-breakpoints="xs">4 </td>
-                        <td data-title="fullName" data-breakpoints="xs">
-                          Herman Beck
-                        </td>
-                        <td data-title="companyName" data-breakpoints="xs">
-                          Lula Tv
-                        </td>
-                        <td data-title="Email Address" data-breakpoints="xs">
-                          herman@gmail.com
-                        </td>
-                        <td data-title="phoneNo" data-breakpoints="xs">
-                          2323345466
-                        </td>
-                        <td data-title="userName" data-breakpoints="xs">
-                          Herman
-                        </td>
-                        <td data-title="appAdded" data-breakpoints="xs">
-                          12
-                        </td>
-                        <td data-title="status" data-breakpoints="xs">
-                          <button title="Click to view" class="btn btn-primary btn-sm" data-toggle="modal"
-                            data-target="#exampleModalCenter">Active                          
-                          </button>
-                        </td>
-                        <td data-title="createdOn" data-breakpoints="xs sm">
-                          7 nov 2019
-                        </td>                      
-                        <td class="row"data-title="action" data-breakpoints="xs">
-                          <button  title="Click to Edit" class="mr-1 btn btn-primary btn-sm">
-                              <i class="mdi mdi-pencil-box"></i>
-                          </button>
-                          <button  title="Click to Edit" class="btn btn-primary btn-sm" data-toggle="modal"
-                          data-target="#exampleModalCenter1">
-                            <i class="mdi mdi-delete-forever"></i>
-                        </button>                                           
-                      </td> 
-                      </tr>
-                      <tr>
-                        <td data-title="ID" data-breakpoints="xs">5 </td>
-                        <td data-title="fullName" data-breakpoints="xs">
-                          Herman Beck
-                        </td>
-                        <td data-title="companyName" data-breakpoints="xs">
-                          Lula Tv
-                        </td>
-                        <td data-title="Email Address" data-breakpoints="xs">
-                          herman@gmail.com
-                        </td>
-                        <td data-title="phoneNo" data-breakpoints="xs">
-                          2323345466
-                        </td>
-                        <td data-title="userName" data-breakpoints="xs">
-                          Herman
-                        </td>
-                        <td data-title="appAdded" data-breakpoints="xs">
-                          12
-                        </td>
-                        <td data-title="status" data-breakpoints="xs">
-                          <button title="Click to view" class="btn btn-primary btn-sm" data-toggle="modal"
-                            data-target="#exampleModalCenter">Active                          
-                          </button>
-                        </td>
-                        <td data-title="createdOn" data-breakpoints="xs sm">
-                          7 nov 2019
-                        </td>                      
-                        <td class="row"data-title="action" data-breakpoints="xs">
-                          <button  title="Click to Edit" class="mr-1 btn btn-primary btn-sm">
-                              <i class="mdi mdi-pencil-box"></i>
-                          </button>
-                          <button  title="Click to Edit" class="btn btn-primary btn-sm" data-toggle="modal"
-                          data-target="#exampleModalCenter1">
-                            <i class="mdi mdi-delete-forever"></i>
-                        </button>                                           
-                      </td> 
-                      </tr>
-                      <tr>
-                        <td data-title="ID" data-breakpoints="xs">6 </td>
-                        <td data-title="fullName" data-breakpoints="xs">
-                          Herman Beck
-                        </td>
-                        <td data-title="companyName" data-breakpoints="xs">
-                          Lula Tv
-                        </td>
-                        <td data-title="Email Address" data-breakpoints="xs">
-                          herman@gmail.com
-                        </td>
-                        <td data-title="phoneNo" data-breakpoints="xs">
-                          2323345466
-                        </td>
-                        <td data-title="userName" data-breakpoints="xs">
-                          Herman
-                        </td>
-                        <td data-title="appAdded" data-breakpoints="xs">
-                          12
-                        </td>
-                        <td data-title="status" data-breakpoints="xs">
-                          <button title="Click to view" class="btn btn-primary btn-sm" data-toggle="modal"
-                            data-target="#exampleModalCenter">Active                          
-                          </button>
-                        </td>
-                        <td data-title="createdOn" data-breakpoints="xs sm">
-                          7 nov 2019
-                        </td>                      
-                        <td class="row"data-title="action" data-breakpoints="xs">
-                          <button  title="Click to Edit" class="mr-1 btn btn-primary btn-sm">
-                              <i class="mdi mdi-pencil-box"></i>
-                          </button>
-                          <button  title="Click to Edit" class="btn btn-primary btn-sm" data-toggle="modal"
-                          data-target="#exampleModalCenter1">
-                            <i class="mdi mdi-delete-forever"></i>
-                        </button>                                           
-                      </td> 
-                      </tr>
-                      <tr>
-                        <td data-title="ID" data-breakpoints="xs">7 </td>
-                        <td data-title="fullName" data-breakpoints="xs">
-                          Herman Beck
-                        </td>
-                        <td data-title="companyName" data-breakpoints="xs">
-                          Lula Tv
-                        </td>
-                        <td data-title="Email Address" data-breakpoints="xs">
-                          herman@gmail.com
-                        </td>
-                        <td data-title="phoneNo" data-breakpoints="xs">
-                          2323345466
-                        </td>
-                        <td data-title="userName" data-breakpoints="xs">
-                          Herman
-                        </td>
-                        <td data-title="appAdded" data-breakpoints="xs">
-                          12
-                        </td>
-                        <td data-title="status" data-breakpoints="xs">
-                          <button title="Click to view" class="btn btn-primary btn-sm" data-toggle="modal"
-                            data-target="#exampleModalCenter">Active                          
-                          </button>
-                        </td>
-                        <td data-title="createdOn" data-breakpoints="xs sm">
-                          7 nov 2019
-                        </td>                      
-                        <td class="row"data-title="action" data-breakpoints="xs">
-                          <button  title="Click to Edit" class="mr-1 btn btn-primary btn-sm">
-                              <i class="mdi mdi-pencil-box"></i>
-                          </button>
-                          <button  title="Click to Edit" class="btn btn-primary btn-sm" data-toggle="modal"
-                          data-target="#exampleModalCenter1">
-                            <i class="mdi mdi-delete-forever"></i>
-                        </button>                                           
-                      </td> 
-                      </tr>
-                      <tr>
-                        <td data-title="ID" data-breakpoints="xs">8 </td>
-                        <td data-title="fullName" data-breakpoints="xs">
-                          Herman Beck
-                        </td>
-                        <td data-title="companyName" data-breakpoints="xs">
-                          Lula Tv
-                        </td>
-                        <td data-title="Email Address" data-breakpoints="xs">
-                          herman@gmail.com
-                        </td>
-                        <td data-title="phoneNo" data-breakpoints="xs">
-                          2323345466
-                        </td>
-                        <td data-title="userName" data-breakpoints="xs">
-                          Herman
-                        </td>
-                        <td data-title="appAdded" data-breakpoints="xs">
-                          12
-                        </td>
-                        <td data-title="status" data-breakpoints="xs">
-                          <button title="Click to view" class="btn btn-primary btn-sm" data-toggle="modal"
-                            data-target="#exampleModalCenter">Active                          
-                          </button>
-                        </td>
-                        <td data-title="createdOn" data-breakpoints="xs sm">
-                          7 nov 2019
-                        </td>                      
-                        <td class="row"data-title="action" data-breakpoints="xs">
-                          <button  title="Click to Edit" class="mr-1 btn btn-primary btn-sm">
-                              <i class="mdi mdi-pencil-box"></i>
-                          </button>
-                          <button  title="Click to Edit" class="btn btn-primary btn-sm" data-toggle="modal"
-                          data-target="#exampleModalCenter1">
-                            <i class="mdi mdi-delete-forever"></i>
-                        </button>                                           
-                      </td> 
-                      </tr>                    
-                    </tbody>
-                  </table>                
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title">Create Users</h4>               
-                  <form class="forms-sample">
-                    <div class="form-group"style="padding-top:20px;">
-                      <label for="exampleInputUsername1">Full Name</label>
-                      <input type="text" class="form-control" id="exampleInputUsername1" placeholder="fullName">
-                    </div>                 
-                    <div class="form-group">
-                      <label for="exampleInputEmail1">Email address</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputUsername1">Phone No</label>
-                      <input type="text" class="form-control" id="exampleInputUsername1" placeholder="phoneNo">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputUsername1">Username</label>
-                      <input type="text" class="form-control" id="exampleInputUsername1" placeholder="Username">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputPassword1">Password</label>
-                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputConfirmPassword1">Confirm Password</label>
-                      <input type="password" class="form-control" id="exampleInputConfirmPassword1" placeholder="Password">
-                    </div>                 
-                    <button type="submit" class="btn btn-gradient-primary mr-2">Create</button>
-                    <button class="btn btn-light">Cancel</button>
-                  </form>
-                </div>
+          <div class="col-md-6 grid-margin stretch-card">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="card-title">Create Users</h4>
+                <form class="forms-sample"[formGroup]="Users">
+                  <div class="form-group"style="padding-top:20px;">
+                    <label for="exampleInputUsername1">Full Name:</label>
+                    <input type="text" class="form-control" formControlName="fullname" placeholder="FUll Name"
+                    [ngClass]="{ 'is-invalid': Users && s.fullname.errors && !Users.untouched}">
+                  <div *ngIf="Users.touched && s.fullname.errors" class="invalid-feedback"
+                    [hidden]="Users.untouched">
+                    <div *ngIf="s.fullname.errors.required">Full Name is required</div>
+                  </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Email address:</label>
+                    <input type="text" class="form-control" formControlName="email" placeholder="Email Address"
+                    pattern="[a-zA-Z0-9.-]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z ]{2,}"
+                    [ngClass]="{ 'is-invalid': Users && s.email.errors && !Users.untouched}">
+                  <div *ngIf="Users && s.email.errors" class="invalid-feedback" [hidden]="Users.untouched">
+                    <div *ngIf="s.email.errors.required">Email is required</div>
+                    <div *ngIf="s.email.errors">Email must be a valid email address</div>
+                  </div>       
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Phone No:</label>
+                    <input type="text" class="form-control" formControlName="mobileno" placeholder="Phone No"
+                    pattern="^\s*(?:\+?(\d{1,3}))?[- (]*(\d{3})[- )]*(\d{3})[- ]*(\d{4})(?: *[x/#]{1}(\d+))?\s*$"
+                    [ngClass]="{ 'is-invalid': Users && s.mobileno.errors && !Users.untouched}" />
+                  <div *ngIf="Users && s.mobileno.errors" class="invalid-feedback" [hidden]="Users.untouched">
+                    <div *ngIf="s.mobileno.errors.required">Phone No is required</div>
+                    <div *ngIf="s.mobileno.errors">Phone No must be a valid</div>
+                  </div>
+                  </div>                  
+                  <div class="form-group">
+                    <label for="exampleInputUsername1">Username:</label>
+                    <input type="text" class="form-control" formControlName="username" placeholder="userName"
+                    [ngClass]="{ 'is-invalid': Users && s.username.errors && !Users.untouched}">
+                  <div *ngIf="Users.touched && s.username.errors" class="invalid-feedback"
+                    [hidden]="Users.untouched">
+                    <div *ngIf="s.username.errors.required">Username is required</div>
+                  </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword4">Password</label>
+                    <input type="password" class="form-control" placeholder="Password" formControlName="password"
+                    [ngClass]="{ 'is-invalid': Users && s.password.errors && !Users.untouched}">
+                  <div *ngIf="Users && s.password.errors" class="invalid-feedback" [hidden]="Users.untouched">
+                    <div *ngIf="s.password.errors.required">Password is required</div>
+                    <div *ngIf="s.password.errors.minlength">Password must be at least 6 characters</div>
+                  </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword4">Confirm Password</label>
+                    <input type="password" class="form-control" formControlName="confirmPassword"
+                        placeholder="Confirm password" required="true" placeholder=" Confirm Password"
+                        [ngClass]="{ 'is-invalid': Users && s.confirmPassword.errors && !Users.untouched}" />
+                      <div *ngIf="Users && s.confirmPassword.errors" class="invalid-feedback"
+                        [hidden]="Users.untouched">
+                        <div *ngIf="s.confirmPassword.errors.required">Confirm Password is required</div>
+                        <div *ngIf="s.confirmPassword.errors.mustMatch">Confirm Passwords must match</div>
+                      </div>
+                  </div>         
+                  <button type="submit" class="btn btn-gradient-primary mr-2">Create</button>
+                  <button class="btn btn-light">Cancel</button>
+                </form>
               </div>
             </div>
           </div>
         </div>
-        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
-          aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h2 class="modal-title  btn-inquiry" id="exampleModalLongTitle">Edit</h2>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-  
-                <div class="row">
-                  <h5 class="col-form-label col-sm-2 pt-0"></h5>
-                  <div class="col-sm-10">
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" name="gridRadios" value="option1" checked>
-                      <label class="form-check-label">
-                        <h4>Active</h4>
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" name="gridRadios" value="option2">
-                      <label class="form-check-label">
-                        <h4>Inactive</h4>
-                      </label>
-                    </div>
+      </div>
+      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2 class="modal-title  btn-inquiry" id="exampleModalLongTitle">Edit</h2>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+
+              <div class="row">
+                <h5 class="col-form-label col-sm-2 pt-0"></h5>
+                <div class="col-sm-10">
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gridRadios" value="option1" checked>
+                    <label class="form-check-label">
+                      <h4>Active</h4>
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gridRadios" value="option2">
+                    <label class="form-check-label">
+                      <h4>Inactive</h4>
+                    </label>
                   </div>
                 </div>
-  
               </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-dismiss="modal">Update</button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancle</button>
-              </div>
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Update</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancle</button>
             </div>
           </div>
         </div>
-        <div class="modal fade" id="exampleModalCenter1" tabindex="-1" role="dialog"
+      </div>
+      <div class="modal fade" id="exampleModalCenter1" tabindex="-1" role="dialog"
         aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
@@ -526,39 +302,116 @@
               </button>
             </div>
             <div class="modal-body">
-  
+
               <div class="row">
                 <!-- <h5 class="col-form-label col-sm-2 pt-0">Edit</h5> -->
                 <div class="col-sm-12 icon1">
-                  <i class="mdi mdi-close-circle-outline"></i>               
+                  <i class="mdi mdi-close-circle-outline"></i>
                 </div>
                 <div class="col-sm-12 toastr">
-                <h2>Are you sure about to delete<br />this admin?</h2>
+                  <h2>Are you sure about to delete<br />this admin?</h2>
+                </div>
               </div>
-              </div>
-  
+
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-primary" data-dismiss="modal">Cancle</button>
-              <button type="button" class="btn btn-danger" data-dismiss="modal">Yes Delete It!</button>
+              <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="delUser()">Yes Delete
+                It!</button>
             </div>
           </div>
         </div>
       </div>
-        <!-- partial:partials/_footer.html -->
-        <footer class="footer">
-          <div class="d-sm-flex justify-content-center justify-content-sm-between">
-            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">
-              <i class="mdi mdi mdi-camcorder-box icons"></i>
-              <i class="mdi mdi-twitter-box icons"></i>
-              <i class="mdi mdi-facebook-box icons"></i>
-              <i class="mdi mdi-instagram icons"></i>
-            </span>
-            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Epic Stream © 2020 All Rights
-              Reserved.</span>
+      <div id="edit" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2 class="modal-title">Update Data</h2>
+            </div>
+            <div class="modal-body">
+              <form class="forms-sample" [formGroup]="User">               
+                <div class="form-group">
+                <input type="text" class="col-md-12 form-control" placeholder="Full name" [(ngModel)]="newUser.fullName"
+                  formControlName="fullname" [ngClass]="{ 'is-invalid': User && f.fullname.errors && !User.untouched}">
+                <div *ngIf="User.touched && f.fullname.errors" class="invalid-feedback" [hidden]="User.untouched">
+                  <div *ngIf="f.fullname.errors.required">Full Name is required</div>
+                </div>
+              </div>
+              <div class="form-group">
+                <input type="text" class="col-md-12 form-control" placeholder="companyName" [(ngModel)]="newUser.companyName"
+                  formControlName="companyname" [ngClass]="{ 'is-invalid': User && f.companyname.errors && !User.untouched}">
+                <div *ngIf="User.touched && f.companyname.errors" class="invalid-feedback" [hidden]="User.untouched">
+                  <div *ngIf="f.companyname.errors.required">company Name is required</div>
+                </div>
+              </div>       
+              <div class="form-group">
+                <input type="text" class="col-md-12 form-control" formControlName="email"[(ngModel)]="newUser.email" placeholder="Email Address"
+                pattern="[a-zA-Z0-9.-]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z ]{2,}"
+                [ngClass]="{ 'is-invalid': User && f.email.errors && !User.untouched}">
+              <div *ngIf="User && f.email.errors" class="invalid-feedback" [hidden]="User.untouched">
+                <div *ngIf="f.email.errors.required">Email is required</div>
+                <div *ngIf="f.email.errors">Email must be a valid email address</div>
+              </div>       
+              </div>       
+              <div class="form-group">
+                <input type="text" class="col-md-12 form-control" formControlName="mobileno" placeholder="Phone No"[(ngModel)]="newUser.phoneNo"
+                pattern="^\s*(?:\+?(\d{1,3}))?[- (]*(\d{3})[- )]*(\d{3})[- ]*(\d{4})(?: *[x/#]{1}(\d+))?\s*$"
+                [ngClass]="{ 'is-invalid': User && f.mobileno.errors && !User.untouched}" />
+              <div *ngIf="User && f.mobileno.errors" class="invalid-feedback" [hidden]="User.untouched">
+                <div *ngIf="f.mobileno.errors.required">Phone No is required</div>
+                <div *ngIf="f.mobileno.errors">Phone No must be a valid</div>
+              </div>
+              </div>  
+              <div class="form-group">
+                <input type="text" class="col-md-12 form-control" formControlName="username" placeholder="userName"
+                [(ngModel)]="newUser.userName"
+                [ngClass]="{ 'is-invalid': User && f.username.errors && !User.untouched}">
+              <div *ngIf="User.touched && f.username.errors" class="invalid-feedback"
+                [hidden]="User.untouched">
+                <div *ngIf="f.username.errors.required">Username is required</div>
+              </div>
+              </div>             
+              <div class="form-group">
+                <input type="text" class="col-md-12 form-control" formControlName="appadded" placeholder="appAdded"
+                 [(ngModel)]="newUser.appAdded"pattern="^-?[0-9]\\d*(\\.\\d{1,2})?$"
+                [ngClass]="{ 'is-invalid': User && f.appadded.errors && !User.untouched}">
+              <div *ngIf="User.touched && f.appadded.errors" class="invalid-feedback"
+                [hidden]="User.untouched">
+                <div *ngIf="f.appadded.errors.required">App Added is required</div>
+              </div>
+              </div>                                                                   
+              <div class="form-group">
+                <input type="date" class="col-md-12 form-control" formControlName="createdon" placeholder="createdOn" [(ngModel)]="newUser.createdOn"
+                [ngClass]="{ 'is-invalid': User && f.createdon.errors && !User.untouched}">
+              <div *ngIf="User.touched && f.createdon.errors" class="invalid-feedback"
+                [hidden]="User.untouched">
+                <div *ngIf="f.createdon.errors.required">CreatedOn is required</div>
+              </div>
+              </div>                      
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" id="up" class="btn btn-primary" data-dismiss="modal"
+                (click)="updateUser(newUser)">Update</button>
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
           </div>
-        </footer>
-        <!-- partial -->
+        </div>
       </div>
+      <!-- partial:partials/_footer.html -->
+      <footer class="footer">
+        <div class="d-sm-flex justify-content-center justify-content-sm-between">
+          <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">
+            <i class="mdi mdi mdi-camcorder-box icons"></i>
+            <i class="mdi mdi-twitter-box icons"></i>
+            <i class="mdi mdi-facebook-box icons"></i>
+            <i class="mdi mdi-instagram icons"></i>
+          </span>
+          <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Epic Stream © 2020 All Rights
+            Reserved.</span>
+        </div>
+      </footer>
+      <!-- partial -->
     </div>
   </div>
+</div>

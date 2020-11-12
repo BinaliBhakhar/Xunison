@@ -32,20 +32,7 @@
   <div class="container-fluid page-body-wrapper">
     <!-- partial:partials/_sidebar.html -->
     <nav class="sidebar sidebar-offcanvas" id="sidebar">
-      <ul class="nav">
-        <!-- <li class="nav-item nav-profile">
-        <a href="#" class="nav-link">
-          <div class="nav-profile-image">
-            <img src="assets/images/faces/face1.jpg" alt="profile">
-            <span class="login-status online"></span>            
-          </div>
-          <div class="nav-profile-text d-flex flex-column">
-            <span class="font-weight-bold mb-2">David Grey. H</span>
-            <span class="text-secondary text-small">Project Manager</span>
-          </div>
-          <i class="mdi mdi-bookmark-check text-success nav-profile-badge"></i>
-        </a>
-      </li> -->
+      <ul class="nav">       
       <li>       
         <span class="menu-title nav-link general">GENERAL</span>      
     </li>
@@ -57,8 +44,7 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" href="profile">
-            <span class="menu-title">Profile</span>
-            <!-- <i class="menu-arrow"></i> -->
+            <span class="menu-title">Profile</span>            
             <i class="mdi mdi-contacts menu-icon"></i>
           </a>
         </li>
@@ -111,20 +97,35 @@
               <div class="card-body">
                 <h4 class="card-title" style="text-align:center;">Send Notifications</h4>
                 <p class="card-description"> </p>
-                <form class="forms-sample">
+                <form class="forms-sample"[formGroup]="notification">
                   <div class="form-group">
                     <label for="exampleInputUsername1">Title:</label>
-                    <input type="text" class="form-control" id="exampleInputUsername1" placeholder="Title">
+                    <input type="text" class="form-control" formControlName="title" placeholder="Title"
+                    [ngClass]="{ 'is-invalid': notification && f.title.errors && !notification.untouched}">
+                  <div *ngIf="notification.touched && f.title.errors" class="invalid-feedback"
+                    [hidden]="notification.untouched">
+                    <div *ngIf="f.title.errors.required">Title is required</div>
+                  </div>
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Message:</label>
-                    <textarea class="form-control" id="exampleTextarea1" rows="4" placeholder="Message"></textarea>
+                    <textarea type="text" class="form-control" formControlName="msg" row="4" placeholder="Message"
+                    [ngClass]="{ 'is-invalid': notification && f.msg.errors && !notification.untouched}"></textarea>
+                  <div *ngIf="notification.touched && f.msg.errors" class="invalid-feedback"
+                    [hidden]="notification.untouched">
+                    <div *ngIf="f.msg.errors.required">Message is required</div>
+                  </div>
                   </div>
                   <div class="form-group">
                     <label>Image ( Optional )</label>
                     <input type="file" name="img[]" class="file-upload-default">
                     <div class="input-group col-xs-12">
-                      <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Image">
+                      <input type="text" disabled placeholder="Upload Image" class="form-control file-upload-info" formControlName="image" placeholder="Title"
+                      [ngClass]="{ 'is-invalid': notification && f.image.errors && !notification.untouched}">
+                    <div *ngIf="notification.touched && f.image.errors" class="invalid-feedback"
+                      [hidden]="notification.untouched">
+                      <div *ngIf="f.image.errors.required">Image is required</div>
+                    </div>
                       <span class="input-group-append">
                         <button class="file-upload-browse btn btn-gradient-primary" type="button">Upload</button>
                       </span>
@@ -132,7 +133,12 @@
                   </div>
                   <div class="form-group">
                     <label for="exampleInputConfirmPassword1">External Link ( optional ):</label>
-                    <input type="password" class="form-control" id="exampleInputConfirmPassword1" placeholder="link">
+                    <input type="text" class="form-control" formControlName="link" placeholder="Link"
+                    [ngClass]="{ 'is-invalid': notification && f.link.errors && !notification.untouched}">
+                  <div *ngIf="notification.touched && f.link.errors" class="invalid-feedback"
+                    [hidden]="notification.untouched">
+                    <div *ngIf="f.link.errors.required">External link is required</div>
+                  </div>
                   </div>
                   <button type="submit" class="btn btn-gradient-primary mr-2">Send</button>
                 </form>
